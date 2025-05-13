@@ -23,6 +23,7 @@
     flex: 1 1 600px;
     color: var(--text-primary);
     line-height: 1.8;
+    font-size: var(--font-md);
     opacity: 0;
     animation: fadeInUp 0.8s ease-out forwards;
 }
@@ -30,7 +31,7 @@
 .intro {
     font-style: italic;
     margin-bottom: 32px;
-    font-size: 1.2rem;
+    font-size: var(--font-lg);
     color: var(--text-secondary);
     padding-left: 24px;
     border-left: 3px solid var(--accent-500);
@@ -49,6 +50,7 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     border-radius: 8px;
     padding: 32px;
+    font-size: var(--font-md);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     overflow: hidden;
@@ -98,6 +100,7 @@
     display: grid;
     gap: 16px;
     padding-left: 0;
+    font-size: var(--font-md);
 }
 
 .direction-item ul li {
@@ -131,7 +134,7 @@
 .note {
     margin-top: 32px;
     color: var(--text-secondary);
-    font-size: 0.95rem;
+    font-size: var(--font-sm);
     line-height: 1.7;
     padding: 20px;
     background: var(--white);
@@ -209,6 +212,7 @@
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     overflow: hidden;
+    font-size: var(--font-md);
 }
 
 .callout::before {
@@ -236,7 +240,7 @@
 .callout h4 {
     margin: 0 0 20px;
     color: var(--accent-500);
-    font-size: 1.3rem;
+    font-size: var(--font-lg);
     font-weight: 600;
     transition: color 0.3s ease;
 }
@@ -249,7 +253,7 @@
     margin: 0;
     color: var(--text-secondary);
     line-height: 1.7;
-    font-size: 1rem;
+    font-size: var(--font-md);
 }
 
 @media (max-width: 900px) {

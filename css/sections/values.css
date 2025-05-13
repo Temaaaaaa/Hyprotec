@@ -31,6 +31,7 @@
     transition: transform 0.3s, box-shadow 0.3s;
     flex: 1 1 48%;
     max-width: 500px;
+    font-size: var(--font-md);
 }
 
 .value-card:hover {
@@ -39,14 +40,14 @@
 }
 
 .value-title {
-    font-size: 1.25rem;
+    font-size: var(--font-lg);
     color: var(--accent-500);
     margin-bottom: 12px;
     font-weight: 600;
 }
 
 .value-text {
-    font-size: 1rem;
+    font-size: var(--font-md);
     color: var(--text-primary);
     line-height: 1.6;
 }

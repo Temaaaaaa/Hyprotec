@@ -5,18 +5,34 @@
     box-sizing: border-box;
 }
 
-
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-inter);
     color: var(--text-primary);
-    line-height: 1.5;
+    line-height: 1.6;
+    font-size: var(--font-base);
     background: var(--gray-50);
 }
 
-h1, h2, h3,
-.section-title,
+h1 {
+    font-size: var(--font-xxl);
+}
+
+h2 {
+    font-size: var(--font-xl);
+}
+
+h3 {
+    font-size: var(--font-lg);
+}
+
+.section-title {
+    font-family: var(--font-montserrat);
+    font-size: var(--font-xl);
+}
+
 .main-nav a {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-montserrat);
+    font-size: var(--font-md);
 }
 
 /* ===== Подчеркивание заголовков секций ===== */
@@ -31,14 +47,13 @@ html {
     scroll-padding-top: 80px;
 }
 
-
 section {
     padding: 80px 0;
 }
 
 section + section {
     margin-top: 60px;
-} 
+}
 
 @media (max-width: 768px) {
     section {

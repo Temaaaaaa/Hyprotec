@@ -62,7 +62,7 @@
 .dropdown-toggle {
     position: relative;
     font-weight: 500;
-    font-size: 15px;
+    font-size: var(--font-md);
     line-height: 1.2;
     padding: 8px 0;
     color: inherit;
@@ -128,7 +128,7 @@
 .dropdown-menu a {
     display: block;
     padding: 10px 16px;
-    font-size: 14px;
+    font-size: var(--font-sm);
     color: var(--text-primary);
     text-decoration: none;
     transition: background 0.2s;
@@ -145,7 +145,7 @@
 .contact-phone a {
     color: var(--accent-500);
     font-weight: 600;
-    font-size: 15px;
+    font-size: var(--font-md);
     text-decoration: none;
     white-space: nowrap;
     transition: color 0.3s;

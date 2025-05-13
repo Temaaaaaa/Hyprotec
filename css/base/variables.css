@@ -66,6 +66,15 @@
     --bg-muted: var(--gray-200);
     --bg-dark: rgba(34, 34, 34, 0.95);
 
+    /* ===== Шрифт ===== */
+    --font-base: 20px;
+    --font-sm: 0.9rem;
+    --font-md: 1.1rem;
+    --font-lg: 1.4rem;
+    --font-xl: 2.4rem;
+    --font-xxl: 4rem;
+
+
     /* ===== Дополнительно ===== */
     --transition-default: all 0.3s ease;
     --shadow-sm: 0 4px 8px rgba(0, 0, 0, 0.06);

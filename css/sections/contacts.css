@@ -1,7 +1,9 @@
+/* ===== Контакты ===== */
 .contacts-section {
-    padding: 80px 20px 100px; /* было 80px 20px, добавили отступ вниз */
+    padding: 80px 20px 100px;
     background-color: var(--gray-50);
 }
+
 .container-contacts {
     max-width: 1200px;
     margin: 0 auto;
@@ -14,20 +16,20 @@
 
 .contacts-info {
     max-width: 500px;
-    font-size: 16px;
+    font-size: var(--font-md);
     line-height: 1.6;
     color: var(--text-primary);
 }
 
 .contacts-phone {
-    font-size: 28px;
+    font-size: var(--font-xxl);
     margin-bottom: 10px;
     text-align: left;
     color: var(--text-primary);
 }
 
 .contacts-email {
-    font-size: 22px;
+    font-size: var(--font-xl);
     color: var(--accent-500);
     margin-bottom: 10px;
 }
@@ -36,11 +38,13 @@
     margin-bottom: 20px;
     font-style: italic;
     color: var(--text-secondary);
+    font-size: var(--font-md);
 }
 
 .company-details p {
     margin: 6px 0;
     color: var(--text-secondary);
+    font-size: var(--font-md);
 }
 
 .contacts-map iframe {
