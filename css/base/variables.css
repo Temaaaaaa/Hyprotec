@@ -37,28 +37,37 @@
 
 /* ===== переменные ===== */
 :root {
-    /* Brand Colors */
-    --accent-500: #e6002b;
-    --accent-600: #c40025;
+    /* ===== Fonts ===== */
+    --font-inter: 'Inter', sans-serif;
+    --font-montserrat: 'Montserrat', sans-serif;
 
-    /* Neutral Colors */
+    /* ===== Brand Colors ===== */
+    --accent-500: #e42327; /* основной цвет HYPROTEC */
+    --accent-600: #c31f22; /* более тёмный для наведения */
+
+    /* ===== Neutral Colors ===== */
     --white: #ffffff;
-    --gray-50: #fafafa;
-    --gray-100: #f5f5f5;
-    --gray-200: #f0f4f8;
-    --gray-300: #f9f9f9;
+    --gray-50: #ededed;
+    --gray-100: #e0e0e0;
+    --gray-200: #d5d5d5;
+    --gray-300: #e8e8e8;
     --gray-700: #555555;
     --gray-800: #333333;
     --gray-900: #111111;
 
-    /* Text Colors */
-    --text-primary: var(--gray-800);   /* основной текст */
-    --text-secondary: var(--gray-700); /* дополнительный */
-    --text-inverse: var(--white);      /* на тёмном фоне */
+    /* ===== Text Colors ===== */
+    --text-primary: var(--gray-800);
+    --text-secondary: var(--gray-700);
+    --text-inverse: var(--white);
 
-    /* Background Colors */
-    --bg-light: var(--white);
+    /* ===== Background Colors ===== */
+    --bg-light: var(--gray-100);
     --bg-soft: var(--gray-50);
     --bg-muted: var(--gray-200);
     --bg-dark: rgba(34, 34, 34, 0.95);
-} 
+
+    /* ===== Дополнительно ===== */
+    --transition-default: all 0.3s ease;
+    --shadow-sm: 0 4px 8px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.08);
+}

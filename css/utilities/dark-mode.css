@@ -129,3 +129,14 @@ html.dark-mode .graph {
   padding: 16px;
   border-radius: 8px;
 }
+html.dark-mode {
+  --accent-500: #ff3b3f;
+  --accent-600: #d9282b;
+}
+
+html.dark-mode .site-header a,
+html.dark-mode .section-title,
+html.dark-mode .contact-phone a {
+  text-shadow: 0 0 4px rgba(255, 40, 40, 0.3);
+}
+

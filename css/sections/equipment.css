@@ -33,7 +33,6 @@
 /* ===== Секция Владения ===== */
 .ownership-section {
     padding: 80px 20px;
-    background-color: var(--gray-300);
 }
 
 .ownership-content {
