@@ -1,0 +1,64 @@
+/* ===== Fonts ===== */
+@font-face {
+  font-family: 'Inter';
+  src: url('../../assets/fonts/Inter18pt-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('../../assets/fonts/Inter18pt-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('../../assets/fonts/Inter18pt-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../../assets/fonts/Montserrat-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../../assets/fonts/Montserrat-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== переменные ===== */
+:root {
+    /* Brand Colors */
+    --accent-500: #e6002b;
+    --accent-600: #c40025;
+
+    /* Neutral Colors */
+    --white: #ffffff;
+    --gray-50: #fafafa;
+    --gray-100: #f5f5f5;
+    --gray-200: #f0f4f8;
+    --gray-300: #f9f9f9;
+    --gray-700: #555555;
+    --gray-800: #333333;
+    --gray-900: #111111;
+
+    /* Text Colors */
+    --text-primary: var(--gray-800);   /* основной текст */
+    --text-secondary: var(--gray-700); /* дополнительный */
+    --text-inverse: var(--white);      /* на тёмном фоне */
+
+    /* Background Colors */
+    --bg-light: var(--white);
+    --bg-soft: var(--gray-50);
+    --bg-muted: var(--gray-200);
+    --bg-dark: rgba(34, 34, 34, 0.95);
+} 

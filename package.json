@@ -1,0 +1,21 @@
+{
+  "name": "hpt",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server --port=3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Temaaaaaa/Hyprotec-main.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Temaaaaaa/Hyprotec-main/issues"
+  },
+  "homepage": "https://github.com/Temaaaaaa/Hyprotec-main#readme",
+  "description": ""
+}

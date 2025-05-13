@@ -1,0 +1,17 @@
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(to right, #c41e3a, #e63946);
+    z-index: 9999;
+    transition: width 0.1s ease-out;
+    box-shadow: 0 0 10px rgba(196, 30, 58, 0.5);
+}
+
+/* Добавляем поддержку тёмной темы */
+.dark-mode .scroll-progress {
+    background: linear-gradient(to right, #e63946, #c41e3a);
+    box-shadow: 0 0 10px rgba(230, 57, 70, 0.5);
+} 

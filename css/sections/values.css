@@ -1,0 +1,65 @@
+/* ===== Секция Ценности ===== */
+.values-section {
+    background: var(--gray-50);
+    padding: 80px 20px;
+}
+
+.values-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.values-layout .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.values-layout .center-row {
+    justify-content: center;
+}
+
+/* ===== Карточка Ценности ===== */
+.value-card {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 24px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex: 1 1 48%;
+    max-width: 500px;
+}
+
+.value-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.value-title {
+    font-size: 1.25rem;
+    color: var(--accent-500);
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.value-text {
+    font-size: 1rem;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+    .values-layout .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .value-card {
+        width: 100%;
+        max-width: 100%;
+    }
+}

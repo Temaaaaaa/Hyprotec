@@ -1,0 +1,56 @@
+/* ===== Reset & Base Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-primary);
+    line-height: 1.5;
+    background: var(--gray-50);
+}
+
+h1, h2, h3,
+.section-title,
+.main-nav a {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ===== Подчеркивание заголовков секций ===== */
+.section-title {
+    position: relative;
+    display: inline-block;
+}
+
+/* ===== Плавная прокрутка ===== */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+
+section {
+    padding: 80px 0;
+}
+
+section + section {
+    margin-top: 60px;
+} 
+
+@media (max-width: 768px) {
+    section {
+        padding: 60px 16px; /* вместо 80px по бокам делаем 16px */
+    }
+
+    section + section {
+        margin-top: 40px;
+    }
+
+    .section-title::after {
+        height: 2px;
+        bottom: -6px;
+    }
+}

@@ -1,0 +1,106 @@
+/* ===== Hero Base ===== */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+/* ===== Hero Media ===== */
+.hero-media video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7));
+    z-index: 2;
+}
+
+/* ===== Hero Content ===== */
+.hero-text {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: var(--text-inverse);
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+    transform: translateY(40px);
+    padding: 0 20px;
+}
+
+.hero-logo img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-inverse);
+}
+
+.hero-text .tagline {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    color: var(--text-inverse);
+}
+
+/* ===== Call to Action ===== */
+.hero-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: var(--accent-500);
+    color: var(--text-inverse);
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    transition: background 0.3s ease, transform 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hero-btn:hover {
+    background: var(--accent-600);
+    transform: translateY(-2px);
+}
+
+/* ===== Responsive Styles ===== */
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2.4rem;
+    }
+
+    .hero-text .tagline {
+        font-size: 1.1rem;
+    }
+
+    .hero-btn {
+        font-size: 0.9rem;
+        padding: 12px 24px;
+    }
+} 

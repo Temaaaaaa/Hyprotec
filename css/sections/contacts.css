@@ -1,0 +1,57 @@
+.contacts-section {
+    padding: 80px 20px 100px; /* было 80px 20px, добавили отступ вниз */
+    background-color: var(--gray-50);
+}
+.container-contacts {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.contacts-info {
+    max-width: 500px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-primary);
+}
+
+.contacts-phone {
+    font-size: 28px;
+    margin-bottom: 10px;
+    text-align: left;
+    color: var(--text-primary);
+}
+
+.contacts-email {
+    font-size: 22px;
+    color: var(--accent-500);
+    margin-bottom: 10px;
+}
+
+.contacts-hours {
+    margin-bottom: 20px;
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+.company-details p {
+    margin: 6px 0;
+    color: var(--text-secondary);
+}
+
+.contacts-map iframe {
+    border: none;
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.contacts-map img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    display: block;
+}

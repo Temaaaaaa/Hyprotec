@@ -1,0 +1,131 @@
+body {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* ===== Dark Mode Base ===== */
+html.dark-mode,
+html.dark-mode body {
+  background-color: var(--gray-900);
+  color: var(--text-inverse);
+}
+
+/* Links */
+
+
+html.dark-mode a:hover {
+  color: var(--accent-500);
+}
+
+/* Header */
+html.dark-mode .site-header {
+  background: var(--gray-900);
+  border-color: var(--gray-800);
+}
+
+/* Nav Links underline */
+html.dark-mode .main-nav a::before,
+html.dark-mode .dropdown-toggle::before {
+  background: var(--accent-500);
+}
+
+/* Cards & Boxes */
+html.dark-mode .card,
+html.dark-mode .value-card,
+html.dark-mode .why-card,
+html.dark-mode .service-card,
+html.dark-mode .callout,
+html.dark-mode .note,
+html.dark-mode .direction-item {
+  background-color: var(--gray-800);
+  color: var(--text-inverse);
+  border-color: var(--accent-500);
+}
+
+/* Overlays */
+html.dark-mode .card-overlay,
+html.dark-mode .service-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  color: var(--text-inverse);
+}
+
+/* Tables */
+html.dark-mode .ownership-table th,
+html.dark-mode .ownership-table td {
+  background-color: var(--gray-800);
+  color: var(--text-inverse);
+  border-color: var(--gray-700);
+}
+
+/* Sections */
+html.dark-mode section,
+html.dark-mode .container,
+html.dark-mode .site-footer,
+html.dark-mode .contacts-section,
+html.dark-mode .ownership-section,
+html.dark-mode .stats-section {
+  background-color: var(--gray-900) !important;
+  color: var(--text-inverse) !important;
+}
+
+/* Typography */
+html.dark-mode .section-title,
+html.dark-mode .section-number,
+html.dark-mode h1,
+html.dark-mode h2,
+html.dark-mode h3,
+html.dark-mode h4 {
+  color: var(--accent-500);
+}
+
+html.dark-mode p,
+html.dark-mode li,
+html.dark-mode .value-text,
+html.dark-mode .why-text,
+html.dark-mode .about-text,
+html.dark-mode .ownership-notes,
+html.dark-mode .contacts-email,
+html.dark-mode .contacts-phone,
+html.dark-mode .contacts-hours,
+html.dark-mode .company-details,
+html.dark-mode .challenges-list li {
+  color: var(--gray-100);
+  opacity: 1;
+}
+
+/* Scrollbar */
+html.dark-mode ::-webkit-scrollbar {
+  background-color: var(--gray-800);
+}
+
+html.dark-mode ::-webkit-scrollbar-thumb {
+  background-color: var(--gray-700);
+}
+
+html.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background-color: var(--gray-700);
+}
+
+/* Footer links */
+html.dark-mode .footer-column ul li a {
+  color: var(--gray-100);
+}
+
+/* Dropdown */
+html.dark-mode .dropdown-menu {
+  background: var(--gray-900);
+}
+
+html.dark-mode .dropdown-menu a {
+  color: var(--text-inverse);
+}
+
+html.dark-mode .dropdown-menu a:hover {
+  background: var(--gray-800);
+}
+
+/* Graph blocks */
+html.dark-mode .graph {
+  background-color: var(--gray-900);
+  padding: 16px;
+  border-radius: 8px;
+}
