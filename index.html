@@ -37,6 +37,7 @@
     <link rel="stylesheet" href="css/utilities/dark-mode.css">
     <link rel="stylesheet" href="css/utilities/layout.css">
     <link rel="stylesheet" href="css/utilities/scroll-progress.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/css/splide.min.css">
 </head>
 <body>
 <div class="scroll-progress"></div>
@@ -260,57 +261,57 @@
                 <h2 class="section-title">Ценности компании</h2>
             </div>
 
-            <div class="values-layout">
-                <!-- Верхняя строка -->
-                <div class="row">
-                    <article class="value-card">
-                        <h3 class="value-title">Команда</h3>
-                        <p class="value-text">
-                            Основа успеха и динамического роста компании, компания повышает уровень профессионализма
-                            своих сотрудников и своих Партнеров.
-                        </p>
-                    </article>
-                    <article class="value-card">
-                        <h3 class="value-title">Безопасность</h3>
-                        <p class="value-text">
-                            Компания обеспечивает безопасные условия труда, сохранению жизни и здоровья сотрудников,
-                            использует международный опыт в области охраны труда и защиты.
-                        </p>
-                    </article>
-                </div>
+            <div class="splide" id="values-carousel">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <article class="value-card">
+                                <h3 class="value-title">Команда</h3>
+                                <p class="value-text">
+                                    Основа успеха и динамического роста компании, компания повышает уровень профессионализма своих сотрудников и своих Партнёров.
+                                </p>
+                            </article>
+                        </li>
+                        <li class="splide__slide">
+                            <article class="value-card">
+                                <h3 class="value-title">Безопасность</h3>
+                                <p class="value-text">
+                                    Компания обеспечивает безопасные условия труда, сохранение жизни и условий сотрудников, использует международный опыт в области охраны труда и защищает здоровье сотрудников.
+                                </p>
+                            </article>
+                        </li>
+                        <li class="splide__slide">
+                            <article class="value-card">
+                                <h3 class="value-title">Технологии</h3>
+                                <p class="value-text">
+                                    Компания обеспечивает конкурентное преимущество за счёт постоянного внедрения новых технологий и лучших отраслевых практик.
+                                </p>
+                            </article>
+                        </li>
+                        <li class="splide__slide">
+                            <article class="value-card">
+                                <h3 class="value-title">Результат</h3>
+                                <p class="value-text">
+                                    Деятельность направлена на успешное решение технологических задач любой сложности. Технологический успех — основа взаимовыгодного сотрудничества с Партнёрами.
+                                </p>
+                            </article>
+                        </li>
+                        <li class="splide__slide">
+                            <article class="value-card">
+                                <h3 class="value-title">Клиентоориентированность</h3>
+                                <p class="value-text">
+                                    Постоянное стремление к соответствию ожиданий заказчика и обеспечение репутации авторитетного и надёжного Партнёра, ценим доверие заказчиков, демонстрируем индивидуальный и ответственный подход к каждому Заказчику.
+                                </p>
+                            </article>
+                        </li>
 
-                <!-- Центральная карточка -->
-                <div class="row center-row">
-                    <article class="value-card">
-                        <h3 class="value-title">Клиентоориентированность</h3>
-                        <p class="value-text">
-                            Постоянное стремление к соответствию ожиданий заказчика и обеспечение репутации
-                            авторитетного и надёжного Партнера, ценим доверие заказчиков, демонстрируем индивидуальный и
-                            ответственный подход к каждому Заказчику.
-                        </p>
-                    </article>
-                </div>
-
-                <!-- Нижняя строка -->
-                <div class="row">
-                    <article class="value-card">
-                        <h3 class="value-title">Технологии</h3>
-                        <p class="value-text">
-                            Компания обеспечивает конкурентное преимущество за счёт постоянного внедрения новых
-                            технологий и лучших отраслевых практик.
-                        </p>
-                    </article>
-                    <article class="value-card">
-                        <h3 class="value-title">Результат</h3>
-                        <p class="value-text">
-                            Деятельность направлена на успешное решение технологических задач любой сложности.
-                            Технологический успех — основа взаимовыгодного сотрудничества с Партнёрами.
-                        </p>
-                    </article>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
+
+
 
 
     <!-- ====== СЕКЦИЯ «УСЛУГИ» ====== -->
@@ -563,6 +564,7 @@
 
 
 <script type="module" src="js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/js/splide.min.js"></script>
 
 
 </body>

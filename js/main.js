@@ -129,6 +129,21 @@ function setupScrollProgress() {
         bar.style.width = scrolled + '%';
     });
 }
+document.addEventListener('DOMContentLoaded', function () {
+    new Splide('#values-carousel', {
+        type: 'loop',
+        perPage: 1,
+        gap: '32px',
+        arrows: true,
+        pagination: false,
+        padding: '20%',
+        breakpoints: {
+            1024: { perPage: 1, padding: '10%' },
+            768: { perPage: 1, padding: '0' },
+        },
+    }).mount();
+});
+
 
 // === Запуск всего ===
 document.addEventListener('DOMContentLoaded', () => {
