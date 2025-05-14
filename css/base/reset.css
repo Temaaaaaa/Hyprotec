@@ -52,7 +52,7 @@ section {
 }
 
 section + section {
-    margin-top: 60px;
+    margin-top: 0;
 }
 
 @media (max-width: 768px) {

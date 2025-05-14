@@ -4,10 +4,7 @@
     background-color: var(--gray-50);
 }
 
-.equipment-section .container {
-    max-width: 1100px;
-    margin: 0 auto;
-}
+
 
 .equipment-content p {
     font-size: var(--font-md);
@@ -20,20 +17,20 @@
     list-style-type: disc;
     padding-left: 1.5rem;
     margin-bottom: 40px;
-    max-width: 800px;
+    max-width: 900px;
     font-size: var(--font-md);
-}
-
-.equipment-content .challenges-list li {
-    font-size: var(--font-md);
-    line-height: 1.7;
-    margin-bottom: 12px;
-    color: var(--text-primary);
 }
 
 /* ===== Секция Владения ===== */
 .ownership-section {
     padding: 80px 20px;
+    background-color: var(--gray-50);
+}
+
+.ownership-section .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .ownership-content {
@@ -45,12 +42,12 @@
 }
 
 .ownership-left {
-    flex: 1 1 500px;
-    max-width: 600px;
+    flex: 1 1 720px;
+    max-width: 720px;
 }
 
 .ownership-chart {
-    flex: 1 1 400px;
+    flex: 1 1 600px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -66,6 +63,7 @@
     width: 100%;
     border-collapse: collapse;
     font-size: var(--font-md);
+    margin-top: 20px;
 }
 
 .ownership-table th,
@@ -89,25 +87,9 @@
     margin: 40px auto 0;
     font-size: var(--font-md);
     line-height: 1.6;
-    max-width: 900px;
+    max-width: 1000px;
     color: var(--text-secondary);
-}
-
-@media (max-width: 768px) {
-    .ownership-content {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .ownership-left,
-    .ownership-chart {
-        max-width: 100%;
-    }
-
-    .ownership-chart {
-        justify-content: flex-start;
-        margin-top: 24px;
-    }
+    padding: 0 20px;
 }
 
 /* ===== Карточки оборудования ===== */
@@ -116,17 +98,20 @@
     background-color: var(--gray-50);
 }
 
-.container-cards {
+.product-cards .container-cards {
+    max-width: 1440px;
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
+    gap: 40px;
+    padding: 0 20px;
 }
 
 .card {
     position: relative;
-    width: 320px;
-    height: 220px;
+    width: 420px;
+    height: 260px;
     border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
@@ -155,12 +140,12 @@
     z-index: 2;
     width: 100%;
     height: 100%;
-    padding: 20px;
+    padding: 24px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     color: var(--white);
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.45);
     transition: background 0.3s ease;
     font-size: var(--font-md);
 }
@@ -192,25 +177,56 @@
     background-color: var(--gray-50);
 }
 
-.container-stats {
-    max-width: 1200px;
+.stats-section .container-stats {
+    max-width: 1440px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
+    justify-content: space-between;
+    gap: 60px;
+    padding: 0 20px;
 }
 
 .stats-text {
-    flex: 1 1 400px;
-    max-width: 500px;
-    font-size: var(--font-md);
+    flex: 1 1 700px;
+    max-width: 720px;
+    font-size: var(--font-lg);
     line-height: 1.8;
     color: var(--text-secondary);
 }
 
+.graph {
+    flex: 1 1 600px;
+    display: flex;
+    justify-content: center;
+}
+
 .graph img {
-    width: 320px;
+    width: 100%;
+    max-width: 600px;
     height: auto;
     display: block;
+}
+
+/* ===== Адаптив ===== */
+@media (max-width: 1024px) {
+    .ownership-content,
+    .container-cards,
+    .container-stats {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .ownership-left,
+    .ownership-chart,
+    .stats-text,
+    .graph {
+        max-width: 100%;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
 }
