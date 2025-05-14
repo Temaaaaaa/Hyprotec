@@ -140,3 +140,79 @@ html.dark-mode .contact-phone a {
   text-shadow: 0 0 4px rgba(255, 40, 40, 0.3);
 }
 
+html.dark-mode .stats-numbers-section {
+  background: var(--gray-900);
+}
+
+html.dark-mode .number-item {
+  background: var(--gray-800);
+  border-color: var(--gray-700);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+html.dark-mode .number-label {
+  color: var(--gray-100);
+}
+
+html.dark-mode .why-card {
+  background: var(--gray-800);
+  border-color: var(--accent-500);
+  color: var(--text-inverse);
+}
+
+html.dark-mode .number-item::before {
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.04), transparent 60%);
+}
+
+html.dark-mode .values-section {
+  background-color: var(--gray-900);
+}
+
+html.dark-mode .value-card {
+  background: linear-gradient(135deg, rgba(30, 30, 30, 0.6), rgba(45, 45, 45, 0.8));
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  color: var(--text-inverse);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+}
+
+html.dark-mode .value-card::before {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.03), transparent);
+}
+
+html.dark-mode .value-title {
+  color: var(--accent-500);
+}
+
+
+html.dark-mode .value-text {
+  color: var(--gray-100);
+}
+
+/* Стрелки управления */
+html.dark-mode .splide__arrow {
+  color: var(--accent-500);
+  background: transparent;
+}
+
+/* Контейнеры и треки */
+html.dark-mode .splide__slide {
+  background-color: transparent;
+}
+
+html.dark-mode .splide__track {
+  background-color: transparent;
+}
+
+html.dark-mode .splide__arrow {
+  color: #ffffff;
+  background: rgb(255, 0, 0);
+  border-radius: 50%;
+}
+
+html.dark-mode .splide__arrow:hover {
+  background: rgb(246, 245, 245);
+}
+
+

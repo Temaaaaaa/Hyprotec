@@ -144,6 +144,44 @@ document.addEventListener('DOMContentLoaded', function () {
     }).mount();
 });
 
+function setupNumberCounters() {
+    const items = document.querySelectorAll('.number-item');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const counter = el.querySelector('.number-value');
+                const target = +el.dataset.target;
+                let current = 0;
+                const step = Math.ceil(target / 80);
+
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        counter.textContent = target.toLocaleString('ru-RU');
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = current.toLocaleString('ru-RU');
+                    }
+                }, 20);
+
+                el.classList.add('visible');
+                observer.unobserve(el);
+            }
+        });
+    }, {
+        threshold: 0.4
+    });
+
+    items.forEach(item => observer.observe(item));
+}
+
+
+
+
+
+
 
 // === Запуск всего ===
 document.addEventListener('DOMContentLoaded', () => {
@@ -153,4 +191,5 @@ document.addEventListener('DOMContentLoaded', () => {
     animateOnScroll();
     startTypingEffect();
     setupScrollProgress();
+    setupNumberCounters()
 });
