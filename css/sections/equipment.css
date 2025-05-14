@@ -1,96 +1,260 @@
 /* ===== Секция «Лабораторное оборудование» ===== */
+/* ===== Лабораторное оборудование: новая стилистика ===== */
 .equipment-section {
-    padding: 80px 20px;
+    padding: 100px 20px;
     background-color: var(--gray-50);
+    position: relative;
+    z-index: 1;
 }
 
+/*.equipment-section .container {*/
+/*    max-width: 1280px;*/
+/*    margin: 0 auto;*/
+/*    padding: 0 20px;*/
+/*}*/
 
-
-.equipment-content p {
-    font-size: var(--font-md);
+.equipment-content {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    font-size: var(--font-lg);
+    color: var(--text-primary);
     line-height: 1.8;
+}
+
+/* Параграфы */
+.equipment-paragraphs p {
     margin-bottom: 24px;
     color: var(--text-primary);
 }
 
-.equipment-content .challenges-list {
-    list-style-type: disc;
-    padding-left: 1.5rem;
-    margin-bottom: 40px;
-    max-width: 900px;
-    font-size: var(--font-md);
+/* Список вызовов */
+.challenges-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+    padding: 0;
+    list-style: none;
 }
+
+.challenges-list li {
+    background: var(--white);
+    border-left: 6px solid var(--accent-500);
+    padding: 24px 28px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    font-size: var(--font-md);
+    color: var(--text-primary);
+    line-height: 1.7;
+    position: relative;
+    transition: var(--transition-default);
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.challenges-list li::before {
+    font-size: var(--font-md);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 4px;
+    transition: transform 0.3s ease;
+}
+.challenges-list li:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+.challenges-list li:hover::before {
+    transform: rotate(20deg);
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+    .equipment-content {
+        gap: 32px;
+    }
+
+    .challenges-list li {
+        padding: 18px 20px;
+        font-size: var(--font-sm);
+    }
+}
+
+
+
 
 /* ===== Секция Владения ===== */
+
+
+/* ===== Ownership Section ===== */
 .ownership-section {
-    padding: 80px 20px;
-    background-color: var(--gray-50);
+    padding: 100px 20px;
+    background: var(--gray-50);
 }
 
-.ownership-section .container {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 20px;
+.section-subline {
+    display: block;
+    font-size: var(--font-md);
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-top: 8px;
 }
 
-.ownership-content {
+.ownership-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+/* Сетка: таблица слева, график справа */
+.ownership-split {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: flex-start;
-    gap: 50px;
+    gap: 48px;
 }
 
-.ownership-left {
-    flex: 1 1 720px;
-    max-width: 720px;
+/* === Таблица слева === */
+.ownership-table-block {
+    flex: 1 1 640px;
+    min-width: 320px;
 }
 
-.ownership-chart {
-    flex: 1 1 600px;
+/* === График справа === */
+.ownership-chart-block {
+    flex: 1 1 500px;
+    /*min-width: 250px;*/
     display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: flex-start;
+    padding-top: 8px;
 }
 
-.ownership-chart img {
-    max-width: 100%;
-    height: auto;
+.ownership-chart-block canvas {
+    width: 100% !important;
+    aspect-ratio: 2 / 1;
     display: block;
+    border-radius: 8px;
 }
 
+
+/* === Таблица === */
 .ownership-table {
     width: 100%;
+    font-size: var(--font-lg);
     border-collapse: collapse;
-    font-size: var(--font-md);
-    margin-top: 20px;
-}
-
-.ownership-table th,
-.ownership-table td {
-    border: 1px solid #ccc;
-    padding: 12px 16px;
-    text-align: center;
-    color: var(--text-primary);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-default);
+    margin: 0 auto;
 }
 
 .ownership-table th {
-    background-color: var(--gray-300);
-    font-weight: bold;
+    background: var(--gray-200);
+    font-weight: 600;
+    color: var(--text-primary);
+    padding: 24px 32px;
+    font-size: var(--font-lg);
+    text-align: center;
 }
 
-.ownership-table .total-row {
-    background-color: var(--gray-200);
+.ownership-table td {
+    background: var(--white);
+    color: var(--text-primary);
+    padding: 20px 28px;
+    text-align: center;
+    font-size: var(--font-lg);
+    border-bottom: 1px solid var(--gray-100);
+    transition: background-color 0.3s ease;
 }
 
+.ownership-table tbody tr:not(.total-row):hover td {
+    background-color: var(--gray-100);
+}
+
+.ownership-table .total-row td {
+    background: var(--gray-50);
+    font-weight: 800;
+    color: var(--accent-500);
+    font-size: var(--font-xl);
+    padding: 26px 32px;
+    border: none;
+}
+
+/* === Преимущества под таблицей === */
 .ownership-notes {
-    margin: 40px auto 0;
-    font-size: var(--font-md);
-    line-height: 1.6;
-    max-width: 1000px;
+    margin-top: 24px;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 16px;
+    font-size: var(--font-lg);
     color: var(--text-secondary);
-    padding: 0 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+.ownership-notes li {
+    padding-left: 28px;
+    position: relative;
+    line-height: 1.7;
+}
+
+.ownership-notes li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 1.2em;
+    color: var(--accent-500);
+}
+
+/* === Адаптив === */
+@media (max-width: 1024px) {
+    .ownership-split {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .ownership-chart-block {
+        padding-top: 0;
+    }
+
+    .ownership-chart-block canvas {
+        max-width: 100%;
+        aspect-ratio: 16 / 9;
+    }
+}
+
+/* 🌗 Dark Mode */
+html.dark-mode .ownership-section {
+    background: var(--gray-900);
+}
+
+html.dark-mode .ownership-table th {
+    background: var(--gray-700);
+    color: var(--gray-100);
+}
+
+html.dark-mode .ownership-table td {
+    background: var(--gray-800);
+    color: var(--gray-100);
+    border-color: var(--gray-700);
+}
+
+html.dark-mode .ownership-table .total-row td {
+    background: var(--gray-700);
+    color: var(--accent-500);
+}
+
+html.dark-mode .ownership-notes li {
+    color: var(--gray-100);
+}
+
+
 
 /* ===== Карточки оборудования ===== */
 .product-cards {
@@ -173,40 +337,56 @@
 
 /* ===== Статистика ===== */
 .stats-section {
-    padding: 80px 20px;
+    padding: 100px 20px;
     background-color: var(--gray-50);
 }
 
-.stats-section .container-stats {
-    max-width: 1440px;
-    margin: 0 auto;
+.stats-content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 60px;
-    padding: 0 20px;
+    align-items: flex-start;
+    gap: 64px;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 .stats-text {
-    flex: 1 1 700px;
-    max-width: 720px;
+    flex: 1 1 600px;
     font-size: var(--font-lg);
     line-height: 1.8;
-    color: var(--text-secondary);
-}
-
-.graph {
-    flex: 1 1 600px;
+    color: var(--text-primary);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 24px;
 }
 
-.graph img {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    display: block;
+.stats-charts {
+    flex: 1 1 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    align-items: center;
 }
+
+.chart-block canvas {
+    width: 100% !important;
+    max-width: 400px;
+    height: auto !important;
+    aspect-ratio: 1 / 1;
+}
+
+/* 🌗 Dark mode */
+html.dark-mode .stats-section {
+    background-color: var(--gray-900);
+}
+
+html.dark-mode .stats-text {
+    color: var(--gray-100);
+}
+
+
+
 
 /* ===== Адаптив ===== */
 @media (max-width: 1024px) {
@@ -229,4 +409,11 @@
         max-width: 100%;
         height: auto;
     }
+}
+
+.ownership-chart {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 32px 0;
 }

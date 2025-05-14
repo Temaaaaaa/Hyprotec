@@ -177,6 +177,230 @@ function setupNumberCounters() {
     items.forEach(item => observer.observe(item));
 }
 
+function renderOwnershipChart() {
+    const ctx = document.getElementById('ownershipChart').getContext('2d');
+    const rootStyles = getComputedStyle(document.documentElement);
+    const bodyStyles = getComputedStyle(document.body);
+
+    const font = rootStyles.getPropertyValue('--font-inter').replace(/["']/g, '').trim() || 'Inter, sans-serif';
+    const accent500 = rootStyles.getPropertyValue('--accent-500').trim() || '#ff0000';
+    const textColor = bodyStyles.color || '#111';
+    // Увеличим resolution в 2x или 3x, если экран HiDPI
+    const canvas = document.getElementById('ownershipChart');
+
+// Увеличим resolution в 2x или 3x, если экран HiDPI
+    const ratio = window.devicePixelRatio || 1;
+    canvas.width = canvas.offsetWidth * ratio;
+    canvas.height = canvas.offsetHeight * ratio;
+    ctx.scale(ratio, ratio);
+
+    Chart.defaults.font.family = font;
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['HPHT (США)', 'HPHT Greatest'],
+            datasets: [
+                {
+                    label: 'Цена',
+                    data: [1000, 550],
+                    backgroundColor: accent500,
+                    borderRadius: { topLeft: 10, topRight: 10 },
+                    barPercentage: 0.6,
+                    categoryPercentage: 0.5,
+                },
+                {
+                    label: 'Запчасти / Материалы',
+                    data: [650, 200],
+                    backgroundColor: 'rgba(0, 229, 255, 0.8)',
+                    borderRadius: { topLeft: 10, topRight: 10 },
+                    barPercentage: 0.6,
+                    categoryPercentage: 0.5,
+                },
+                {
+                    label: 'Сервис',
+                    data: [300, 300],
+                    backgroundColor: 'rgba(105, 240, 174, 0.85)',
+                    borderRadius: { topLeft: 10, topRight: 10 },
+                    barPercentage: 0.6,
+                    categoryPercentage: 0.5,
+                }
+            ],
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: {
+                mode: 'index',
+                intersect: false
+            },
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        font: { size: 17 },
+                        color: getComputedStyle(document.body).color,
+                        usePointStyle: true,
+                        pointStyle: 'rectRounded',
+
+                        boxWidth: 16,
+                        boxHeight: 16,
+                        padding: 16,
+                    },
+                    onHover: (event, legendItem, legend) => {
+                        event.native.target.style.cursor = 'pointer';
+                    },
+                    onLeave: (event, legendItem, legend) => {
+                        event.native.target.style.cursor = 'default';
+                    }
+                },
+                tooltip: {
+                    backgroundColor: '#111',
+                    titleColor: '#fff',
+                    bodyColor: '#fff',
+                    bodyFont: { size: 14 },
+                    titleFont: { weight: '600' },
+                    padding: 10,
+                    cornerRadius: 6,
+                }
+            },
+            scales: {
+                x: {
+                    stacked: true,
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        font: { size: 14 },
+                        color: textColor,
+                    }
+                },
+                y: {
+                    stacked: true,
+                    beginAtZero: true,
+                    ticks: {
+                        stepSize: 500,
+                        font: { size: 13 },
+                        color: textColor,
+                    },
+                    grid: {
+                        color: 'rgba(0,0,0,0.05)',
+                        drawBorder: false
+                    }
+                }
+            },
+            animation: {
+                duration: 1200,
+                easing: 'easeOutQuart',
+            }
+        }
+    });
+}
+
+function renderEquipmentCharts() {
+    const rootStyles = getComputedStyle(document.documentElement);
+    const blue = '#03a9f4';
+    const aqua = '#1de9b6';
+    const textColor = getComputedStyle(document.body).color;
+
+    const font = rootStyles.getPropertyValue('--font-inter').replace(/["']/g, '').trim() || 'Inter, sans-serif';
+    Chart.defaults.font.family = font;
+
+    // 2020
+    new Chart(document.getElementById('equipmentChart2020'), {
+        type: 'doughnut',
+        data: {
+            labels: ['Американское оборудование', 'Аналоги'],
+            datasets: [{
+                data: [100, 0],
+                backgroundColor: [blue, aqua],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Оборудование НТЦ «ХАЙПРОТЕК»\n2020 г.',
+                    color: textColor,
+                    font: { size: 18, weight: '600' },
+                    padding: { top: 20, bottom: 10 }
+                },
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        color: textColor,
+                        font: { size: 14 },
+                        boxWidth: 16
+                    }
+                }
+            },
+            animation: {
+                animateScale: true,
+                duration: 1400,
+                easing: 'easeOutBounce'
+            },
+            cutout: '60%',
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+
+    // 2025
+    new Chart(document.getElementById('equipmentChart2025'), {
+        type: 'doughnut',
+        data: {
+            labels: ['Американское оборудование', 'Аналоги'],
+            datasets: [{
+                data: [55, 45],
+                backgroundColor: [blue, aqua],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Оборудование НТЦ «ХАЙПРОТЕК»\n2025 г.',
+                    color: textColor,
+                    font: { size: 18, weight: '600' },
+                    padding: { top: 20, bottom: 10 }
+                },
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        color: textColor,
+                        font: { size: 14 },
+                        boxWidth: 16
+                    }
+                }
+            },
+            animation: {
+                animateRotate: true,
+                animateScale: true,
+                duration: 1400,
+                easing: 'easeOutBack'
+            },
+            cutout: '60%',
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+}
+
+function animateTableOnScroll() {
+    const table = document.querySelector('.ownership-table');
+    if (!table) return;
+
+    const observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+            table.classList.add('visible');
+            observer.disconnect();
+        }
+    }, { threshold: 0.3 });
+
+    observer.observe(table);
+}
 
 
 
@@ -191,5 +415,8 @@ document.addEventListener('DOMContentLoaded', () => {
     animateOnScroll();
     startTypingEffect();
     setupScrollProgress();
-    setupNumberCounters()
+    setupNumberCounters();
+    renderOwnershipChart();
+    renderEquipmentCharts();
+    animateTableOnScroll();
 });
