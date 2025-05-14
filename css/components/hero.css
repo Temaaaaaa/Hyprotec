@@ -88,18 +88,3 @@
     transform: translateY(-2px);
 }
 
-/* ===== Responsive Styles ===== */
-@media (max-width: 768px) {
-    .hero-text h1 {
-        font-size: var(--font-xl);
-    }
-
-    .hero-text .tagline {
-        font-size: var(--font-md);
-    }
-
-    .hero-btn {
-        font-size: var(--font-sm);
-        padding: 12px 24px;
-    }
-}

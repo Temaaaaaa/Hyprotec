@@ -211,23 +211,10 @@
     font-size: 1.2em;
     color: var(--accent-500);
 }
-
-/* === Адаптив === */
-@media (max-width: 1024px) {
-    .ownership-split {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .ownership-chart-block {
-        padding-top: 0;
-    }
-
-    .ownership-chart-block canvas {
-        max-width: 100%;
-        aspect-ratio: 16 / 9;
-    }
+.ownership-table--stacked {
+    display: none;
 }
+/* === Адаптив === */
 
 /* 🌗 Dark Mode */
 html.dark-mode .ownership-section {
@@ -389,27 +376,6 @@ html.dark-mode .stats-text {
 
 
 /* ===== Адаптив ===== */
-@media (max-width: 1024px) {
-    .ownership-content,
-    .container-cards,
-    .container-stats {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .ownership-left,
-    .ownership-chart,
-    .stats-text,
-    .graph {
-        max-width: 100%;
-    }
-
-    .card {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-    }
-}
 
 .ownership-chart {
     max-width: 100%;

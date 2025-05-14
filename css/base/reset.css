@@ -55,17 +55,3 @@ section + section {
     margin-top: 0;
 }
 
-@media (max-width: 768px) {
-    section {
-        padding: 60px 16px; /* вместо 80px по бокам делаем 16px */
-    }
-
-    section + section {
-        margin-top: 40px;
-    }
-
-    .section-title::after {
-        height: 2px;
-        bottom: -6px;
-    }
-}

@@ -64,23 +64,3 @@
     color: var(--text-secondary);
     margin-top: 8px;
 }
-
-@media (max-width: 768px) {
-    .section-header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .section-number {
-        margin-bottom: 8px;
-    }
-
-    .section-title {
-        font-size: var(--font-lg);
-    }
-
-    .section-title::after {
-        height: 2px;
-        bottom: -6px;
-    }
-}
