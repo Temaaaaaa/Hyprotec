@@ -1,4 +1,16 @@
-/* === Переход === */
+/* === Тёмная тема — бренд HyproTec === */
+html.dark-mode {
+  --accent-500: #E73439;
+  --accent-600: #c32125;
+
+  --gray-900: #111111;
+  --gray-800: #22282A;
+  --gray-700: #2c2c2c;
+  --gray-600: #9D9B99;
+  --gray-100: #f5f5f5;
+}
+
+/* === Переходы === */
 body {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
@@ -10,12 +22,6 @@ html.dark-mode body {
   color: var(--text-inverse);
 }
 
-/* === Переменные под тёмную тему (если не через root) === */
-html.dark-mode {
-  --accent-500: #ff3b3f;
-  --accent-600: #d9282b;
-}
-
 /* === Ссылки === */
 html.dark-mode a {
   color: var(--gray-100);
@@ -24,7 +30,7 @@ html.dark-mode a:hover {
   color: var(--accent-500);
 }
 
-/* === Заголовки и важные элементы === */
+/* === Заголовки и ключевые элементы === */
 html.dark-mode h1,
 html.dark-mode h2,
 html.dark-mode h3,
@@ -35,7 +41,7 @@ html.dark-mode .section-number {
   text-shadow: 0 0 4px rgba(255, 40, 40, 0.3);
 }
 
-/* === Параграфы и базовые блоки === */
+/* === Обычный текст, списки и секции === */
 html.dark-mode p,
 html.dark-mode li,
 html.dark-mode .value-text,
@@ -51,7 +57,19 @@ html.dark-mode .challenges-list li {
   opacity: 1;
 }
 
-/* === Навигация / Хедер === */
+/* === Секции и контейнеры === */
+html.dark-mode section,
+html.dark-mode .container,
+html.dark-mode .ownership-section,
+html.dark-mode .stats-section,
+html.dark-mode .values-section,
+html.dark-mode .contacts-section,
+html.dark-mode .site-footer {
+  background-color: var(--gray-900) !important;
+  color: var(--text-inverse) !important;
+}
+
+/* === Навигация и хедер === */
 html.dark-mode .site-header {
   background: var(--gray-900);
   border-color: var(--gray-800);
@@ -60,7 +78,7 @@ html.dark-mode .site-header a {
   color: var(--gray-100);
 }
 
-/* underline (hover) */
+/* === Hover-подчёркивание в nav === */
 html.dark-mode .main-nav a::before,
 html.dark-mode .dropdown-toggle::before {
   background: var(--accent-500);
@@ -79,6 +97,7 @@ html.dark-mode .direction-item {
   border-color: var(--accent-500);
 }
 
+/* Value-карточки (блюр и фон) */
 html.dark-mode .value-card {
   background: linear-gradient(135deg, rgba(30, 30, 30, 0.6), rgba(45, 45, 45, 0.8));
   backdrop-filter: blur(16px) saturate(160%);
@@ -91,18 +110,6 @@ html.dark-mode .value-card::before {
 }
 html.dark-mode .value-title {
   color: var(--accent-500);
-}
-
-/* === Секции и layout-блоки === */
-html.dark-mode section,
-html.dark-mode .container,
-html.dark-mode .ownership-section,
-html.dark-mode .stats-section,
-html.dark-mode .values-section,
-html.dark-mode .contacts-section,
-html.dark-mode .site-footer {
-  background-color: var(--gray-900) !important;
-  color: var(--text-inverse) !important;
 }
 
 /* === Таблицы === */
@@ -163,7 +170,7 @@ html.dark-mode .number-label {
   color: var(--gray-100);
 }
 
-/* === Графики / canvas containers === */
+/* === Графики / canvas === */
 html.dark-mode .graph,
 html.dark-mode .ownership-chart-block,
 html.dark-mode .stats-charts,
@@ -174,27 +181,25 @@ html.dark-mode .graph-column {
 /* === Splide arrows === */
 html.dark-mode .splide__arrow {
   color: #ffffff;
-  background: rgb(255, 0, 0);
+  background: var(--accent-500);
   border-radius: 50%;
 }
 html.dark-mode .splide__arrow:hover {
-  background: rgb(246, 245, 245);
-}
-html.dark-mode .splide__track,
-html.dark-mode .splide__slide {
-  background-color: transparent;
+  background: #fefefe;
 }
 
+/* === Списки вызовов === */
 html.dark-mode .challenges-list li {
   background-color: var(--gray-800);
   color: var(--gray-100);
   border-left-color: var(--accent-500);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
-
 html.dark-mode .challenges-list li:hover {
   background-color: var(--gray-700);
 }
+
+/* === Subline текст === */
 html.dark-mode .section-subline {
   color: var(--accent-500);
 }

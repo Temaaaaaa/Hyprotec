@@ -108,7 +108,7 @@
 .direction-item ul li {
     position: relative;
     padding-left: 28px;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     transition: color 0.3s ease;
 }
 
@@ -125,9 +125,6 @@
     transition: transform 0.3s ease;
 }
 
-.direction-item ul li:hover {
-    color: var(--text-primary);
-}
 
 .direction-item ul li:hover::before {
     transform: translateY(-50%) scale(1.5);
@@ -135,7 +132,7 @@
 
 .note {
     margin-top: 32px;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     font-size: var(--font-sm);
     line-height: 1.7;
     padding: 20px;
@@ -253,7 +250,7 @@
 
 .callout p {
     margin: 0;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     line-height: 1.7;
     font-size: var(--font-md);
 }

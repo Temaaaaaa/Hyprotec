@@ -59,6 +59,6 @@
 
 .why-text {
     font-size: var(--font-md);
-    color: var(--text-secondary);
+    color: var(--text-primary);
     line-height: 1.6;
 }
