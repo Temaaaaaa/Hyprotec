@@ -1,41 +1,41 @@
-/* ===== Контейнеры ширины ===== */
+/*!* ===== Контейнеры ширины ===== *!*/
 
-.container-full {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-}
+/*.container-full {*/
+/*    width: 100%;*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*}*/
 
-.container-xl {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 32px;
-}
+/*.container-xl {*/
+/*    max-width: 1440px;*/
+/*    margin: 0 auto;*/
+/*    padding: 0 32px;*/
+/*}*/
 
-.container-lg {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 28px;
-}
+/*.container-lg {*/
+/*    max-width: 1280px;*/
+/*    margin: 0 auto;*/
+/*    padding: 0 28px;*/
+/*}*/
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-}
+/*.container {*/
+/*    max-width: 1200px;*/
+/*    margin: 0 auto;*/
+/*    padding: 0 24px;*/
+/*}*/
 
-.container-sm {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+/*.container-sm {*/
+/*    max-width: 960px;*/
+/*    margin: 0 auto;*/
+/*    padding: 0 20px;*/
+/*}*/
 
-/* ===== Mobile adjustments ===== */
-@media (max-width: 768px) {
-    .container-xl,
-    .container-lg,
-    .container,
-    .container-sm {
-        padding: 0 16px;
-    }
-}
+/*!* ===== Mobile adjustments ===== *!*/
+/*@media (max-width: 768px) {*/
+/*    .container-xl,*/
+/*    .container-lg,*/
+/*    .container,*/
+/*    .container-sm {*/
+/*        padding: 0 16px;*/
+/*    }*/
+/*}*/

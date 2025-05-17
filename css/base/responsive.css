@@ -132,6 +132,10 @@
         width: 100% !important;
         max-width: 100% !important;
     }
+
+    .ownership-chart-block canvas {
+        aspect-ratio: 16 / 9;
+    }
 }
 
 @media (max-width: 768px) {
@@ -198,11 +202,6 @@
         color: var(--text-primary);
     }
 
-    html.dark-mode .site-header {
-        background-color: var(--gray-900);
-        color: var(--text-inverse);
-    }
-
     .top-bar {
         flex-direction: row;
         justify-content: space-between;
@@ -226,11 +225,6 @@
         border-top: 1px solid var(--gray-200);
     }
 
-    html.dark-mode .main-nav {
-        background: var(--gray-900);
-        border-color: var(--gray-700);
-    }
-
     .main-nav.open {
         display: flex;
     }
@@ -249,38 +243,22 @@
         width: 100%;
     }
 
-    html.dark-mode .nav-list a,
-    html.dark-mode .dropdown-toggle {
-        color: var(--gray-100);
-    }
-
     .dropdown-menu {
-        position: relative;
-        background: var(--gray-100);
+        position: static;
         width: 100%;
-        border-radius: 8px;
-        box-shadow: none;
+        padding: 0;
         margin-top: 8px;
-        opacity: 1 !important;
-        transform: none !important;
-        pointer-events: auto;
-        display: none;
+        background: transparent;
+        box-shadow: none;
     }
 
     .dropdown-menu.open {
         display: block;
     }
 
-    html.dark-mode .dropdown-menu {
-        background: var(--gray-800);
-    }
-
     .dropdown-menu a {
-        color: var(--text-primary);
-    }
-
-    html.dark-mode .dropdown-menu a {
-        color: var(--gray-100);
+        padding: 8px 0;
+        font-size: var(--font-sm);
     }
 
     .hamburger {
@@ -288,75 +266,32 @@
         background: none;
         border: none;
         font-size: 24px;
+        cursor: pointer;
         color: var(--text-primary);
     }
 
-    html.dark-mode .hamburger {
-        color: var(--gray-100);
-    }
-
-    /* ==== UX-улучшения для .services-section ===== */
     .services-section .service-card {
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .services-section .service-card:hover {
-        transform: translateY(-6px) scale(1.02);
-        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+        height: 200px;
     }
 
     .services-section .service-overlay {
-        transition: background 0.3s ease;
-        padding: 24px;
+        padding: 16px;
     }
 
     .services-section .service-btn {
-        opacity: 1;
-        pointer-events: all;
-        transform: none;
-        background: var(--accent-500);
-        color: var(--text-inverse);
-        transition: background 0.3s ease, transform 0.3s ease;
+        padding: 8px 16px;
+        font-size: var(--font-sm);
     }
 
-    .services-section .service-btn:hover {
-        background: var(--accent-600);
-        transform: translateY(-2px);
-    }
-
-    /* ==== UX стрелок для .values-section ===== */
     .values-section .splide__arrows {
-        position: absolute;
-        top: 50%;
-        left: -28px;
-        right: -28px;
-        transform: translateY(-50%);
-        display: flex;
-        justify-content: space-between;
-        pointer-events: none;
-    }
-
-    .values-section .splide__arrow {
-        background: var(--accent-500);
-        color: white;
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        pointer-events: all;
-        z-index: 10;
-    }
-
-    html.dark-mode .values-section .splide__arrow {
-        background: var(--accent-600);
+        display: none;
     }
 }
 
 @media (max-width: 480px) {
     .container-xl,
     .container-lg,
-    .container,
-    .container-sm {
+    .container {
         padding: 0 16px;
     }
 
@@ -367,15 +302,48 @@
 
     .footer-container {
         flex-direction: column;
-        gap: 32px;
+        gap: 24px;
     }
 
     .footer-right {
         flex-direction: column;
-        gap: 24px;
+        gap: 16px;
     }
 
     .footer-logo {
-        max-width: 140px;
+        max-width: 120px;
     }
+}
+
+/* Dark Mode Styles */
+html.dark-mode .site-header {
+    background-color: var(--gray-900);
+    color: var(--text-inverse);
+}
+
+html.dark-mode .main-nav {
+    background: var(--gray-900);
+    border-color: var(--gray-700);
+}
+
+html.dark-mode .nav-list a,
+html.dark-mode .dropdown-toggle {
+    color: var(--text-inverse);
+}
+
+html.dark-mode .dropdown-menu {
+    background: var(--gray-800);
+}
+
+html.dark-mode .dropdown-menu a {
+    color: var(--text-inverse);
+}
+
+html.dark-mode .hamburger {
+    color: var(--text-inverse);
+}
+
+html.dark-mode .values-section .splide__arrow {
+    background: var(--gray-800);
+    color: var(--text-inverse);
 }

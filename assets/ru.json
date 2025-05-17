@@ -1,0 +1,14 @@
+{
+  "nav_about": "О компании",
+  "nav_services": "Услуги",
+  "nav_sub_analysis": "Система анализа",
+  "nav_sub_ntc": "Научно-тех. центр",
+  "nav_sub_supervision": "Супервайзинг",
+  "nav_sub_consulting": "Консалтинг",
+  "nav_sub_calibration": "Калибровка и ТО",
+  "nav_sub_training": "Обучение персонала",
+  "nav_equipment": "Оборудование",
+  "nav_contacts": "Контакты",
+  "hero_btn": "Наши услуги",
+  "hero_tagline": ["Нефтесервисная компания", "Лабораторные технологии", "Анализ буровых растворов"]
+}

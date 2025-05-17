@@ -11,7 +11,6 @@ function setupThemeToggle() {
     toggle?.addEventListener('change', () => {
         html.classList.toggle('dark-mode');
         localStorage.setItem('darkMode', html.classList.contains('dark-mode') ? 'true' : 'false');
-
     });
 }
 
@@ -129,21 +128,24 @@ function setupScrollProgress() {
         bar.style.width = scrolled + '%';
     });
 }
+
+// === Инициализация Splide ===
 document.addEventListener('DOMContentLoaded', function () {
     new Splide('#values-carousel', {
         type: 'loop',
         perPage: 1,
         gap: '32px',
         arrows: true,
-        pagination: false,
+        pagination: true,
         padding: '20%',
         breakpoints: {
-            1024: { perPage: 1, padding: '10%' },
-            768: { perPage: 1, padding: '0' },
+            1024: { perPage: 1, padding: '10%', arrows: false },
+            768: { perPage: 1, padding: '0', arrows: false },
         },
     }).mount();
 });
 
+// === Счетчики чисел ===
 function setupNumberCounters() {
     const items = document.querySelectorAll('.number-item');
 
@@ -177,6 +179,7 @@ function setupNumberCounters() {
     items.forEach(item => observer.observe(item));
 }
 
+// === График собственности ===
 function renderOwnershipChart() {
     const ctx = document.getElementById('ownershipChart').getContext('2d');
     const rootStyles = getComputedStyle(document.documentElement);
@@ -185,10 +188,8 @@ function renderOwnershipChart() {
     const font = rootStyles.getPropertyValue('--font-inter').replace(/["']/g, '').trim() || 'Inter, sans-serif';
     const accent500 = rootStyles.getPropertyValue('--accent-500').trim() || '#ff0000';
     const textColor = bodyStyles.color || '#111';
-    // Увеличим resolution в 2x или 3x, если экран HiDPI
-    const canvas = document.getElementById('ownershipChart');
 
-// Увеличим resolution в 2x или 3x, если экран HiDPI
+    const canvas = document.getElementById('ownershipChart');
     const ratio = window.devicePixelRatio || 1;
     canvas.width = canvas.offsetWidth * ratio;
     canvas.height = canvas.offsetHeight * ratio;
@@ -242,7 +243,6 @@ function renderOwnershipChart() {
                         color: getComputedStyle(document.body).color,
                         usePointStyle: true,
                         pointStyle: 'rectRounded',
-
                         boxWidth: 16,
                         boxHeight: 16,
                         padding: 16,
@@ -297,6 +297,7 @@ function renderOwnershipChart() {
     });
 }
 
+// === Графики оборудования ===
 function renderEquipmentCharts() {
     const rootStyles = getComputedStyle(document.documentElement);
     const blue = '#03a9f4';
@@ -388,6 +389,7 @@ function renderEquipmentCharts() {
     });
 }
 
+// === Анимация таблицы ===
 function animateTableOnScroll() {
     const table = document.querySelector('.ownership-table');
     if (!table) return;
@@ -402,12 +404,7 @@ function animateTableOnScroll() {
     observer.observe(table);
 }
 
-
-
-
-
-
-// === Запуск всего ===
+// === Инициализация всех функций ===
 document.addEventListener('DOMContentLoaded', () => {
     setupThemeToggle();
     setupHeaderScroll();

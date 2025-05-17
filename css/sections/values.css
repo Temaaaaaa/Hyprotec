@@ -52,6 +52,7 @@
     justify-content: flex-start;
     position: relative;
     overflow: hidden;
+
 }
 
 .value-title {
@@ -116,40 +117,3 @@
     fill: currentColor;
 }
 
-/* ===== Адаптив ===== */
-@media (max-width: 1440px) {
-    .splide__slide .value-card {
-        max-width: 760px;
-    }
-}
-
-@media (max-width: 1024px) {
-    #values-carousel {
-        padding: 0 12px;
-        height: auto;
-    }
-
-    .splide__slide .value-card {
-        padding: 40px 28px;
-        max-width: 100%;
-        min-height: unset;
-    }
-
-    .value-title {
-        font-size: var(--font-xl);
-    }
-
-    .value-text {
-        font-size: var(--font-sm);
-    }
-
-    .splide__arrow {
-        font-size: 1.75rem;
-    }
-}
-
-@media (max-width: 640px) {
-    .splide__slide .value-card {
-        padding: 32px 20px;
-    }
-}

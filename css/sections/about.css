@@ -7,8 +7,8 @@
     background: var(--gray-50);
     background-image:
             radial-gradient(circle at 100% 0%, var(--accent-500) 0%, transparent 0.5%),
-            radial-gradient(circle at 0% 100%, var(--accent-500) 0%, transparent 0.5%),
-            url('../../images/8.jpeg'); /* ← добавили фон-картинку */
+            radial-gradient(circle at 0% 100%, var(--accent-500) 0%, transparent 0.5%);
+            /*url('../../images/8.jpeg'); !* ← добавили фон-картинку *!*/
     background-repeat: no-repeat;
     background-size: auto, auto, cover; /* или contain, если нужно всё влезло */
     background-position: top right, bottom left, center right; /* можно подогнать по вкусу */
@@ -255,35 +255,3 @@
     font-size: var(--font-md);
 }
 
-@media (max-width: 900px) {
-    .about-section {
-        padding: 80px 20px;
-    }
-
-    .about-section .container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .about-text,
-    .about-image {
-        max-width: 100%;
-    }
-
-    .about-image {
-        margin-top: 40px;
-    }
-
-    .callouts {
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
-
-    .direction-item {
-        padding: 24px;
-    }
-
-    .callout {
-        padding: 24px;
-    }
-}

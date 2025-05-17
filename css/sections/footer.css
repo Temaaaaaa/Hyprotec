@@ -1,8 +1,8 @@
 .site-footer {
-    background-color: var(--gray-900);
-    color: var(--text-inverse);
+    background-color: var(--gray-800);
+    /*color: var(--text-inverse);*/
     padding: 40px 20px;
-    font-family: var(--font-inter);
+    font-family: var(--font-inter), sans-serif;
     font-size: var(--font-sm);
 }
 
@@ -33,7 +33,7 @@
 }
 
 .footer-rights {
-    color: var(--gray-700);
+    color: var(--gray-600);
     font-size: var(--font-sm);
 }
 
