@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="HYPROTEC — oilfield service company specializing in laboratory technologies and drilling fluid analysis.">
+    <meta name="keywords" content="HYPROTEC, oilfield service, drilling fluids, laboratory, analysis">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="HYPROTEC">
+    <meta property="og:description" content="Oilfield services and laboratory technologies by HYPROTEC.">
+    <meta property="og:image" content="https://your-domain.com/images/og-image.jpg">
+    <meta property="og:url" content="https://your-domain.com/en/">
+    <meta property="og:type" content="website">
+
+    <title>HYPROTEC</title>
+
+    <!-- Base Styles -->
+    <link rel="stylesheet" href="../css/base/variables.css">
+    <link rel="stylesheet" href="../css/base/reset.css">
+
+    <!-- Components -->
+    <link rel="stylesheet" href="../css/components/header.css">
+    <link rel="stylesheet" href="../css/components/hero.css">
+    <link rel="stylesheet" href="../css/components/theme-toggle.css">
+
+    <!-- Sections -->
+    <link rel="stylesheet" href="../css/sections/about.css">
+    <link rel="stylesheet" href="../css/sections/services.css">
+    <link rel="stylesheet" href="../css/sections/values.css">
+    <link rel="stylesheet" href="../css/sections/whyus.css">
+    <link rel="stylesheet" href="../css/sections/equipment.css">
+    <link rel="stylesheet" href="../css/sections/clients.css">
+    <link rel="stylesheet" href="../css/sections/contacts.css">
+    <link rel="stylesheet" href="../css/sections/footer.css">
+    <link rel="stylesheet" href="../css/sections/stats-number.css">
+
+    <!-- Utilities -->
+    <link rel="stylesheet" href="../css/utilities/animations.css">
+    <link rel="stylesheet" href="../css/utilities/dark-mode.css">
+    <link rel="stylesheet" href="../css/utilities/layout.css">
+    <link rel="stylesheet" href="../css/utilities/scroll-progress.css">
+    <link rel="stylesheet" href="../css/base/responsive.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/css/splide.min.css">
+</head>
+<body>
+<div class="scroll-progress"></div>
+
+<!-- ======= HEADER ======= -->
+<header class="site-header">
+    <div class="container top-bar">
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+            <img src="../images/Hyprotec_logo3-03.jpg" alt="HYPROTEC logo" />
+        </a>
+
+        <!-- Navigation -->
+        <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+            <ul class="nav-list">
+                <li><a href="#about">About</a></li>
+
+                <li class="has-dropdown">
+                    <a href="#services" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                        Services <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-label="submenu">
+                        <li><a href="https://hyprotec.ru/monitoring_system" target="_blank" rel="noopener noreferrer">Monitoring System</a></li>
+                        <li><a href="https://ntc.hyprotec.ru" target="_blank" rel="noopener noreferrer">Research Center</a></li>
+                        <li><a href="https://supervision.hyprotec.ru" target="_blank" rel="noopener noreferrer">Supervision</a></li>
+                        <li><a href="https://consulting.hyprotec.ru" target="_blank" rel="noopener noreferrer">Consulting</a></li>
+                        <li><a href="https://calibration.hyprotec.ru" target="_blank" rel="noopener noreferrer">Calibration & Maintenance</a></li>
+                        <li><a href="https://training.hyprotec.ru" target="_blank" rel="noopener noreferrer">Personnel Training</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#equipment-section">Equipment</a></li>
+                <li><a href="#contacts">Contacts</a></li>
+            </ul>
+            <div class="lang-switch">
+                <a href="../index.html" class="lang-link ru">RU</a>
+                <a href="index.html" class="lang-link en active">EN</a>
+            </div>
+
+            <!-- Phone -->
+            <div class="contact-phone">
+                <a href="tel:+79223180000">+7 (922) 318-00-00</a>
+            </div>
+
+            <!-- Dark mode toggle -->
+            <div class="theme-wrapper">
+                <label class="theme-switch">
+                    <input type="checkbox" id="theme" class="theme-switch__input" />
+                    <span class="theme-switch__slider">
+            <span class="theme-switch__icon">
+              <span class="theme__icon">
+                <span class="theme__icon-part"></span>
+                <span class="theme__icon-part"></span>
+                <span class="theme__icon-part"></span>
+                <span class="theme__icon-part"></span>
+                <span class="theme__icon-part"></span>
+                <span class="theme__icon-part"></span>
+                <span class="theme__icon-part"></span>
+                <span class="theme__icon-part"></span>
+                <span class="theme__icon-part"></span>
+              </span>
+            </span>
+          </span>
+                </label>
+            </div>
+        </nav>
+
+        <!-- Burger menu -->
+        <button id="menuToggle" class="hamburger" aria-label="Open menu">
+            ☰
+        </button>
+    </div>
+</header>
+<main>
+    <section class="hero">
+        <div class="hero-media">
+            <video autoplay muted loop playsinline>
+                <source src="../video/vid.mp4" type="video/mp4" />
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+
+        <div class="hero-text">
+            <h1 class="hero-logo">
+                <img src="../images/Hyprotec_logo-02.jpg" alt="HYPROTEC logo" />
+            </h1>
+            <p class="tagline" id="tagline"></p>
+            <a href="#services" class="hero-btn">Our Services</a>
+        </div>
+    </section>
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-text">
+                <div class="section-header">
+                    <span class="section-number">01</span>
+                    <h1 class="section-title">About the Company</h1>
+                </div>
+                <p class="intro">
+                    Key areas of activity of HYPROTEC LLC:
+                </p>
+                <ul class="directions-list">
+                    <li class="direction-item">
+                        <div class="direction-header">
+                            <!-- <img src="icons/innovation.svg" alt="" class="direction-icon"> -->
+                            <strong>Innovation Center</strong>
+                        </div>
+                        <p>
+                            Provision of service operations using an automated online monitoring system for drilling fluid parameters installed directly on the rig.
+                        </p>
+                    </li>
+                    <li class="direction-item">
+                        <div class="direction-header">
+                            <!-- <img src="icons/lab.svg" alt="" class="direction-icon"> -->
+                            <strong>Scientific and Technological Center</strong>
+                        </div>
+                        <ul>
+                            <li>Independent laboratory testing of cement and drilling fluids, as well as fracturing fluids (FSA accreditation in accordance with GOST ISO/IEC 17025-2019).</li>
+                            <li>Supervision and auditing of contractors, processes, and laboratories in drilling fluid and well cementing domains.</li>
+                            <li>Expert conclusions and formulation of technical fluid recipes.</li>
+                        </ul>
+                    </li>
+                    <li class="direction-item">
+                        <div class="direction-header">
+                            <!-- <img src="icons/education.svg" alt="" class="direction-icon"> -->
+                            <strong>Professional Education Center</strong>
+                        </div>
+                        <p>Training and education programs on drilling and cementing fluids for industry specialists.</p>
+                    </li>
+                    <li class="direction-item">
+                        <div class="direction-header">
+                            <!-- <img src="icons/trade.svg" alt="" class="direction-icon"> -->
+                            <strong>Trading House</strong>
+                        </div>
+                        <p>Supply of laboratory equipment with warranty and post-warranty service across Russia and abroad.</p>
+                    </li>
+                    <li class="direction-item">
+                        <div class="direction-header">
+                            <!-- <img src="icons/service.svg" alt="" class="direction-icon"> -->
+                            <strong>Service Center</strong>
+                        </div>
+                        <p>Commissioning, repair, maintenance, and calibration of laboratory equipment.</p>
+                    </li>
+                </ul>
+
+                <div class="callouts">
+                    <div class="callout">
+                        <h4>STC Accreditation</h4>
+                        <p>The laboratory in Novy Urengoy is accredited by the FSA under GOST ISO/IEC 17025-2019 — ensuring the accuracy and independence of all tests.</p>
+                    </div>
+                    <div class="callout">
+                        <h4>Corporate Culture</h4>
+                        <p>We apply the best international and national engineering practices to deliver every project at the highest level.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="why-us" class="why-us-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title">Why Choose Us?</h2>
+            </div>
+            <div class="why-us-grid">
+                <div class="why-card" data-tilt>
+                    <div class="icon-wrapper">
+                        <!-- Replace with your own SVG or GIF -->
+                        <img src="../images/icons/icons8-опыт.gif" alt="Experience" class="why-icon">
+                    </div>
+                    <h3 class="why-title">Professional Expertise</h3>
+                    <p class="why-text">
+                        A team with many years of experience in leading Russian and international oil and gas companies.
+                    </p>
+                </div>
+                <div class="why-card" data-tilt>
+                    <div class="icon-wrapper">
+                        <img src="../images/icons/settings.gif" alt="Technologies" class="why-icon">
+                    </div>
+                    <h3 class="why-title">Modern Technologies</h3>
+                    <p class="why-text">
+                        We use only cutting-edge equipment and technologies to enhance drilling efficiency and ensure process control.
+                    </p>
+                </div>
+                <div class="why-card" data-tilt>
+                    <div class="icon-wrapper">
+                        <img src="../images/icons/brain.gif" alt="Developments" class="why-icon">
+                    </div>
+                    <h3 class="why-title">Proprietary Solutions</h3>
+                    <p class="why-text">
+                        We develop unique technologies for monitoring the parameters of technical fluids.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="stats-numbers-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">07</span>
+                <h2 class="section-title">HYPROTEC in Numbers</h2>
+            </div>
+            <div class="numbers-grid">
+                <div class="number-item" data-target="24">
+                    <div class="number-value">0</div>
+                    <div class="number-label">Years of executive team experience</div>
+                </div>
+                <div class="number-item" data-target="915">
+                    <div class="number-value">0</div>
+                    <div class="number-label">Employees across the company</div>
+                </div>
+                <div class="number-item" data-target="152">
+                    <div class="number-value">0</div>
+                    <div class="number-label">Supported rigs</div>
+                </div>
+                <div class="number-item" data-target="15313">
+                    <div class="number-value">0</div>
+                    <div class="number-label">Successfully drilled wells</div>
+                </div>
+                <div class="number-item" data-target="3185">
+                    <div class="number-value">0</div>
+                    <div class="number-label">Plugged wells</div>
+                </div>
+                <div class="number-item" data-target="264048">
+                    <div class="number-value">0</div>
+                    <div class="number-label">Drilled meters of mud monitoring</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="values" class="values-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title">Company Values</h2>
+            </div>
+
+            <div class="splide" id="values-carousel">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <article class="value-card">
+                                <h3 class="value-title">Team</h3>
+                                <p class="value-text">
+                                    The foundation of the company’s success and dynamic growth. We consistently enhance the professionalism of our employees and partners.
+                                </p>
+                            </article>
+                        </li>
+                        <li class="splide__slide">
+                            <article class="value-card">
+                                <h3 class="value-title">Safety</h3>
+                                <p class="value-text">
+                                    We ensure safe working conditions, protect the lives and well-being of employees, apply international best practices in occupational safety, and prioritize health protection.
+                                </p>
+                            </article>
+                        </li>
+                        <li class="splide__slide">
+                            <article class="value-card">
+                                <h3 class="value-title">Technology</h3>
+                                <p class="value-text">
+                                    We maintain a competitive edge through the continuous implementation of innovative technologies and leading industry practices.
+                                </p>
+                            </article>
+                        </li>
+                        <li class="splide__slide">
+                            <article class="value-card">
+                                <h3 class="value-title">Results</h3>
+                                <p class="value-text">
+                                    Our work is focused on successfully solving complex technical challenges. Technological success is the foundation of mutually beneficial partnerships.
+                                </p>
+                            </article>
+                        </li>
+                        <li class="splide__slide">
+                            <article class="value-card">
+                                <h3 class="value-title">Customer Focus</h3>
+                                <p class="value-text">
+                                    We strive to meet customer expectations and uphold our reputation as a reliable partner. We value our clients’ trust and offer a personalized, responsible approach to each project.
+                                </p>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="section-title">Services</h2>
+                <p class="section-subtitle">6 areas — one unified quality standard</p>
+            </div>
+            <div class="services-grid">
+                <article class="service-card" data-tilt>
+                    <img src="../images/cards/card1.jpeg" alt="Scientific and Technological Center">
+                    <div class="service-overlay">
+                        <h3>Scientific and Technological Center</h3>
+                        <button class="service-btn">Learn more</button>
+                    </div>
+                </article>
+                <article class="service-card" data-tilt>
+                    <img src="../images/cards/card2.jpg" alt="Supervision and Field Auditing">
+                    <div class="service-overlay">
+                        <h3>Supervision and Field Auditing</h3>
+                        <button class="service-btn">Learn more</button>
+                    </div>
+                </article>
+                <article class="service-card" data-tilt>
+                    <img src="../images/cards/card3.jpeg" alt="Technical Consulting">
+                    <div class="service-overlay">
+                        <h3>Technical Consulting</h3>
+                        <button class="service-btn">Learn more</button>
+                    </div>
+                </article>
+                <article class="service-card" data-tilt>
+                    <img src="../images/cards/card4.jpg" alt="Calibration and Maintenance">
+                    <div class="service-overlay">
+                        <h3>Calibration and Maintenance</h3>
+                        <button class="service-btn">Learn more</button>
+                    </div>
+                </article>
+                <article class="service-card" data-tilt>
+                    <img src="../images/cards/card5.jpg" alt="Continuous Mud Analysis">
+                    <div class="service-overlay">
+                        <h3>Continuous Mud Analysis</h3>
+                        <button class="service-btn">Learn more</button>
+                    </div>
+                </article>
+                <article class="service-card" data-tilt>
+                    <img src="../images/cards/card6.jpg" alt="Personnel Training">
+                    <div class="service-overlay">
+                        <h3>Personnel Training</h3>
+                        <button class="service-btn">Learn more</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    <section class="equipment-section" id="equipment-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">05</span>
+                <h2 class="section-title">Laboratory Equipment</h2>
+            </div>
+
+            <div class="equipment-content">
+                <div class="equipment-paragraphs">
+                    <p>
+                        HYPROTEC LLC regularly supplies American, Russian, and Chinese laboratory equipment and spare parts to third-party companies, as well as for internal use. Our Scientific and Technological Center in Novy Urengoy hosts a large permanent testing laboratory, which has been conducting daily testing of drilling fluids, cement slurries, and fracturing fluids since 2020.
+                    </p>
+                    <p>
+                        During the expansion of our own research and development capabilities, HYPROTEC faced the challenge of finding reliable manufacturers of professional-grade laboratory equipment. In solving this task, we encountered several key challenges:
+                    </p>
+                </div>
+
+                <ul class="challenges-list">
+                    <li>Shifts in market landscape and reduced availability of Western equipment</li>
+                    <li>Search for alternative solutions in local and allied markets</li>
+                    <li>Assessment of equipment reliability and availability</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="ownership-section" id="ownership">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">06</span>
+                <h2 class="section-title">
+                    Total Cost of Ownership for 5,000 Tests
+                    <span class="section-subline">(over a 10-year period)</span>
+                </h2>
+            </div>
+
+            <div class="ownership-wrapper">
+                <div class="ownership-split">
+                    <!-- Table (desktop) -->
+                    <div class="ownership-table-block">
+                        <table class="ownership-table">
+                            <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th>Consistometer<br>1 HPHT (USA)</th>
+                                <th>Consistometer<br>HPHT <strong>Greatest</strong></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Price</td>
+                                <td>1000 USD</td>
+                                <td>550 USD</td>
+                            </tr>
+                            <tr>
+                                <td>Spare Parts / Consumables</td>
+                                <td>650 USD</td>
+                                <td>200 USD</td>
+                            </tr>
+                            <tr>
+                                <td>Service</td>
+                                <td>300 USD</td>
+                                <td>300 USD</td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>Total</strong></td>
+                                <td><strong>1950 USD</strong></td>
+                                <td><strong>1050 USD</strong></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Responsive stacked table -->
+                    <div class="ownership-table ownership-table--stacked">
+                        <div class="row header-row">
+                            <div class="cell label">Metric</div>
+                            <div class="cell">1 HPHT (USA)</div>
+                            <div class="cell">HPHT <strong>Greatest</strong></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="cell label">Price</div>
+                            <div class="cell">1000 USD</div>
+                            <div class="cell">550 USD</div>
+                        </div>
+
+                        <div class="row">
+                            <div class="cell label">Spare Parts / Consumables</div>
+                            <div class="cell">650 USD</div>
+                            <div class="cell">200 USD</div>
+                        </div>
+
+                        <div class="row">
+                            <div class="cell label">Service</div>
+                            <div class="cell">300 USD</div>
+                            <div class="cell">300 USD</div>
+                        </div>
+
+                        <div class="row total-row">
+                            <div class="cell label"><strong>Total</strong></div>
+                            <div class="cell"><strong>1950 USD</strong></div>
+                            <div class="cell"><strong>1050 USD</strong></div>
+                        </div>
+                    </div>
+
+                    <!-- Chart block -->
+                    <div class="ownership-chart-block">
+                        <canvas id="ownershipChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Advantages list -->
+                <ul class="ownership-notes">
+                    <li>Total cost of ownership for 500 cycles (per year) with HPHT Greatest is 85% lower than the US-made equivalent</li>
+                    <li>Comparable mean time between maintenance</li>
+                    <li>Local availability of service, spare parts, and consumables in the Russian Federation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-cards">
+        <div class="container-cards">
+            <div class="card">
+                <img src="../images/lab/lab1.jpg" alt="Cement slurry testing equipment">
+                <div class="card-overlay">
+                    <h3>Equipment for Cement Slurry Testing</h3>
+                    <a href="#" class="btn">
+                        Learn more <span class="arrow">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="../images/lab/lab2.jpg" alt="Drilling fluid testing equipment">
+                <div class="card-overlay">
+                    <h3>Equipment for Drilling Fluid Testing</h3>
+                    <a href="#" class="btn">
+                        Learn more <span class="arrow">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="../images/lab/lab3.jpg" alt="Made in Russia">
+                <div class="card-overlay">
+                    <h3>MudLabIns – Made in Russia</h3>
+                    <a href="#" class="btn">
+                        Learn more <span class="arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="stats-section" id="equipment-usage">
+        <div class="container">
+            <div class="stats-content">
+                <div class="stats-text">
+                    <p>
+                        Over more than three years of operation, both HYPROTEC and our customers have noted the high performance and reliability of Greatest and MudLabIns laboratory equipment.
+                    </p>
+                    <p>
+                        The quality of our supplied equipment has been recognized by numerous major oilfield service companies.
+                        Positive operating experience, combined with comprehensive warranty coverage and local service availability in Russia,
+                        gives our clients full confidence in our equipment.
+                    </p>
+                    <p>
+                        Contact our experts and we will recommend the most suitable equipment for your organization — with warranty and support tailored to your specific needs.
+                    </p>
+                </div>
+
+                <div class="stats-charts">
+                    <div class="chart-block">
+                        <canvas id="equipmentChart2020"></canvas>
+                    </div>
+                    <div class="chart-block">
+                        <canvas id="equipmentChart2025"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="clients" class="clients-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">08</span>
+                <h2 class="section-title">Our Clients</h2>
+            </div>
+
+            <div class="clients-grid">
+                <div class="client-logo"><img src="../images/logos/7a9226b1eea5a45a8d8921135dc25e9c.jpg" alt="ARKTIKGAZ"></div>
+                <div class="client-logo"><img src="../images/logos/Novatek_Logo_cyrillic.svg" alt="NOVATEK"></div>
+                <div class="client-logo"><img src="../images/logos/ccs-logo-new.jpg" alt="Well Cementing Center"></div>
+                <div class="client-logo"><img src="../images/logos/logo_osnovnoy_angliyskiy_chernyy.jpg" alt="NOVATEK (English)"></div>
+                <div class="client-logo"><img src="../images/logos/Burservis_logo_cyr_w%201_layerstyle.png" alt="Burservis"></div>
+                <div class="client-logo"><img src="../images/logos/Elbrus_logo_color_v1.jpg" alt="Elbrus Drilling"></div>
+                <div class="client-logo"><img src="../images/logos/zavod_neft_oborud.jpg" alt="Oil Equipment Plant"></div>
+                <div class="client-logo"><img src="../images/logos/shlumbergepng.jpg" alt="Schlumberger"></div>
+                <div class="client-logo"><img src="../images/logos/ofs.svg" alt="OFS Technologies"></div>
+                <div class="client-logo"><img src="../images/logos/integra.jpg" alt="Integra"></div>
+                <div class="client-logo"><img src="../images/logos/eng-logo.jpg" alt="ENGS"></div>
+                <div class="client-logo"><img src="../images/logos/petro.jpg" alt="PetroAlliance"></div>
+                <div class="client-logo"><img src="../images/logos/suldukar.svg" alt="Syuldyukar Geological Survey"></div>
+                <div class="client-logo"><img src="../images/logos/samgtu.jpg" alt="Samara State Technical University"></div>
+                <div class="client-logo"><img src="../images/logos/smnipi.jpg" alt="SamaraNIPIneft"></div>
+                <div class="client-logo"><img src="../images/logos/rngsnab.jpg" alt="RNG Supply"></div>
+                <div class="client-logo"><img src="../images/logos/perm.jpg" alt="Perm Polytechnic University"></div>
+                <div class="client-logo"><img src="../images/logos/noveks.svg" alt="NOVEX"></div>
+                <div class="client-logo"><img src="../images/logos/sokol.jpg" alt="Sokol HDD"></div>
+                <div class="client-logo"><img src="../images/logos/igs.svg" alt="IGS Group"></div>
+                <div class="client-logo"><img src="../images/logos/gns.svg" alt="GNS Group"></div>
+            </div>
+
+        </div>
+    </section>
+    <section class="contacts-section">
+        <div class="container-contacts">
+            <div class="contacts-info">
+                <h2 class="contacts-phone">8 922 318 00 00</h2>
+                <h3 class="contacts-email">info@hyprotec.ru</h3>
+                <p class="contacts-hours">Working hours: Mon–Fri, 10:00–19:00</p>
+
+                <div class="company-details">
+                    <p>LLC <strong>“HYPROTEC”</strong></p>
+                    <p>INN <strong>7203456345</strong></p>
+                    <p>KPP <strong>720301001</strong></p>
+                    <p>OGRN <strong>1187232020722</strong></p>
+                    <p>625000, Tyumen Region, Tyumen,<br>
+                        15 Griboedova St., Office 1</p>
+                </div>
+            </div>
+
+            <div class="contacts-map">
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Af2b12c5ceae10d922c0fee41817b70696ff03f02db3c599ca4628d5f3698f18a&amp;source=constructor"
+                        width="400" height="300" frameborder="0"></iframe>
+            </div>
+        </div>
+    </section>
+</main>
+<footer id="contacts" class="site-footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <a href="#">
+                <img src="../images/Hyprotec_logo3-03.jpg" alt="HYPROTEC logo" class="footer-logo">
+            </a>
+            <div class="footer-rights">© All rights reserved. HYPROTEC.</div>
+        </div>
+
+        <div class="footer-right">
+            <div class="footer-column">
+                <h4>MENU</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>COMPANY</h4>
+                <ul>
+                    <li><a href="#">Certificates</a></li>
+                    <li><a href="#">Presentation</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="cookie-banner" id="cookieBanner">
+    <p>
+        We use cookies to improve your experience.
+        <button id="cookieAccept">Accept</button>
+    </p>
+</div>
+<script type="module" src="../js/main.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/js/splide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+
+
+</body>

@@ -86,36 +86,27 @@ function animateOnScroll() {
 
 // === Печатающий текст ===
 function startTypingEffect() {
-    const phrases = [
-        "Нефтесервисная компания",
-        "Лабораторные технологии",
-        "Анализ буровых растворов"
-    ];
     const el = document.getElementById("tagline");
     if (!el) return;
 
-    let phrase = 0;
+    const lang = document.documentElement.lang;
+    const phrase = lang === "en"
+        ? "Oilfield Service Company"
+        : "Нефтесервисная Компания";
+
     let letter = 0;
-    let deleting = false;
 
     function type() {
-        el.textContent = phrases[phrase].slice(0, letter);
-
-        if (!deleting && letter === phrases[phrase].length) {
-            deleting = true;
-            setTimeout(type, 1500);
-        } else if (deleting && letter === 0) {
-            deleting = false;
-            phrase = (phrase + 1) % phrases.length;
-            setTimeout(type, 300);
-        } else {
-            letter += deleting ? -1 : 1;
-            setTimeout(type, deleting ? 30 : 100);
+        el.textContent = phrase.slice(0, letter);
+        letter++;
+        if (letter <= phrase.length) {
+            setTimeout(type, 75); // скорость печати
         }
     }
 
     type();
 }
+
 
 // === Прогресс сверху ===
 function setupScrollProgress() {
@@ -181,15 +172,19 @@ function setupNumberCounters() {
 
 // === График собственности ===
 function renderOwnershipChart() {
-    const ctx = document.getElementById('ownershipChart').getContext('2d');
+    const canvas = document.getElementById('ownershipChart');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
     const rootStyles = getComputedStyle(document.documentElement);
     const bodyStyles = getComputedStyle(document.body);
+    const lang = document.documentElement.lang;
 
     const font = rootStyles.getPropertyValue('--font-inter').replace(/["']/g, '').trim() || 'Inter, sans-serif';
     const accent500 = rootStyles.getPropertyValue('--accent-500').trim() || '#ff0000';
     const textColor = bodyStyles.color || '#111';
 
-    const canvas = document.getElementById('ownershipChart');
+    // Установка Retina-разрешения
     const ratio = window.devicePixelRatio || 1;
     canvas.width = canvas.offsetWidth * ratio;
     canvas.height = canvas.offsetHeight * ratio;
@@ -197,13 +192,22 @@ function renderOwnershipChart() {
 
     Chart.defaults.font.family = font;
 
+    // === Локализация ===
+    const labels = lang === 'en'
+        ? ['1 HPHT (USA)', 'HPHT Greatest']
+        : ['HPHT (США)', 'HPHT Greatest'];
+
+    const datasetLabels = lang === 'en'
+        ? ['Price', 'Spare Parts / Consumables', 'Service']
+        : ['Цена', 'Запчасти / Материалы', 'Сервис'];
+
     new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['HPHT (США)', 'HPHT Greatest'],
+            labels,
             datasets: [
                 {
-                    label: 'Цена',
+                    label: datasetLabels[0],
                     data: [1000, 550],
                     backgroundColor: accent500,
                     borderRadius: { topLeft: 10, topRight: 10 },
@@ -211,7 +215,7 @@ function renderOwnershipChart() {
                     categoryPercentage: 0.5,
                 },
                 {
-                    label: 'Запчасти / Материалы',
+                    label: datasetLabels[1],
                     data: [650, 200],
                     backgroundColor: 'rgba(0, 229, 255, 0.8)',
                     borderRadius: { topLeft: 10, topRight: 10 },
@@ -219,7 +223,7 @@ function renderOwnershipChart() {
                     categoryPercentage: 0.5,
                 },
                 {
-                    label: 'Сервис',
+                    label: datasetLabels[2],
                     data: [300, 300],
                     backgroundColor: 'rgba(105, 240, 174, 0.85)',
                     borderRadius: { topLeft: 10, topRight: 10 },
@@ -240,17 +244,17 @@ function renderOwnershipChart() {
                     position: 'bottom',
                     labels: {
                         font: { size: 17 },
-                        color: getComputedStyle(document.body).color,
+                        color: textColor,
                         usePointStyle: true,
                         pointStyle: 'rectRounded',
                         boxWidth: 16,
                         boxHeight: 16,
                         padding: 16,
                     },
-                    onHover: (event, legendItem, legend) => {
+                    onHover: (event) => {
                         event.native.target.style.cursor = 'pointer';
                     },
-                    onLeave: (event, legendItem, legend) => {
+                    onLeave: (event) => {
                         event.native.target.style.cursor = 'default';
                     }
                 },
@@ -297,97 +301,81 @@ function renderOwnershipChart() {
     });
 }
 
+
 // === Графики оборудования ===
 function renderEquipmentCharts() {
     const rootStyles = getComputedStyle(document.documentElement);
+    const lang = document.documentElement.lang;
+    const textColor = getComputedStyle(document.body).color;
     const blue = '#03a9f4';
     const aqua = '#1de9b6';
-    const textColor = getComputedStyle(document.body).color;
 
     const font = rootStyles.getPropertyValue('--font-inter').replace(/["']/g, '').trim() || 'Inter, sans-serif';
     Chart.defaults.font.family = font;
 
-    // 2020
-    new Chart(document.getElementById('equipmentChart2020'), {
-        type: 'doughnut',
-        data: {
-            labels: ['Американское оборудование', 'Аналоги'],
-            datasets: [{
-                data: [100, 0],
-                backgroundColor: [blue, aqua],
-                borderWidth: 0
-            }]
-        },
-        options: {
-            plugins: {
-                title: {
-                    display: true,
-                    text: 'Оборудование НТЦ «ХАЙПРОТЕК»\n2020 г.',
-                    color: textColor,
-                    font: { size: 18, weight: '600' },
-                    padding: { top: 20, bottom: 10 }
-                },
-                legend: {
-                    position: 'bottom',
-                    labels: {
-                        color: textColor,
-                        font: { size: 14 },
-                        boxWidth: 16
-                    }
-                }
-            },
-            animation: {
-                animateScale: true,
-                duration: 1400,
-                easing: 'easeOutBounce'
-            },
-            cutout: '60%',
-            responsive: true,
-            maintainAspectRatio: false
-        }
-    });
+    // === Localized values ===
+    const labels = lang === 'en'
+        ? ['American Equipment', 'Alternatives']
+        : ['Американское оборудование', 'Аналоги'];
 
-    // 2025
-    new Chart(document.getElementById('equipmentChart2025'), {
-        type: 'doughnut',
-        data: {
-            labels: ['Американское оборудование', 'Аналоги'],
-            datasets: [{
-                data: [55, 45],
-                backgroundColor: [blue, aqua],
-                borderWidth: 0
-            }]
-        },
-        options: {
-            plugins: {
-                title: {
-                    display: true,
-                    text: 'Оборудование НТЦ «ХАЙПРОТЕК»\n2025 г.',
-                    color: textColor,
-                    font: { size: 18, weight: '600' },
-                    padding: { top: 20, bottom: 10 }
-                },
-                legend: {
-                    position: 'bottom',
-                    labels: {
+    const titles = {
+        '2020': lang === 'en' ? 'HYPROTEC STC Equipment\n2020' : 'Оборудование НТЦ «ХАЙПРОТЕК»\n2020 г.',
+        '2025': lang === 'en' ? 'HYPROTEC STC Equipment\n2025' : 'Оборудование НТЦ «ХАЙПРОТЕК»\n2025 г.'
+    };
+
+    const datasets = {
+        '2020': [100, 0],
+        '2025': [55, 45]
+    };
+
+    ['2020', '2025'].forEach((year) => {
+        const canvasId = `equipmentChart${year}`;
+        const canvas = document.getElementById(canvasId);
+        if (!canvas) return;
+
+        new Chart(canvas, {
+            type: 'doughnut',
+            data: {
+                labels,
+                datasets: [{
+                    data: datasets[year],
+                    backgroundColor: [blue, aqua],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                plugins: {
+                    title: {
+                        display: true,
+                        text: titles[year],
                         color: textColor,
-                        font: { size: 14 },
-                        boxWidth: 16
+                        font: { size: 18, weight: '600' },
+                        padding: { top: 20, bottom: 10 }
+                    },
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: textColor,
+                            font: { size: 14 },
+                            boxWidth: 16
+                        }
                     }
-                }
-            },
-            animation: {
-                animateRotate: true,
-                animateScale: true,
-                duration: 1400,
-                easing: 'easeOutBack'
-            },
-            cutout: '60%',
-            responsive: true,
-            maintainAspectRatio: false
-        }
+                },
+                animation: {
+                    animateRotate: true,
+                    animateScale: true,
+                    duration: 1400,
+                    easing: year === '2020' ? 'easeOutBounce' : 'easeOutBack'
+                },
+                cutout: '60%',
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
     });
 }
+
+
 
 // === Анимация таблицы ===
 function animateTableOnScroll() {

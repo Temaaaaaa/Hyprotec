@@ -79,23 +79,3 @@
     z-index: 1;
 }
 
-/*!* Tablet: 2 в строку *!*/
-/*@media (max-width: 1024px) {*/
-/*    .numbers-grid {*/
-/*        grid-template-columns: repeat(2, 1fr);*/
-/*        gap: 48px 48px;*/
-/*    }*/
-/*}*/
-
-/*!* Мобильный: 1 в строку *!*/
-/*@media (max-width: 600px) {*/
-/*    .numbers-grid {*/
-/*        grid-template-columns: 1fr;*/
-/*        gap: 32px;*/
-/*    }*/
-
-/*    .number-item {*/
-/*        max-width: 90%;*/
-/*        padding: 32px 20px;*/
-/*    }*/
-/*}*/

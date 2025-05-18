@@ -14,12 +14,12 @@
     background-position: top right, bottom left, center right; /* можно подогнать по вкусу */
 }
 
-.about-section .container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 64px;
-    align-items: flex-start;
-}
+/*.about-section .container {*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    gap: 64px;*/
+/*    align-items: flex-start;*/
+/*}*/
 
 .about-text {
     flex: 1 1 600px;

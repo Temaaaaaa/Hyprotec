@@ -187,3 +187,25 @@
     font-size: 24px;
     color: inherit;
 }
+.lang-switch {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-left: 24px;
+    font-weight: 600;
+}
+
+.lang-link {
+    text-decoration: none;
+    color: var(--text-primary, #111);
+    opacity: 0.6;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.lang-link:hover,
+.lang-link.active {
+    opacity: 1;
+    color: var(--accent-500, #e73439);
+    text-decoration: underline;
+}
+
