@@ -355,13 +355,47 @@ html.dark-mode .ownership-notes li {
 }
 
 /* 🌗 Dark mode */
-html.dark-mode .stats-section {
-    background-color: var(--gray-900);
+/* ===== DARK MODE: Секция "Лаборатория в цифрах" ===== */
+html.dark-mode .stats-numbers-section {
+    background: var(--gray-900);
+    color: var(--text-inverse);
 }
 
-html.dark-mode .stats-text {
+html.dark-mode .section-header {
+    text-align: center;
+}
+
+html.dark-mode .section-title {
+    color: var(--accent-500);
+    text-shadow: 0 0 6px rgba(255, 40, 40, 0.2);
+}
+
+html.dark-mode .section-subline {
+    color: var(--gray-100);
+    opacity: 0.9;
+}
+
+html.dark-mode .lab-col {
     color: var(--gray-100);
 }
+
+html.dark-mode .lab-col strong {
+    color: var(--accent-500);
+    text-shadow: 0 0 5px rgba(231, 52, 57, 0.4);
+}
+
+html.dark-mode .lab-center-bottom {
+    border-left: 2px solid var(--gray-700);
+    border-right: 2px solid var(--gray-700);
+}
+
+@media (max-width: 1024px) {
+    html.dark-mode .lab-center-bottom {
+        border-left: none;
+        border-right: none;
+    }
+}
+
 
 
 

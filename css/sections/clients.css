@@ -14,10 +14,7 @@
     font-weight: 700;
 }
 
-.section-subline {
-    font-size: var(--font-md);
-    color: var(--text-secondary);
-}
+
 
 /* Контейнер для автопрокрутки */
 .logo-marquee {
@@ -44,7 +41,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: white;
+    background: var(--gray-100);
     border-radius: 16px;
     padding: 20px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);

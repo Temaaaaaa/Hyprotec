@@ -5,9 +5,8 @@
     padding: 100px 20px;
     overflow: hidden;
     background: var(--gray-50);
-    background-image:
-            radial-gradient(circle at 100% 0%, var(--accent-500) 0%, transparent 0.5%),
-            radial-gradient(circle at 0% 100%, var(--accent-500) 0%, transparent 0.5%);
+
+
             /*url('../../images/8.jpeg'); !* ← добавили фон-картинку *!*/
     background-repeat: no-repeat;
     background-size: auto, auto, cover; /* или contain, если нужно всё влезло */

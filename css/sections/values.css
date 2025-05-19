@@ -76,17 +76,7 @@
     z-index: 1;
 }
 
-.splide__slide .value-card::before {
-    content: "";
-    position: absolute;
-    top: -20%;
-    right: -20%;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(255, 0, 0, 0.05), transparent);
-    border-radius: 50%;
-    z-index: 0;
-}
+
 
 /* ===== Стрелки Splide ===== */
 .splide__arrows {
