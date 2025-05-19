@@ -138,37 +138,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // === Счетчики чисел ===
 function setupNumberCounters() {
-    const items = document.querySelectorAll('.number-item');
+    const counters = document.querySelectorAll('strong[data-target]');
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const el = entry.target;
-                const counter = el.querySelector('.number-value');
-                const target = +el.dataset.target;
+                const target = parseInt(el.getAttribute('data-target'), 10);
                 let current = 0;
-                const step = Math.ceil(target / 80);
+                const step = Math.max(1, Math.ceil(target / 100));
 
                 const timer = setInterval(() => {
                     current += step;
                     if (current >= target) {
-                        counter.textContent = target.toLocaleString('ru-RU');
+                        el.textContent = target.toLocaleString('ru-RU');
                         clearInterval(timer);
                     } else {
-                        counter.textContent = current.toLocaleString('ru-RU');
+                        el.textContent = current.toLocaleString('ru-RU');
                     }
                 }, 20);
 
-                el.classList.add('visible');
                 observer.unobserve(el);
             }
         });
-    }, {
-        threshold: 0.4
-    });
+    }, { threshold: 0.3 });
 
-    items.forEach(item => observer.observe(item));
+    counters.forEach(counter => observer.observe(counter));
 }
+
+
 
 // === График собственности ===
 function renderOwnershipChart() {
