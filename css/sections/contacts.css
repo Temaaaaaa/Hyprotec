@@ -1,21 +1,19 @@
-/* ===== Контакты ===== */
 .contacts-section {
-    padding: 80px 20px 100px;
+    padding: 100px 20px;
     background-color: var(--gray-50);
 }
 
-.container-contacts {
+.contacts-container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    justify-content: center;
-    gap: 50px;
     flex-wrap: wrap;
+    gap: 60px;
     align-items: flex-start;
 }
 
-.contacts-info {
-    max-width: 500px;
+.contacts-left {
+    flex: 1 1 400px;
     font-size: var(--font-md);
     line-height: 1.6;
     color: var(--text-primary);
@@ -24,38 +22,38 @@
 .contacts-phone {
     font-size: var(--font-xxl);
     margin-bottom: 10px;
-    text-align: left;
     color: var(--text-primary);
 }
 
 .contacts-email {
+    display: inline-block;
     font-size: var(--font-xl);
     color: var(--accent-500);
     margin-bottom: 10px;
+    text-decoration: none;
 }
 
 .contacts-hours {
-    margin-bottom: 20px;
     font-style: italic;
     color: var(--text-secondary);
-    font-size: var(--font-md);
+    margin-bottom: 20px;
 }
 
 .company-details p {
     margin: 6px 0;
     color: var(--text-secondary);
-    font-size: var(--font-md);
 }
 
-.contacts-map iframe {
-    border: none;
+.contacts-right {
+    flex: 1 1 400px;
+    align-self: center;
     max-width: 100%;
-    border-radius: 8px;
 }
 
-.contacts-map img {
-    max-width: 400px;
+.contacts-right iframe {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 300px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }

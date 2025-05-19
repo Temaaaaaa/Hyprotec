@@ -91,8 +91,8 @@ function startTypingEffect() {
 
     const lang = document.documentElement.lang;
     const phrase = lang === "en"
-        ? "Oilfield Service Company"
-        : "Нефтесервисная Компания";
+        ? "oilfield service company"
+        : "нефтесервисная компания";
 
     let letter = 0;
 
