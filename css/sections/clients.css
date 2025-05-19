@@ -1,61 +1,83 @@
 .clients-section {
-    padding: 140px 20px;
-    background-color: var(--gray-50);
-}
-
-.clients-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
-    justify-items: center;
-    align-items: center;
-    max-width: 1440px;
-    margin: 0 auto;
-}
-
-.client-logo {
-    background-color: #9faabd;
-    border-radius: 20px;
-    width: 100%;
-    height: 160px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    background: #f9f9f9;
+    padding: 100px 0;
     overflow: hidden;
 }
 
-.client-logo img {
+.section-header {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.section-title {
+    font-size: var(--font-xxl);
+    font-weight: 700;
+}
+
+.section-subline {
+    font-size: var(--font-md);
+    color: var(--text-secondary);
+}
+
+/* Контейнер для автопрокрутки */
+.logo-marquee {
+    overflow: hidden;
+    position: relative;
+}
+
+.logo-track {
+    display: flex;
+    width: max-content;
+    animation: scroll-left 40s linear infinite;
+    gap: 32px;
+}
+
+@keyframes scroll-left {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* идеально сработает при дублировании */
+}
+
+.client-card {
+    flex: 0 0 auto;
+    width: 200px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.client-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.client-card img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    transition: transform 0.4s ease;
+    filter: grayscale(100%) brightness(0) invert(0);
+    opacity: 0.85;
+    transition: filter .3s ease, opacity .3s ease;
 }
 
-.client-logo:hover {
-    transform: scale(1.04);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+.client-card:hover img {
+    filter: grayscale(0);
+    opacity: 1;
 }
 
-/* 🔳 Доп. стиль для логотипов с белым фоном */
-.client-logo.white-bg {
-    background-color: #f0f0f0;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-/* 🌑 Dark Mode */
-html.dark-mode .clients-section {
-    background-color: var(--gray-900);
-}
-
-html.dark-mode .client-logo {
-    background-color: var(--gray-800);
-    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
-}
-
-html.dark-mode .client-logo.white-bg {
-    background-color: #2a2a2a;
-    border-color: rgba(255, 255, 255, 0.08);
+/* Адаптив */
+@media (max-width: 768px) {
+    .client-card {
+        width: 140px;
+        height: 100px;
+        padding: 12px;
+    }
+    .logo-track {
+        gap: 24px;
+    }
 }
