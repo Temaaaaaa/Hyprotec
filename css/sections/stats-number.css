@@ -78,4 +78,10 @@
     position: relative;
     z-index: 1;
 }
+.extra-centered {
+    margin: 60px auto 0;
+    max-width: 300px;
+    width: 100%;
+    text-align: center;
+}
 
