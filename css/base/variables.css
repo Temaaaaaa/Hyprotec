@@ -66,12 +66,12 @@
     --bg-dark: rgba(34, 40, 42, 0.95); /* фирменный чёрный с прозрачностью */
 
     /* ===== Шрифт ===== */
-    --font-base: 20px;
-    --font-sm: 0.9rem;
-    --font-md: 1.1rem;
-    --font-lg: 1.4rem;
-    --font-xl: 2.4rem;
-    --font-xxl: 4rem;
+    --font-base: 18px;
+    --font-sm: 1rem;
+    --font-md: 1.125rem;
+    --font-lg: 1.5rem;
+    --font-xl: 2.25rem;
+    --font-xxl: 3.5rem;
 
 
     /* ===== Дополнительно ===== */

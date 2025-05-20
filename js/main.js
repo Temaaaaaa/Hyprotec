@@ -18,6 +18,9 @@ function setupThemeToggle() {
 function setupHeaderScroll() {
     const header = document.querySelector('.site-header');
     const hero = document.querySelector('.hero');
+    let lastScrollY = window.scrollY;
+    let isScrolling = false;
+    let scrollTimeout;
 
     const observer = new IntersectionObserver(([entry]) => {
         if (entry.intersectionRatio < 0.2) {
@@ -29,15 +32,26 @@ function setupHeaderScroll() {
 
     if (hero) observer.observe(hero);
 
-    let lastY = 0;
     window.addEventListener('scroll', () => {
-        const currentY = window.scrollY;
-        if (currentY > lastY && currentY > 150) {
-            header.classList.add('hidden');
-        } else {
-            header.classList.remove('hidden');
+        if (!isScrolling) {
+            isScrolling = true;
+            requestAnimationFrame(() => {
+                const currentScrollY = window.scrollY;
+                const scrollDirection = currentScrollY > lastScrollY ? 'down' : 'up';
+                
+                // Show header when scrolling up or at the top
+                if (scrollDirection === 'up' || currentScrollY < 100) {
+                    header.classList.remove('hidden');
+                } 
+                // Hide header when scrolling down and not at the top
+                else if (scrollDirection === 'down' && currentScrollY > 100) {
+                    header.classList.add('hidden');
+                }
+
+                lastScrollY = currentScrollY;
+                isScrolling = false;
+            });
         }
-        lastY = currentY;
     });
 }
 
@@ -47,21 +61,50 @@ function setupMobileMenu() {
     const nav = document.querySelector('.main-nav');
     const dropToggle = document.querySelector('.dropdown-toggle');
     const dropdown = document.querySelector('.dropdown-menu');
+    const body = document.body;
 
+    // Toggle mobile menu
     burger?.addEventListener('click', () => {
         nav.classList.toggle('open');
+        burger.setAttribute('aria-expanded', nav.classList.contains('open'));
+        body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
     });
 
+    // Toggle dropdown
     dropToggle?.addEventListener('click', (e) => {
         e.preventDefault();
         dropdown?.classList.toggle('open');
         dropToggle.classList.toggle('active');
+        dropToggle.setAttribute('aria-expanded', dropdown?.classList.contains('open'));
     });
 
+    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
-        if (!e.target.closest('.has-dropdown')) {
+        if (!e.target.closest('.has-dropdown') && !e.target.closest('#menuToggle')) {
             dropdown?.classList.remove('open');
             dropToggle?.classList.remove('active');
+            dropToggle?.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    // Close menu when clicking on a link
+    nav?.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A' && !e.target.classList.contains('dropdown-toggle')) {
+            nav.classList.remove('open');
+            burger.setAttribute('aria-expanded', 'false');
+            body.style.overflow = '';
+        }
+    });
+
+    // Handle escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            nav?.classList.remove('open');
+            dropdown?.classList.remove('open');
+            dropToggle?.classList.remove('active');
+            burger?.setAttribute('aria-expanded', 'false');
+            dropToggle?.setAttribute('aria-expanded', 'false');
+            body.style.overflow = '';
         }
     });
 }
@@ -166,31 +209,40 @@ function setupNumberCounters() {
     counters.forEach(counter => observer.observe(counter));
 }
 
-
+// === Цвета для графиков в зависимости от темы ===
+function getChartColors() {
+    const isDark = document.documentElement.classList.contains('dark-mode');
+    return {
+        text: isDark ? '#ffffff' : '#111',
+        grid: isDark ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.05)',
+        tooltipBg: isDark ? '#2c2c2c' : '#111',
+        tooltipText: '#fff',
+        border: isDark ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.1)'
+    };
+}
 
 // === График собственности ===
 function renderOwnershipChart() {
     const canvas = document.getElementById('ownershipChart');
     if (!canvas) return;
 
+    // Удаляем предыдущий график, если он есть
+    if (canvas._chartInstance) {
+        canvas._chartInstance.destroy();
+    }
+
     const ctx = canvas.getContext('2d');
     const rootStyles = getComputedStyle(document.documentElement);
     const bodyStyles = getComputedStyle(document.body);
     const lang = document.documentElement.lang;
-
     const font = rootStyles.getPropertyValue('--font-inter').replace(/["']/g, '').trim() || 'Inter, sans-serif';
     const accent500 = rootStyles.getPropertyValue('--accent-500').trim() || '#ff0000';
-    const textColor = bodyStyles.color || '#111';
 
-    // Установка Retina-разрешения
-    const ratio = window.devicePixelRatio || 1;
-    canvas.width = canvas.offsetWidth * ratio;
-    canvas.height = canvas.offsetHeight * ratio;
-    ctx.scale(ratio, ratio);
+    const colors = getChartColors();
 
     Chart.defaults.font.family = font;
+    Chart.defaults.borderColor = colors.border;
 
-    // === Локализация ===
     const labels = lang === 'en'
         ? ['1 HPHT (USA)', 'HPHT Greatest']
         : ['HPHT (США)', 'HPHT Greatest'];
@@ -199,7 +251,7 @@ function renderOwnershipChart() {
         ? ['Price', 'Spare Parts / Consumables', 'Service']
         : ['Цена', 'Запчасти / Материалы', 'Сервис'];
 
-    new Chart(ctx, {
+    const chartInstance = new Chart(ctx, {
         type: 'bar',
         data: {
             labels,
@@ -241,77 +293,85 @@ function renderOwnershipChart() {
                 legend: {
                     position: 'bottom',
                     labels: {
-                        font: { size: 17 },
-                        color: textColor,
+                        font: { size: window.innerWidth < 600 ? 12 : 17 },
+                        color: colors.text,
                         usePointStyle: true,
                         pointStyle: 'rectRounded',
-                        boxWidth: 16,
-                        boxHeight: 16,
-                        padding: 16,
-                    },
-                    onHover: (event) => {
-                        event.native.target.style.cursor = 'pointer';
-                    },
-                    onLeave: (event) => {
-                        event.native.target.style.cursor = 'default';
+                        boxWidth: window.innerWidth < 600 ? 10 : 16,
+                        boxHeight: window.innerWidth < 600 ? 10 : 16,
+                        padding: window.innerWidth < 600 ? 8 : 16,
                     }
                 },
                 tooltip: {
-                    backgroundColor: '#111',
-                    titleColor: '#fff',
-                    bodyColor: '#fff',
-                    bodyFont: { size: 14 },
-                    titleFont: { weight: '600' },
-                    padding: 10,
+                    backgroundColor: colors.tooltipBg,
+                    titleColor: colors.tooltipText,
+                    bodyColor: colors.tooltipText,
+                    bodyFont: { size: window.innerWidth < 600 ? 12 : 14 },
+                    titleFont: { weight: '600', size: window.innerWidth < 600 ? 13 : 14 },
+                    padding: window.innerWidth < 600 ? 8 : 10,
                     cornerRadius: 6,
+                    borderColor: colors.border,
+                    borderWidth: 1
+                }
+            },
+            layout: {
+                padding: {
+                    bottom: window.innerWidth < 600 ? 16 : 0
                 }
             },
             scales: {
                 x: {
                     stacked: true,
-                    grid: {
-                        display: false
+                    grid: { 
+                        display: false,
+                        color: colors.grid
                     },
-                    ticks: {
-                        font: { size: 14 },
-                        color: textColor,
+                    ticks: { 
+                        font: { size: window.innerWidth < 600 ? 12 : 14 }, 
+                        color: colors.text 
+                    },
+                    border: {
+                        color: colors.border
                     }
                 },
                 y: {
                     stacked: true,
                     beginAtZero: true,
-                    ticks: {
-                        stepSize: 500,
-                        font: { size: 13 },
-                        color: textColor,
+                    ticks: { 
+                        stepSize: 500, 
+                        font: { size: window.innerWidth < 600 ? 11 : 13 }, 
+                        color: colors.text 
                     },
-                    grid: {
-                        color: 'rgba(0,0,0,0.05)',
-                        drawBorder: false
+                    grid: { 
+                        color: colors.grid, 
+                        drawBorder: false 
+                    },
+                    border: {
+                        color: colors.border
                     }
                 }
             },
-            animation: {
-                duration: 1200,
-                easing: 'easeOutQuart',
-            }
+            animation: { duration: 1200, easing: 'easeOutQuart' }
         }
     });
-}
 
+    // Сохраняем инстанс для последующего destroy
+    canvas._chartInstance = chartInstance;
+}
 
 // === Графики оборудования ===
 function renderEquipmentCharts() {
     const rootStyles = getComputedStyle(document.documentElement);
     const lang = document.documentElement.lang;
-    const textColor = getComputedStyle(document.body).color;
+    const font = rootStyles.getPropertyValue('--font-inter').replace(/["']/g, '').trim() || 'Inter, sans-serif';
     const blue = '#03a9f4';
     const aqua = '#1de9b6';
 
-    const font = rootStyles.getPropertyValue('--font-inter').replace(/["']/g, '').trim() || 'Inter, sans-serif';
-    Chart.defaults.font.family = font;
+    const colors = getChartColors();
 
-    // === Localized values ===
+    Chart.defaults.font.family = font;
+    Chart.defaults.borderColor = colors.border;
+
     const labels = lang === 'en'
         ? ['American Equipment', 'Alternatives']
         : ['Американское оборудование', 'Аналоги'];
@@ -331,7 +391,12 @@ function renderEquipmentCharts() {
         const canvas = document.getElementById(canvasId);
         if (!canvas) return;
 
-        new Chart(canvas, {
+        // Удаляем предыдущий график, если он есть
+        if (canvas._chartInstance) {
+            canvas._chartInstance.destroy();
+        }
+
+        const chartInstance = new Chart(canvas, {
             type: 'doughnut',
             data: {
                 labels,
@@ -346,17 +411,29 @@ function renderEquipmentCharts() {
                     title: {
                         display: true,
                         text: titles[year],
-                        color: textColor,
-                        font: { size: 18, weight: '600' },
-                        padding: { top: 20, bottom: 10 }
+                        color: colors.text,
+                        font: { size: window.innerWidth < 900 ? 18 : 24, weight: '700' },
+                        padding: { top: 20, bottom: 16 }
                     },
                     legend: {
                         position: 'bottom',
                         labels: {
-                            color: textColor,
-                            font: { size: 14 },
-                            boxWidth: 16
+                            color: colors.text,
+                            font: { size: window.innerWidth < 900 ? 15 : 20, weight: '600' },
+                            boxWidth: window.innerWidth < 900 ? 18 : 24,
+                            padding: window.innerWidth < 900 ? 12 : 20
                         }
+                    },
+                    tooltip: {
+                        backgroundColor: colors.tooltipBg,
+                        titleColor: colors.tooltipText,
+                        bodyColor: colors.tooltipText,
+                        bodyFont: { size: window.innerWidth < 900 ? 14 : 18 },
+                        titleFont: { weight: '700', size: window.innerWidth < 900 ? 15 : 20 },
+                        padding: window.innerWidth < 900 ? 10 : 14,
+                        cornerRadius: 6,
+                        borderColor: colors.border,
+                        borderWidth: 1
                     }
                 },
                 animation: {
@@ -370,10 +447,11 @@ function renderEquipmentCharts() {
                 maintainAspectRatio: false
             }
         });
+
+        // Сохраняем инстанс для последующего destroy
+        canvas._chartInstance = chartInstance;
     });
 }
-
-
 
 // === Анимация таблицы ===
 function animateTableOnScroll() {
@@ -390,8 +468,6 @@ function animateTableOnScroll() {
     observer.observe(table);
 }
 
-
-
 // === Инициализация всех функций ===
 document.addEventListener('DOMContentLoaded', () => {
     setupThemeToggle();
@@ -404,4 +480,13 @@ document.addEventListener('DOMContentLoaded', () => {
     renderOwnershipChart();
     renderEquipmentCharts();
     animateTableOnScroll();
+
+    // Перерисовываем графики при смене темы
+    const themeToggle = document.getElementById('theme');
+    if (themeToggle) {
+        themeToggle.addEventListener('change', () => {
+            renderOwnershipChart();
+            renderEquipmentCharts();
+        });
+    }
 });

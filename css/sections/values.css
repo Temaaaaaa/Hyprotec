@@ -1,12 +1,10 @@
 /* ===== Секция Ценности ===== */
 .values-section {
-    padding: 140px 20px;
     overflow: hidden;
-
 }
 
 #values-carousel {
-    margin-top: 48px;
+    margin-top: 32px;
     max-width: 1280px;
     margin-left: auto;
     margin-right: auto;
@@ -20,7 +18,7 @@
     display: flex;
     justify-content: center;
     align-items: stretch;
-    padding: 0 16px;
+    padding: 0 12px;
     box-sizing: border-box;
     transition: transform 0.4s ease, opacity 0.4s ease;
     opacity: 0.3;
@@ -34,15 +32,14 @@
 }
 
 .splide__slide .value-card {
-    border-radius: 32px;
-    padding: 64px 56px;
-    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.08);
+    border-radius: 24px;
+    padding: 40px 32px;
     text-align: left;
     font-size: var(--font-md);
     color: var(--text-primary);
     max-width: 860px;
     width: 100%;
-    min-height: 440px;
+    min-height: 320px;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     border: 1px solid rgba(0, 0, 0, 0.04);
     box-sizing: border-box;
@@ -52,58 +49,187 @@
     justify-content: flex-start;
     position: relative;
     overflow: hidden;
-
 }
 
 .value-title {
     font-size: var(--font-xl);
     color: var(--accent-500);
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     font-weight: 700;
     letter-spacing: -0.01em;
     word-break: break-word;
     position: relative;
     z-index: 1;
-    min-height: 3em;
+    min-height: 2.5em;
 }
 
 .value-text {
-    font-size: var(--font-lg);
+    font-size: var(--font-md);
     color: var(--text-primary);
-    line-height: 1.8;
+    line-height: 1.6;
     word-break: break-word;
     position: relative;
     z-index: 1;
 }
 
-
-
 /* ===== Стрелки Splide ===== */
 .splide__arrows {
-    margin-top: 40px;
+    margin-top: 32px;
     display: flex;
     justify-content: center;
-    gap: 48px;
+    gap: 32px;
 }
 
 .splide__arrow {
     background: none;
     border: none;
     color: var(--accent-500);
-    font-size: 2rem;
+    font-size: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     outline: none;
     box-shadow: none;
-    transition: none;
+    transition: transform 0.3s ease;
+}
+
+.splide__arrow:hover {
+    transform: scale(1.1);
 }
 
 .splide__arrow svg {
     display: inline;
-    width: 1.5em;
-    height: 1.5em;
+    width: 1.2em;
+    height: 1.2em;
     fill: currentColor;
+}
+
+/* ===== Адаптив ===== */
+@media (max-width: 1024px) {
+    .splide__slide .value-card {
+        padding: 32px 24px;
+        min-height: 280px;
+    }
+
+    .value-title {
+        font-size: var(--font-md);
+        margin-bottom: 12px;
+        min-height: 2em;
+    }
+
+    .value-text {
+        font-size: var(--font-sm);
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 768px) {
+    #values-carousel {
+        margin-top: 24px;
+    }
+
+    .splide__slide {
+        padding: 0 8px;
+    }
+
+    .splide__slide .value-card {
+        padding: 24px 20px;
+        min-height: 240px;
+        border-radius: 16px;
+    }
+
+    .value-title {
+        font-size: var(--font-md);
+        margin-bottom: 8px;
+        min-height: 1.8em;
+    }
+
+    .value-text {
+        font-size: var(--font-sm);
+        line-height: 1.4;
+    }
+
+    .splide__arrows {
+        margin-top: 24px;
+        gap: 24px;
+    }
+
+    .splide__arrow {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .site-footer {
+        padding: 8px 0 4px 0;
+        text-align: center;
+        background: var(--gray-900);
+    }
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        padding: 0;
+    }
+    .footer-left {
+        margin-bottom: 4px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-logo {
+        max-width: 90px;
+        margin: 0 auto 2px auto;
+        display: block;
+    }
+    .footer-rights {
+        margin: 0 0 6px 0;
+        font-size: var(--font-xs);
+        text-align: center;
+    }
+    .footer-right {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        align-items: center;
+    }
+    .footer-column {
+        margin-bottom: 2px;
+        padding-bottom: 0;
+        width: 100%;
+        align-items: center;
+    }
+    .footer-column h4 {
+        margin-bottom: 2px;
+        font-size: var(--font-xs);
+        text-align: center;
+    }
+    .footer-column ul {
+        padding: 0;
+        margin: 0 auto 2px auto;
+        text-align: center;
+    }
+    .footer-column ul li {
+        margin-bottom: 1px;
+    }
+    .footer-column ul li a {
+        font-size: var(--font-xs);
+    }
+}
+
+/* ===== Dark Mode ===== */
+html.dark-mode .value-card {
+    background: var(--gray-800);
+    border-color: var(--gray-700);
+}
+
+html.dark-mode .value-text {
+    color: var(--gray-100);
+}
+
+html.dark-mode .splide__arrow {
+    color: var(--accent-500);
 }
 

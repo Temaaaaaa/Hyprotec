@@ -1,6 +1,5 @@
 .clients-section {
     background: #f9f9f9;
-    padding: 100px 0;
     overflow: hidden;
 }
 
@@ -13,8 +12,6 @@
     font-size: var(--font-xxl);
     font-weight: 700;
 }
-
-
 
 /* Контейнер для автопрокрутки */
 .logo-marquee {
@@ -67,7 +64,6 @@
     opacity: 1;
 }
 
-
 /* Адаптив */
 @media (max-width: 768px) {
     .client-card {
@@ -77,5 +73,16 @@
     }
     .logo-track {
         gap: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .client-card {
+        width: 120px;
+        height: 80px;
+        padding: 8px;
+    }
+    .logo-track {
+        gap: 16px;
     }
 }
