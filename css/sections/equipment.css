@@ -353,6 +353,8 @@ html.dark-mode .ownership-notes li {
     width: 340px;
     max-width: 100vw;
     min-width: 220px;
+    display: flex;
+    justify-content: space-around;
 }
 
 .chart-block canvas {
@@ -365,23 +367,7 @@ html.dark-mode .ownership-notes li {
 }
 
 /* На мобильных — вертикально и чуть меньше */
-@media (max-width: 900px) {
-    .stats-charts {
-        flex-direction: column;
-        gap: 32px;
-        align-items: center;
-        width: 100%;
-    }
-    .chart-block {
-        width: 100%;
-        max-width: 400px;
-    }
-    .chart-block canvas {
-        height: 260px !important;
-        min-height: 200px !important;
-        max-height: 300px !important;
-    }
-}
+
 
 /* 🌗 Dark mode */
 /* ===== DARK MODE: Секция "Лаборатория в цифрах" ===== */

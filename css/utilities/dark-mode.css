@@ -203,3 +203,36 @@ html.dark-mode .challenges-list li:hover {
 html.dark-mode .section-subline {
 
 }
+
+/* ===== Ownership Table Mobile: Dark Mode ===== */
+html.dark-mode .ownership-table--stacked {
+  background: var(--gray-900);
+  color: var(--gray-100);
+}
+
+html.dark-mode .ownership-table--stacked .row {
+  background: var(--gray-800);
+  border-bottom: 1px solid var(--gray-700);
+}
+
+html.dark-mode .ownership-table--stacked .header-row {
+  background: var(--gray-700);
+  color: var(--text-inverse);
+}
+
+html.dark-mode .ownership-table--stacked .total-row {
+  background: var(--gray-800);
+  color: var(--accent-500);
+}
+
+html.dark-mode .ownership-table--stacked .cell {
+  border-left: 1px solid var(--gray-700);
+}
+
+html.dark-mode .ownership-table--stacked .cell:first-child {
+  border-left: none;
+}
+
+html.dark-mode .ownership-table--stacked .label {
+  color: var(--gray-100);
+}

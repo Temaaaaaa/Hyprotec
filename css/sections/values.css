@@ -93,11 +93,6 @@
     box-shadow: none;
     transition: transform 0.3s ease;
 }
-
-.splide__arrow:hover {
-    transform: scale(1.1);
-}
-
 .splide__arrow svg {
     display: inline;
     width: 1.2em;

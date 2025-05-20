@@ -55,6 +55,7 @@
     padding: 0 24px;
 }
 
+
 /* ===== Адаптив ===== */
 @media (max-width: 1024px) {
     .lab-stats-grid {
@@ -73,6 +74,8 @@
         padding: 0;
     }
 }
+
+
 
 @media (max-width: 768px) {
     .lab-col {

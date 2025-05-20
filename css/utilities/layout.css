@@ -124,32 +124,5 @@
     background: var(--accent-600);
 }
 
-body::before,
-body::after {
-    content: '';
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 320px;
-    height: 100vh;
-    z-index: 100;
-    pointer-events: none;
-    opacity: 0.2;
-    filter: blur(80px);
-    background: radial-gradient(
-            ellipse at center,
-            var(--accent-500) 0%,
-            rgba(231, 52, 57, 0.2) 40%,
-            transparent 80%
-    );
-}
-
-body::before {
-    left: -160px;
-}
-
-body::after {
-    right: -160px;
-}
 
 
