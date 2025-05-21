@@ -363,7 +363,7 @@ function renderOwnershipChart() {
 function renderEquipmentCharts() {
     const rootStyles = getComputedStyle(document.documentElement);
     const lang = document.documentElement.lang;
-    const font = rootStyles.getPropertyValue('--font-inter').replace(/["']/g, '').trim() || 'Inter, sans-serif';
+    const font = rootStyles.getPropertyValue('--font-inter').replace(/["']/g, '').trim() || 'Arial, sans-serif';
     const blue = '#03a9f4';
     const aqua = '#1de9b6';
 
@@ -391,7 +391,10 @@ function renderEquipmentCharts() {
         const canvas = document.getElementById(canvasId);
         if (!canvas) return;
 
-        // Удаляем предыдущий график, если он есть
+        // Явно задаем размеры canvas
+        canvas.width = 600;
+        canvas.height = 400;
+
         if (canvas._chartInstance) {
             canvas._chartInstance.destroy();
         }
@@ -412,14 +415,22 @@ function renderEquipmentCharts() {
                         display: true,
                         text: titles[year],
                         color: colors.text,
-                        font: { size: window.innerWidth < 900 ? 18 : 24, weight: '700' },
+                        font: {
+                            size: window.innerWidth < 900 ? 20 : 28,
+                            weight: '700',
+                            family: 'Arial, sans-serif',
+                            lineHeight: 1.4
+                        },
                         padding: { top: 20, bottom: 16 }
                     },
                     legend: {
                         position: 'bottom',
                         labels: {
                             color: colors.text,
-                            font: { size: window.innerWidth < 900 ? 15 : 20, weight: '600' },
+                            font: {
+                                size: window.innerWidth < 900 ? 15 : 20,
+                                weight: '600'
+                            },
                             boxWidth: window.innerWidth < 900 ? 18 : 24,
                             padding: window.innerWidth < 900 ? 12 : 20
                         }
@@ -448,10 +459,10 @@ function renderEquipmentCharts() {
             }
         });
 
-        // Сохраняем инстанс для последующего destroy
         canvas._chartInstance = chartInstance;
     });
 }
+
 
 // === Анимация таблицы ===
 function animateTableOnScroll() {
