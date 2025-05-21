@@ -15,7 +15,7 @@
 
 
 .theme__fill {
-    background-color: var(--bg, #fff);
+    background-color:  #fff;
     display: block;
     mix-blend-mode: difference;
     position: fixed;
@@ -32,11 +32,11 @@
     width: 1.5em;
     height: 1.5em;
     z-index: 1;
-    transition:
-        box-shadow var(--transDur) cubic-bezier(.4,0,.2,1),
-        opacity var(--transDur) cubic-bezier(.4,0,.2,1),
-        transform var(--transDur) cubic-bezier(.4,0,.2,1),
-        background var(--transDur) cubic-bezier(.4,0,.2,1);
+    /*transition:*/
+    /*    box-shadow var(--transDur) cubic-bezier(.4,0,.2,1),*/
+    /*    opacity var(--transDur) cubic-bezier(.4,0,.2,1),*/
+    /*    transform var(--transDur) cubic-bezier(.4,0,.2,1),*/
+    /*    background var(--transDur) cubic-bezier(.4,0,.2,1);*/
 }
 
 .theme__icon-part {
@@ -47,11 +47,11 @@
     left: calc(50% - 0.5em);
     width: 1em;
     height: 1em;
-    transition:
-        box-shadow var(--transDur) cubic-bezier(.4,0,.2,1),
-        opacity var(--transDur) cubic-bezier(.4,0,.2,1),
-        transform var(--transDur) cubic-bezier(.4,0,.2,1),
-        background var(--transDur) cubic-bezier(.4,0,.2,1);
+    /*transition:*/
+    /*    box-shadow var(--transDur) cubic-bezier(.4,0,.2,1),*/
+    /*    opacity var(--transDur) cubic-bezier(.4,0,.2,1),*/
+    /*    transform var(--transDur) cubic-bezier(.4,0,.2,1),*/
+    /*    background var(--transDur) cubic-bezier(.4,0,.2,1);*/
     transform: scale(0.5);
 }
 
@@ -162,7 +162,6 @@
   opacity: 0;
   z-index: 3;
   mask-image: radial-gradient(circle at 60% 40%, white 60%, transparent 61%);
-  -webkit-mask-image: radial-gradient(circle at 60% 40%, white 60%, transparent 61%);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .theme-switch__input:checked + .theme-switch__slider {
@@ -219,21 +218,22 @@ input[type="checkbox"].theme__toggle:checked:after {
 
 /* --- Бегунок теперь прозрачный, только для движения --- */
 .theme-switch__slider::before {
-  content: "";
-  position: absolute;
-  left: 3px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: #f4c900;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 1;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #f4c900;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
 }
+
 .theme-switch__input:checked + .theme-switch__slider::before {
-  background: #22b6f9;
-  left: 25px;
+    background: #22b6f9;
+    left: calc(100% - 26px);
 }
 
 /* --- Солнце: белый круг с короткими белыми лучами --- */
@@ -268,7 +268,6 @@ input[type="checkbox"]:checked + .theme-switch__slider .theme-switch__icon .them
   opacity: 0;
   z-index: 3;
   mask-image: radial-gradient(circle at 60% 40%, white 60%, transparent 61%);
-  -webkit-mask-image: radial-gradient(circle at 60% 40%, white 60%, transparent 61%);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 input[type="checkbox"]:checked + .theme-switch__slider .theme-switch__icon .theme-switch__moon {
