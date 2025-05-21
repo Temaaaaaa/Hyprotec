@@ -366,7 +366,6 @@ function renderEquipmentCharts() {
     const font = rootStyles.getPropertyValue('--font-inter').replace(/["']/g, '').trim() || 'Arial, sans-serif';
     const blue = '#03a9f4';
     const aqua = '#1de9b6';
-
     const colors = getChartColors();
 
     Chart.defaults.font.family = font;
@@ -377,8 +376,13 @@ function renderEquipmentCharts() {
         : ['Американское оборудование', 'Аналоги'];
 
     const titles = {
-        '2020': lang === 'en' ? 'HYPROTEC STC Equipment\n2020' : 'Оборудование НТЦ «ХАЙПРОТЕК»\n2020 г.',
-        '2025': lang === 'en' ? 'HYPROTEC STC Equipment\n2025' : 'Оборудование НТЦ «ХАЙПРОТЕК»\n2025 г.'
+        '2020': lang === 'en'
+            ? ['HYPROTEC Equipment', '2020']
+            : ['Оборудование НТЦ «ХАЙПРОТЕК»', '2020 г.'],
+
+        '2025': lang === 'en'
+            ? ['HYPROTEC Equipment', '2025']
+            : ['Оборудование НТЦ «ХАЙПРОТЕК»', '2025 г.']
     };
 
     const datasets = {
@@ -391,10 +395,11 @@ function renderEquipmentCharts() {
         const canvas = document.getElementById(canvasId);
         if (!canvas) return;
 
-        // Явно задаем размеры canvas
-        canvas.width = 600;
-        canvas.height = 400;
+        // Увеличенный размер
+        canvas.width = 1440;
+        canvas.height = 1200;
 
+        // Удалить старый график, если есть
         if (canvas._chartInstance) {
             canvas._chartInstance.destroy();
         }
@@ -416,7 +421,7 @@ function renderEquipmentCharts() {
                         text: titles[year],
                         color: colors.text,
                         font: {
-                            size: window.innerWidth < 900 ? 20 : 28,
+                            size: window.innerWidth < 900 ? 20 : 30,
                             weight: '700',
                             family: 'Arial, sans-serif',
                             lineHeight: 1.4
@@ -444,7 +449,14 @@ function renderEquipmentCharts() {
                         padding: window.innerWidth < 900 ? 10 : 14,
                         cornerRadius: 6,
                         borderColor: colors.border,
-                        borderWidth: 1
+                        borderWidth: 1,
+                        callbacks: {
+                            label: function (context) {
+                                const label = context.label || '';
+                                const value = context.parsed !== undefined ? context.parsed : '';
+                                return `${label}: ${value}%`;
+                            }
+                        }
                     }
                 },
                 animation: {
@@ -462,6 +474,8 @@ function renderEquipmentCharts() {
         canvas._chartInstance = chartInstance;
     });
 }
+
+
 
 
 // === Анимация таблицы ===

@@ -359,10 +359,9 @@ html.dark-mode .ownership-notes li {
 }
 
 .chart-block canvas {
-    width: 100% !important;
-    height: 340px !important;
-    min-height: 300px !important;
-    max-height: 400px !important;
+    width: 720px !important;   /* или столько, сколько нужно */
+    height: 720px !important;
+    max-width: 100%;
     display: block;
     margin: 0 auto;
 }
