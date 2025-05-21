@@ -493,6 +493,7 @@ function animateTableOnScroll() {
     observer.observe(table);
 }
 
+
 // === Инициализация всех функций ===
 document.addEventListener('DOMContentLoaded', () => {
     setupThemeToggle();

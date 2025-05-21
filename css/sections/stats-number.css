@@ -77,16 +77,16 @@
 
 
 
-@media (max-width: 768px) {
-    .lab-col {
-        gap: 24px;
-    }
+/*@media (max-width: 768px) {*/
+/*    .lab-col {*/
+/*        gap: 24px;*/
+/*    }*/
 
-    .lab-center-top {
-        gap: 24px;
-    }
+/*    .lab-center-top {*/
+/*        gap: 24px;*/
+/*    }*/
 
-    .lab-center-bottom {
-        margin-top: 24px;
-    }
-}
+/*    .lab-center-bottom {*/
+/*        margin-top: 24px;*/
+/*    }*/
+/*}*/

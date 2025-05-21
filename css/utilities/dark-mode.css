@@ -30,6 +30,28 @@ html.dark-mode a:hover {
   color: var(--accent-500);
 }
 
+html.dark-mode .btn,
+html.dark-mode .service-btn {
+  display: inline-block;
+  background: var(--accent-500);
+  color: var(--text-inverse);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+html.dark-mode .btn:hover,
+html.dark-mode .service-btn:hover {
+  background: var(--accent-600);   /* тёмнее при наведении */
+  color: #ffffff;                  /* всегда белый текст на фоне */
+  transform: translateY(-2px);     /* лёгкий подъём */
+  box-shadow: 0 8px 24px rgba(231, 52, 57, 0.3); /* мягкая тень */
+}
+
+
+
 /* === Заголовки и ключевые элементы === */
 html.dark-mode h1,
 html.dark-mode h2,

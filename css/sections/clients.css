@@ -23,7 +23,7 @@
     display: flex;
     width: max-content;
     animation: scroll-left 25s linear infinite;
-    gap: 32px;
+    /*gap: 32px;*/
 }
 
 @keyframes scroll-left {
@@ -42,8 +42,10 @@
     border-radius: 16px;
     padding: 20px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    margin-right: 20px;
     transition: transform .3s ease, box-shadow .3s ease;
 }
+
 
 .client-card:hover {
     transform: translateY(-4px);
@@ -64,25 +66,4 @@
     opacity: 1;
 }
 
-/* Адаптив */
-@media (max-width: 768px) {
-    .client-card {
-        width: 140px;
-        height: 100px;
-        padding: 12px;
-    }
-    .logo-track {
-        gap: 24px;
-    }
-}
 
-@media (max-width: 480px) {
-    .client-card {
-        width: 120px;
-        height: 80px;
-        padding: 8px;
-    }
-    .logo-track {
-        gap: 16px;
-    }
-}

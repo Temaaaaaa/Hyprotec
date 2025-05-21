@@ -120,33 +120,33 @@
 }
 
 /* ===== Responsive ===== */
-@media (max-width: 1024px) {
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
-    }
-}
+/*@media (max-width: 1024px) {*/
+/*    .services-grid {*/
+/*        grid-template-columns: repeat(2, 1fr);*/
+/*        gap: 24px;*/
+/*    }*/
+/*}*/
 
-@media (max-width: 768px) {
-    .services-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
+/*@media (max-width: 768px) {*/
+/*    .services-grid {*/
+/*        grid-template-columns: 1fr;*/
+/*        gap: 20px;*/
+/*    }*/
 
-    .service-card img {
-        height: 240px;
-    }
+/*    .service-card img {*/
+/*        height: 240px;*/
+/*    }*/
 
-    .service-overlay {
-        padding: 24px;
-    }
+/*    .service-overlay {*/
+/*        padding: 24px;*/
+/*    }*/
 
-    .service-overlay h3 {
-        font-size: var(--font-md);
-    }
+/*    .service-overlay h3 {*/
+/*        font-size: var(--font-md);*/
+/*    }*/
 
-    .service-btn {
-        padding: 10px 24px;
-        font-size: var(--font-sm);
-    }
-}
+/*    .service-btn {*/
+/*        padding: 10px 24px;*/
+/*        font-size: var(--font-sm);*/
+/*    }*/
+/*}*/

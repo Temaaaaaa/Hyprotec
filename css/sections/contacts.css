@@ -57,39 +57,39 @@
 }
 
 /* Адаптив */
-@media (max-width: 1024px) {
-    .contacts-container {
-        gap: 40px;
-    }
+/*@media (max-width: 1024px) {*/
+/*    .contacts-container {*/
+/*        gap: 40px;*/
+/*    }*/
 
-    .contacts-phone {
-        font-size: var(--font-xl);
-    }
+/*    .contacts-phone {*/
+/*        font-size: var(--font-xl);*/
+/*    }*/
 
-    .contacts-email {
-        font-size: var(--font-lg);
-    }
-}
+/*    .contacts-email {*/
+/*        font-size: var(--font-lg);*/
+/*    }*/
+/*}*/
 
-@media (max-width: 768px) {
-    .contacts-container {
-        gap: 32px;
-    }
+/*@media (max-width: 768px) {*/
+/*    .contacts-container {*/
+/*        gap: 32px;*/
+/*    }*/
 
-    .contacts-left,
-    .contacts-right {
-        flex: 1 1 100%;
-    }
+/*    .contacts-left,*/
+/*    .contacts-right {*/
+/*        flex: 1 1 100%;*/
+/*    }*/
 
-    .contacts-phone {
-        font-size: var(--font-lg);
-    }
+/*    .contacts-phone {*/
+/*        font-size: var(--font-lg);*/
+/*    }*/
 
-    .contacts-email {
-        font-size: var(--font-md);
-    }
+/*    .contacts-email {*/
+/*        font-size: var(--font-md);*/
+/*    }*/
 
-    .contacts-right iframe {
-        height: 250px;
-    }
-}
+/*    .contacts-right iframe {*/
+/*        height: 250px;*/
+/*    }*/
+/*}*/

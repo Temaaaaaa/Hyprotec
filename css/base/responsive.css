@@ -138,6 +138,7 @@
         font-weight: 600;
     }
 
+
     .footer-container {
         flex-direction: column;
         align-items: center;
@@ -501,6 +502,11 @@
     .stats-numbers-section .section-title {
         font-size: var(--font-lg);
     }
+    .chart-block canvas {
+        width: 480px !important;
+        height: 480px !important;
+    }
+
 
     .section-subline,
     .section-subtitle {
@@ -531,6 +537,10 @@
     .stats-numbers-section p {
         font-size: var(--font-md);
     }
+    .chart-block canvas {
+        width: 320px !important;
+        height: 320px !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -538,6 +548,10 @@
     .ownership-section .section-title,
     .stats-numbers-section .section-title {
         font-size: var(--font-md);
+    }
+    .chart-block canvas {
+        width: 320px !important;
+        height: 3200px !important;
     }
 
     .section-subline,
@@ -547,8 +561,15 @@
 
     .equipment-section p,
     .ownership-section p,
+    .ownership-notes,
+    .stats-numbers-section p,
     .stats-numbers-section p {
         font-size: var(--font-md);
+    }
+    .ownership-notes,
+    .ownership-notes li {
+        font-size: var(--font-sm);
+        line-height: 1.4;
     }
 }
 
@@ -556,74 +577,15 @@
 
 
 
-/*    background-color: #ccc;*/
-/*    color: #fff;*/
-/*}*/
-
-
-/*    background: #ccc;*/
-/*    border-color: #ccc;*/
-/*}*/
 
 
 
 
 
-/*    color: #fff;*/
-/*}*/
-
-
-/*    background: #ccc;*/
-/*}*/
 
 
 
 
-/*    border-color: #ccc;*/
-/*}*/
 
 
-/*    background: #ccc;*/
-/*    color: #fff;*/
-/*}*/
 
-
-/*    background-color: #ccc;*/
-/*    border-top: 1px solid #ccc;*/
-/*}*/
-
-
-/*    color: #007bff;*/
-/*}*/
-
-
-/*    color: #ccc;*/
-/*}*/
-
-
-/*    color: #007bff;*/
-/*}*/
-
-
-/*    filter: brightness(1.2);*/
-/*}*/
-
-
-/*    background: #ccc !important;*/
-/*    color: #fff !important;*/
-/*}*/
-
-
-/*    background: #ccc !important;*/
-/*    border-color: #ccc !important;*/
-/*}*/
-
-
-/*    background: #ccc !important;*/
-/*    color: #fff !important;*/
-/*}*/
-
-
-/*    background: #ccc !important;*/
-/*    color: #007bff !important;*/
-/*}*/

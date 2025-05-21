@@ -60,42 +60,42 @@
     line-height: 1.6;
 }
 
-/* Адаптив */
-@media (max-width: 1024px) {
-    .why-us-grid {
-        gap: 32px;
-    }
+/*!* Адаптив *!*/
+/*@media (max-width: 1024px) {*/
+/*    .why-us-grid {*/
+/*        gap: 32px;*/
+/*    }*/
 
-    .why-card {
-        padding: 32px 24px;
-    }
-}
+/*    .why-card {*/
+/*        padding: 32px 24px;*/
+/*    }*/
+/*}*/
 
-@media (max-width: 768px) {
-    .why-us-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 24px;
-    }
+/*@media (max-width: 768px) {*/
+/*    .why-us-grid {*/
+/*        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));*/
+/*        gap: 24px;*/
+/*    }*/
 
-    .why-card {
-        padding: 24px 20px;
-    }
+/*    .why-card {*/
+/*        padding: 24px 20px;*/
+/*    }*/
 
-    .icon-wrapper {
-        width: 60px;
-        height: 60px;
-    }
+/*    .icon-wrapper {*/
+/*        width: 60px;*/
+/*        height: 60px;*/
+/*    }*/
 
-    .icon-wrapper img {
-        width: 30px;
-        height: 30px;
-    }
+/*    .icon-wrapper img {*/
+/*        width: 30px;*/
+/*        height: 30px;*/
+/*    }*/
 
-    .why-title {
-        font-size: var(--font-md);
-    }
+/*    .why-title {*/
+/*        font-size: var(--font-md);*/
+/*    }*/
 
-    .why-text {
-        font-size: var(--font-sm);
-    }
-}
+/*    .why-text {*/
+/*        font-size: var(--font-sm);*/
+/*    }*/
+/*}*/
