@@ -1,4 +1,33 @@
 /* ===== Адаптив до 1280px ===== */
+
+
+/* ===== Адаптив до 1024px ===== */
+
+
+/* ===== Адаптив до 900px ===== */
+
+
+/* ===== Адаптив до 768px ===== */
+
+
+/* ===== Адаптив до 600px ===== */
+
+
+/* ===== Адаптив до 480px ===== */
+
+
+/* ===== Адаптив для header и burger меню ===== */
+
+
+.ownership-section p,
+.stats-section p {
+    font-size: var(--font-lg);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+
 @media (max-width: 1280px) {
     .container,
     .container-lg,
@@ -12,9 +41,25 @@
         gap: 12px;
         text-align: left;
     }
+
+    .equipment-section .section-title,
+    .ownership-section .section-title,
+    .stats-numbers-section .section-title {
+        font-size: var(--font-xl);
+    }
+
+    .section-subline,
+    .section-subtitle {
+        font-size: var(--font-md);
+    }
+
+    .equipment-section p,
+    .ownership-section p,
+    .stats-numbers-section p {
+        font-size: var(--font-md);
+    }
 }
 
-/* ===== Адаптив до 1024px ===== */
 @media (max-width: 1024px) {
     .stats-content,
     .equipment-content,
@@ -41,9 +86,37 @@
     .ownership-chart-block canvas {
         aspect-ratio: 16 / 9;
     }
+
+    .equipment-section .section-title,
+    .ownership-section .section-title,
+    .stats-numbers-section .section-title {
+        font-size: var(--font-lg);
+    }
+
+    .chart-block canvas {
+        width: 480px !important;
+        height: 480px !important;
+    }
+
+    .section-subline,
+    .section-subtitle {
+        font-size: var(--font-md);
+    }
+
+    .equipment-section p,
+    .ownership-section p,
+    .stats-numbers-section p {
+        font-size: var(--font-sm);
+    }
+
+    .ownership-section p,
+    .stats-section p {
+        font-size: var(--font-md);
+        line-height: 1.7;
+        margin-bottom: 16px;
+    }
 }
 
-/* ===== Адаптив до 900px ===== */
 @media (max-width: 900px) {
     .stats-charts {
         flex-direction: column;
@@ -51,10 +124,12 @@
         align-items: center;
         width: 100%;
     }
+
     .chart-block {
         width: 100%;
         max-width: 400px;
     }
+
     .chart-block canvas {
         height: 260px !important;
         min-height: 200px !important;
@@ -62,7 +137,6 @@
     }
 }
 
-/* ===== Адаптив до 768px ===== */
 @media (max-width: 768px) {
     .ownership-table {
         display: none;
@@ -77,6 +151,10 @@
         overflow: hidden;
         font-size: var(--font-sm);
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        max-width: 100%;
+        margin: 0 auto;
+        border: 1px solid #ddd;
+        font-size: 14px;
     }
 
     .ownership-table--stacked .row {
@@ -86,15 +164,23 @@
         text-align: center;
         border-bottom: 1px solid #ccc;
         /*background: #fff;*/
+        line-height: normal;
+        grid-template-columns: 40% 30% 30%;
+        padding: 0;
+        text-align: left;
     }
 
-    .ownership-table--stacked .header-row {
-        /*background: #ccc;*/
+    .ownership-table--stacked .header-row { /*background: #ccc;*/
         font-weight: 600;
+        margin: 0;
+        border-top: none;
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+        line-height: normal !important;
+        border-top: none !important;
     }
 
-    .ownership-table--stacked .total-row {
-        /*background: #ccc;*/
+    .ownership-table--stacked .total-row { /*background: #ccc;*/
         font-weight: 800;
         color: var(--accent-500);
     }
@@ -102,42 +188,29 @@
     .ownership-table--stacked .cell {
         padding: 14px 12px;
         border-left: 1px solid #ccc;
+        padding: 14px 10px;
+        text-align: left;
+        border-left: 1px solid #ddd;
     }
-
 
     .ownership-table--stacked .cell:first-child {
         border-left: none;
     }
+
     .ownership-table--stacked .header-row:first-child {
         border-top-left-radius: 12px;
         border-top-right-radius: 12px;
-    }
-
-    .ownership-table--stacked .header-row {
-        margin: 0;
-        border-top: none;
-    }
-    .ownership-table--stacked .header-row {
-        padding-top: 0 !important;
-        margin-top: 0 !important;
-        line-height: normal !important;
-        border-top: none !important;
     }
 
     .ownership-table--stacked .header-row .cell {
         padding-top: 12px !important;
         padding-bottom: 12px !important;
     }
-    .ownership-table--stacked .row {
-        line-height: normal;
-    }
-
 
     .ownership-table--stacked .label {
         color: #333;
         font-weight: 600;
     }
-
 
     .footer-container {
         flex-direction: column;
@@ -186,87 +259,7 @@
         font-size: var(--font-sm);
         line-height: 1.4;
     }
-}
 
-/* ===== Адаптив до 600px ===== */
-@media (max-width: 600px) {
-    .ownership-chart-block {
-        height: auto !important;
-        min-height: 0 !important;
-        padding: 0 !important;
-        display: block !important;
-    }
-
-    .ownership-chart-block canvas {
-        width: 100% !important;
-        height: 340px !important;
-        min-height: 340px !important;
-        max-height: 340px !important;
-        aspect-ratio: unset !important;
-        display: block;
-        margin: 0 auto;
-        border-radius: 8px;
-    }
-}
-
-/* ===== Адаптив до 480px ===== */
-@media (max-width: 480px) {
-    .container,
-    .container-lg,
-    .container-xl {
-        padding: 0 16px;
-    }
-
-    .card-overlay h3,
-    .service-overlay h3 {
-        font-size: var(--font-md);
-    }
-
-    .footer-logo {
-        max-width: 200px;
-    }
-
-    .footer-container {
-        gap: 12px;
-        padding: 12px 0;
-    }
-
-    .contacts-container {
-        flex-direction: column;
-        gap: 16px;
-        padding: 0 16px;
-    }
-
-    .contacts-phone {
-        font-size: var(--font-md);
-        margin-bottom: 6px;
-        word-break: break-word;
-    }
-
-    .contacts-email {
-        font-size: var(--font-sm);
-        margin-bottom: 6px;
-        word-break: break-word;
-    }
-
-    .contacts-hours {
-        font-size: var(--font-sm);
-        margin-bottom: 8px;
-    }
-
-    .company-details p {
-        font-size: var(--font-sm);
-        margin: 4px 0;
-    }
-
-    .contacts-right iframe {
-        height: 160px;
-        min-height: 120px;
-    }
-}
-
-/* ===== Адаптив для header и burger меню ===== */
-@media (max-width: 768px) {
     .site-header {
         padding: 0;
         height: auto;
@@ -402,14 +395,13 @@
         gap: 12px;
         border-top: 1px solid var(--gray-700);
         width: 100%;
-        padding: 0 0 0 0;      /* убери отступы */
+        padding: 0 0 0 0; /* убери отступы */
         margin: 0;
     }
 
-
     .lang-link {
         display: inline-block;
-        padding: 12px 0;       /* чтобы соответствовать .nav-list a */
+        padding: 12px 0; /* чтобы соответствовать .nav-list a */
         font-size: var(--font-md);
         color: var(--text-primary);
         text-decoration: none;
@@ -428,8 +420,6 @@
         color: var(--accent-500);
     }
 
-
-
     .services-section .service-card {
         height: 200px;
     }
@@ -446,26 +436,6 @@
     .values-section .splide__arrows {
         display: none;
     }
-}
-@media (max-width: 768px) {
-    .ownership-table--stacked {
-        max-width: 100%;
-        margin: 0 auto;
-        border: 1px solid #ddd;
-        font-size: 14px;
-    }
-
-    .ownership-table--stacked .row {
-        grid-template-columns: 40% 30% 30%;
-        padding: 0;
-        text-align: left;
-    }
-
-    .ownership-table--stacked .cell {
-        padding: 14px 10px;
-        text-align: left;
-        border-left: 1px solid #ddd;
-    }
 
     .ownership-table--stacked .cell.label {
         font-weight: 600;
@@ -475,52 +445,7 @@
         background: #f0f0f0;
         font-weight: 700;
     }
-}
 
-@media (max-width: 1280px) {
-    .equipment-section .section-title,
-    .ownership-section .section-title,
-    .stats-numbers-section .section-title {
-        font-size: var(--font-xl);
-    }
-
-    .section-subline,
-    .section-subtitle {
-        font-size: var(--font-md);
-    }
-
-    .equipment-section p,
-    .ownership-section p,
-    .stats-numbers-section p {
-        font-size: var(--font-md);
-    }
-}
-
-@media (max-width: 1024px) {
-    .equipment-section .section-title,
-    .ownership-section .section-title,
-    .stats-numbers-section .section-title {
-        font-size: var(--font-lg);
-    }
-    .chart-block canvas {
-        width: 480px !important;
-        height: 480px !important;
-    }
-
-
-    .section-subline,
-    .section-subtitle {
-        font-size: var(--font-md);
-    }
-
-    .equipment-section p,
-    .ownership-section p,
-    .stats-numbers-section p {
-        font-size: var(--font-sm);
-    }
-}
-
-@media (max-width: 768px) {
     .equipment-section .section-title,
     .ownership-section .section-title,
     .stats-numbers-section .section-title {
@@ -537,18 +462,100 @@
     .stats-numbers-section p {
         font-size: var(--font-md);
     }
+
     .chart-block canvas {
         width: 320px !important;
         height: 320px !important;
     }
+
+    .ownership-section p,
+    .stats-section p {
+        font-size: var(--font-sm);
+        line-height: 1.6;
+        margin-bottom: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    .ownership-chart-block {
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    .ownership-chart-block canvas {
+        width: 100% !important;
+        height: 340px !important;
+        min-height: 340px !important;
+        max-height: 340px !important;
+        aspect-ratio: unset !important;
+        display: block;
+        margin: 0 auto;
+        border-radius: 8px;
+    }
 }
 
 @media (max-width: 480px) {
-    .equipment-section .section-title,
-    .ownership-section .section-title,
-    .stats-numbers-section .section-title {
+    .container,
+    .container-lg,
+    .container-xl {
+        padding: 0 16px;
+    }
+
+    .card-overlay h3,
+    .service-overlay h3 {
         font-size: var(--font-md);
     }
+
+    .footer-logo {
+        max-width: 200px;
+    }
+
+    .footer-container {
+        gap: 12px;
+        padding: 12px 0;
+    }
+
+    .contacts-container {
+        flex-direction: column;
+        gap: 16px;
+        padding: 0 16px;
+    }
+
+    .contacts-phone {
+        font-size: var(--font-md);
+        margin-bottom: 6px;
+        word-break: break-word;
+    }
+
+    .contacts-email {
+        font-size: var(--font-sm);
+        margin-bottom: 6px;
+        word-break: break-word;
+    }
+
+    .contacts-hours {
+        font-size: var(--font-sm);
+        margin-bottom: 8px;
+    }
+
+    .company-details p {
+        font-size: var(--font-sm);
+        margin: 4px 0;
+    }
+
+    .contacts-right iframe {
+        height: 160px;
+        min-height: 120px;
+    }
+
+    .equipment-section,
+    .ownership-section,
+    .stats-numbers-section {
+        font-size: var(--font-md);
+    }
+
     .chart-block canvas {
         width: 320px !important;
         height: 3200px !important;
@@ -566,39 +573,13 @@
     .stats-numbers-section p {
         font-size: var(--font-md);
     }
+
     .ownership-notes,
     .ownership-notes li {
         font-size: var(--font-sm);
         line-height: 1.4;
     }
-}
-.ownership-section p,
-.stats-section p {
-    font-size: var(--font-lg);
-    line-height: 1.8;
-    margin-bottom: 20px;
-    color: var(--text-primary);
-}
 
-@media (max-width: 1024px) {
-    .ownership-section p,
-    .stats-section p {
-        font-size: var(--font-md);
-        line-height: 1.7;
-        margin-bottom: 16px;
-    }
-}
-
-@media (max-width: 768px) {
-    .ownership-section p,
-    .stats-section p {
-        font-size: var(--font-sm);
-        line-height: 1.6;
-        margin-bottom: 14px;
-    }
-}
-
-@media (max-width: 480px) {
     .ownership-section p,
     .stats-section p {
         font-size: var(--font-sm);
@@ -606,20 +587,3 @@
         margin-bottom: 12px;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
