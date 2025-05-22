@@ -100,119 +100,86 @@
     fill: currentColor;
 }
 
-/*!* ===== Адаптив ===== *!*/
-/*@media (max-width: 1024px) {*/
-/*    .splide__slide .value-card {*/
-/*        padding: 32px 24px;*/
-/*        min-height: 280px;*/
-/*    }*/
+/* ===== VALUES: адаптив ===== */
+@media (max-width: 1024px) {
+    .splide__slide .value-card {
+        padding: 32px 24px;
+        min-height: 280px;
+    }
 
-/*    .value-title {*/
-/*        font-size: var(--font-md);*/
-/*        margin-bottom: 12px;*/
-/*        min-height: 2em;*/
-/*    }*/
+    .value-title {
+        font-size: var(--font-md);
+        margin-bottom: 12px;
+        min-height: 2em;
+    }
 
-/*    .value-text {*/
-/*        font-size: var(--font-sm);*/
-/*        line-height: 1.5;*/
-/*    }*/
-/*}*/
+    .value-text {
+        font-size: var(--font-sm);
+        line-height: 1.5;
+    }
 
-/*@media (max-width: 768px) {*/
-/*    #values-carousel {*/
-/*        margin-top: 24px;*/
-/*    }*/
+    .splide__arrows {
+        margin-top: 24px;
+        gap: 24px;
+    }
 
-/*    .splide__slide {*/
-/*        padding: 0 8px;*/
-/*    }*/
+    .splide__arrow {
+        font-size: 1.2rem;
+    }
+}
 
-/*    .splide__slide .value-card {*/
-/*        padding: 24px 20px;*/
-/*        min-height: 240px;*/
-/*        border-radius: 16px;*/
-/*    }*/
+@media (max-width: 768px) {
+    #values-carousel {
+        margin-top: 24px;
+    }
 
-/*    .value-title {*/
-/*        font-size: var(--font-md);*/
-/*        margin-bottom: 8px;*/
-/*        min-height: 1.8em;*/
-/*    }*/
+    .splide__slide {
+        padding: 0 8px;
+    }
 
-/*    .value-text {*/
-/*        font-size: var(--font-sm);*/
-/*        line-height: 1.4;*/
-/*    }*/
+    .splide__slide .value-card {
+        padding: 24px 20px;
+        min-height: 240px;
+        border-radius: 16px;
+    }
 
-/*    .splide__arrows {*/
-/*        margin-top: 24px;*/
-/*        gap: 24px;*/
-/*    }*/
+    .value-title {
+        font-size: var(--font-md);
+        margin-bottom: 8px;
+        min-height: 1.8em;
+    }
 
-/*    .splide__arrow {*/
-/*        font-size: 1.2rem;*/
-/*    }*/
-/*}*/
+    .value-text {
+        font-size: var(--font-sm);
+        line-height: 1.4;
+    }
 
-/*@media (max-width: 600px) {*/
-/*    .site-footer {*/
-/*        padding: 8px 0 4px 0;*/
-/*        text-align: center;*/
-/*        background: var(--gray-900);*/
-/*    }*/
-/*    .footer-container {*/
-/*        flex-direction: column;*/
-/*        align-items: center;*/
-/*        gap: 0;*/
-/*        padding: 0;*/
-/*    }*/
-/*    .footer-left {*/
-/*        margin-bottom: 4px;*/
-/*        width: 100%;*/
-/*        display: flex;*/
-/*        flex-direction: column;*/
-/*        align-items: center;*/
-/*    }*/
-/*    .footer-logo {*/
-/*        max-width: 90px;*/
-/*        margin: 0 auto 2px auto;*/
-/*        display: block;*/
-/*    }*/
-/*    .footer-rights {*/
-/*        margin: 0 0 6px 0;*/
-/*        font-size: var(--font-xs);*/
-/*        text-align: center;*/
-/*    }*/
-/*    .footer-right {*/
-/*        flex-direction: column;*/
-/*        gap: 0;*/
-/*        width: 100%;*/
-/*        align-items: center;*/
-/*    }*/
-/*    .footer-column {*/
-/*        margin-bottom: 2px;*/
-/*        padding-bottom: 0;*/
-/*        width: 100%;*/
-/*        align-items: center;*/
-/*    }*/
-/*    .footer-column h4 {*/
-/*        margin-bottom: 2px;*/
-/*        font-size: var(--font-xs);*/
-/*        text-align: center;*/
-/*    }*/
-/*    .footer-column ul {*/
-/*        padding: 0;*/
-/*        margin: 0 auto 2px auto;*/
-/*        text-align: center;*/
-/*    }*/
-/*    .footer-column ul li {*/
-/*        margin-bottom: 1px;*/
-/*    }*/
-/*    .footer-column ul li a {*/
-/*        font-size: var(--font-xs);*/
-/*    }*/
-/*}*/
+    .splide__arrows {
+        margin-top: 24px;
+        gap: 24px;
+    }
+
+    .splide__arrow {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .splide__slide .value-card {
+        padding: 20px 16px;
+        min-height: 200px;
+    }
+
+    .value-title {
+        font-size: var(--font-sm);
+        min-height: auto;
+    }
+
+    .value-text {
+        font-size: var(--font-sm);
+    }
+}
+
 
 /* ===== Dark Mode ===== */
 html.dark-mode .value-card {

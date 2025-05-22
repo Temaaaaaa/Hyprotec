@@ -56,37 +56,90 @@
 }
 
 
-/* ===== Адаптив ===== */
+/* ===== STATS NUMBERS: адаптив ===== */
+@media (max-width: 1280px) {
+    .lab-stats-grid {
+        gap: 40px;
+    }
+
+    .lab-col {
+        gap: 32px;
+        font-size: var(--font-md);
+    }
+
+    .lab-col strong {
+        font-size: clamp(2rem, 4vw, var(--font-xl));
+    }
+}
+
 @media (max-width: 1024px) {
     .lab-stats-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 48px;
     }
 
     .lab-center-top {
         flex-direction: column;
-        gap: 40px;
+        gap: 32px;
     }
 
     .lab-center-bottom {
+        margin-top: 24px;
+        padding: 0;
         border-left: none;
         border-right: none;
-        padding: 0;
+    }
+
+    .lab-col {
+        gap: 24px;
+        font-size: var(--font-sm);
+    }
+
+    .lab-col strong {
+        font-size: var(--font-lg);
     }
 }
 
+@media (max-width: 768px) {
+    .lab-stats-grid {
+        gap: 32px;
+    }
 
+    .lab-col {
+        font-size: var(--font-sm);
+        gap: 20px;
+    }
 
-/*@media (max-width: 768px) {*/
-/*    .lab-col {*/
-/*        gap: 24px;*/
-/*    }*/
+    .lab-col strong {
+        font-size: var(--font-md);
+    }
 
-/*    .lab-center-top {*/
-/*        gap: 24px;*/
-/*    }*/
+    .lab-center-top {
+        gap: 24px;
+    }
 
-/*    .lab-center-bottom {*/
-/*        margin-top: 24px;*/
-/*    }*/
-/*}*/
+    .lab-center-bottom {
+        margin-top: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .lab-col {
+        font-size: var(--font-sm);
+        gap: 16px;
+        text-align: left;
+    }
+
+    .lab-col strong {
+        font-size: var(--font-md);
+    }
+
+    .lab-center-top {
+        gap: 20px;
+    }
+
+    .lab-center-bottom {
+        font-size: var(--font-sm);
+        text-align: left;
+    }
+}
