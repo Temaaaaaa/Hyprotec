@@ -105,22 +105,23 @@
 </header>
 
 <main id="main"><!-- ====== HERO-СЕКЦИЯ ====== -->
-    <section class="hero">
-        <div class="hero-media">
-            <video autoplay muted loop playsinline>
-                <source src="video/vid.mp4" type="video/mp4"/>
+    <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero-media" aria-hidden="true">
+            <video autoplay muted loop playsinline preload="none" poster="images/hero-poster.jpg">
+                <source src="video/vid.mp4" type="video/mp4" />
             </video>
             <div class="video-overlay"></div>
         </div>
 
         <div class="hero-text">
-            <h1 class="hero-logo">
-                <img src="images/Hyprotec_logo-02.jpg" alt="Хайпротек"/>
+            <h1 id="hero-heading" class="hero-logo">
+                <img src="images/Hyprotec_logo-02.jpg" alt="Хайпротек" loading="eager" />
             </h1>
             <p class="tagline" id="tagline"></p>
             <a href="#services" class="hero-btn">Наши услуги</a>
         </div>
     </section>
+
 
 
     <section id="about" class="about-section">
@@ -218,8 +219,7 @@
             <div class="why-us-grid">
                 <div class="why-card" data-tilt>
                     <div class="icon-wrapper">
-                        <!-- Замените на свои SVG или GIF -->
-                        <img src="images/icons/icons8-опыт.gif" alt="Опыт" class="why-icon">
+                        <img src="images/icons/icons8-опыт.gif" alt="Опыт" class="why-icon" loading="lazy">
                     </div>
                     <h3 class="why-title">Профессиональный подход</h3>
                     <p class="why-text">
@@ -229,7 +229,7 @@
                 </div>
                 <div class="why-card" data-tilt>
                     <div class="icon-wrapper">
-                        <img src="images/icons/settings.gif" alt="Технологии" class="why-icon">
+                        <img src="images/icons/settings.gif" alt="Технологии" class="why-icon" loading="lazy">
                     </div>
                     <h3 class="why-title">Современные технологии</h3>
                     <p class="why-text">
@@ -376,42 +376,42 @@
             </div>
             <div class="services-grid">
                 <article class="service-card" data-tilt>
-                    <img src="images/cards/card1.jpeg" alt="Научно-технологический центр">
+                    <img src="images/cards/card1.jpeg" alt="Научно-технологический центр" loading="lazy">
                     <div class="service-overlay">
                         <h3>Научно-технологический центр</h3>
                         <a href="https://hyprotec.ru/en-lab" target="_blank" class="service-btn">Подробнее</a>
                     </div>
                 </article>
                 <article class="service-card" data-tilt>
-                    <img src="images/cards/card2.jpg" alt="Супервайзинг и полевой аудит">
+                    <img src="images/cards/card2.jpg" alt="Супервайзинг и полевой аудит" loading="lazy">
                     <div class="service-overlay">
                         <h3>Супервайзинг и полевой аудит</h3>
                         <a href="https://hyprotec.ru/supervising" target="_blank" class="service-btn">Подробнее</a>
                     </div>
                 </article>
                 <article class="service-card" data-tilt>
-                    <img src="images/cards/card3.jpeg" alt="Технологический консалтинг">
+                    <img src="images/cards/card3.jpeg" alt="Технологический консалтинг" loading="lazy">
                     <div class="service-overlay">
                         <h3>Технологический консалтинг</h3>
                         <a href="https://hyprotec.ru/consulting" target="_blank" class="service-btn">Подробнее</a>
                     </div>
                 </article>
                 <article class="service-card" data-tilt>
-                    <img src="images/cards/card4.jpg" alt="Калибровка и ТО">
+                    <img src="images/cards/card4.jpg" alt="Калибровка и ТО" loading="lazy">
                     <div class="service-overlay">
                         <h3>Калибровка и ТО</h3>
                         <a href="https://hyprotec.ru/calibration" class="service-btn">Подробнее</a>
                     </div>
                 </article>
                 <article class="service-card" data-tilt>
-                    <img src="images/cards/card5.jpg" alt="Континуальный анализ">
+                    <img src="images/cards/card5.jpg" alt="Континуальный анализ" loading="lazy">
                     <div class="service-overlay">
                         <h3>Непрерывный анализ раствора</h3>
                         <a href="https://hyprotec.ru/monitoring_system" target="_blank" class="service-btn">Подробнее</a>
                     </div>
                 </article>
                 <article class="service-card" data-tilt>
-                    <img src="images/cards/card6.jpg" alt="Обучение персонала">
+                    <img src="images/cards/card6.jpg" alt="Обучение персонала" loading="lazy">
                     <div class="service-overlay">
                         <h3>Обучение персонала</h3>
                         <a href="https://hyprotec.ru/education" target="_blank" class="service-btn">Подробнее</a>
@@ -550,7 +550,7 @@
     <section class="product-cards">
         <div class="container-cards">
             <div class="card">
-                <img src="images/lab/lab1.jpg" alt="Оборудование для тампонажных растворов">
+                <img src="images/lab/lab1.jpg" alt="Оборудование для тампонажных растворов" loading="lazy">
                 <div class="card-overlay">
                     <h3>Оборудование для тестирования тампонажных растворов</h3>
                     <a href="#" class="btn">
@@ -560,7 +560,7 @@
             </div>
 
             <div class="card">
-                <img src="images/lab/lab2.jpg" alt="Оборудование для буровых растворов">
+                <img src="images/lab/lab2.jpg" alt="Оборудование для буровых растворов" loading="lazy">
                 <div class="card-overlay">
                     <h3>Оборудование для тестирования буровых растворов</h3>
                     <a href="#" class="btn">
@@ -570,7 +570,7 @@
             </div>
 
             <div class="card">
-                <img src="images/lab/lab3.jpg" alt="Сделано в России">
+                <img src="images/lab/lab3.jpg" alt="Сделано в России" loading="lazy">
                 <div class="card-overlay">
                     <h3>MudLabIns<br>Сделано в России</h3>
                     <a href="#" class="btn">
@@ -610,9 +610,7 @@
             </div>
         </div>
     </section>
-    <!-- ======= СЕКЦИЯ «Нам доверяют» ======= -->
-    <!-- ======= СЕКЦИЯ «Нам доверяют» (auto-scroll) ======= -->
-    <!-- ======= СЕКЦИЯ «Нам доверяют» (автопрокрутка, без обрывов) ======= -->
+
     <section id="clients" class="clients-section">
         <div class="container">
             <header class="section-header">
@@ -623,50 +621,51 @@
             <div class="logo-marquee">
                 <div class="logo-track">
                     <!-- 1 блок логотипов -->
-                    <div class="client-card"><img src="images/logos/7a9226b1eea5a45a8d8921135dc25e9c.jpg"  alt="АРКТИКГАЗ"></div>
-                    <div class="client-card"><img src="images/logos/Novatek_Logo_cyrillic.svg"              alt="НОВАТЭК"></div>
-                    <div class="client-card"><img src="images/logos/ccs-logo-new.jpg"                       alt="Центр цементирования скважин"></div>
-                    <div class="client-card"><img src="images/logos/logo_osnovnoy_angliyskiy_chernyy.jpg"   alt="НОВАТЭК (англ.)"></div>
-                    <div class="client-card"><img src="images/logos/Burservis_logo_cyr_w%201_layerstyle.png" alt="Бурсервис"></div>
-                    <div class="client-card"><img src="images/logos/Elbrus_logo_color_v1.jpg"               alt="Эльбрус Дриллинг"></div>
-                    <div class="client-card"><img src="images/logos/zavod_neft_oborud-removebg-preview.png"                  alt="Завод нефтяного оборудования"></div>
-                    <div class="client-card"><img src="images/logos/shlumbergepng.jpg"                      alt="Schlumberger"></div>
-                    <div class="client-card"><img src="images/logos/ofs.svg"                                alt="ОФС"></div>
-                    <div class="client-card"><img src="images/logos/integra.jpg"                            alt="Интегра"></div>
-                    <div class="client-card"><img src="images/logos/eng-logo.jpg"                           alt="ЭНГС"></div>
-                    <div class="client-card"><img src="images/logos/petro-removebg-preview.png"                              alt="Петроальянс"></div>
-                    <div class="client-card"><img src="images/logos/suldukar.svg"                           alt="Сюльдюкар Геологоразведка"></div>
-                    <div class="client-card"><img src="images/logos/samgtu-removebg-preview.png"                             alt="СамГТУ"></div>
-                    <div class="client-card"><img src="images/logos/smnipi-removebg-preview.png"                             alt="СамараНИПИнефть"></div>
-                    <div class="client-card"><img src="images/logos/rngsnab.jpg"                            alt="РНГ Снабжение"></div>
-                    <div class="client-card"><img src="images/logos/PNIPU_russkiyi.png_.png" alt="ПНИПУ"></div>
-                    <div class="client-card"><img src="images/logos/noveks.svg"                             alt="NOVEX"></div>
-                    <div class="client-card"><img src="images/logos/sokol-removebg-preview.png"                              alt="Сокол ГНБ"></div>
-                    <div class="client-card igs"><img src="images/logos/1227-removebg-preview.png"                                alt="ИГС Группа компаний"></div>
-                    <div class="client-card gns"><img src="images/logos/gns.svg"                                alt="ИГС Группа компаний"></div>
+                    <div class="client-card"><img src="images/logos/7a9226b1eea5a45a8d8921135dc25e9c.jpg"  alt="АРКТИКГАЗ" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/Novatek_Logo_cyrillic.svg"              alt="НОВАТЭК" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/ccs-logo-new.jpg"                       alt="Центр цементирования скважин" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/logo_osnovnoy_angliyskiy_chernyy.jpg"   alt="НОВАТЭК (англ.)" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/Burservis_logo_cyr_w%201_layerstyle.png" alt="Бурсервис" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/Elbrus_logo_color_v1.jpg"               alt="Эльбрус Дриллинг" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/zavod_neft_oborud-removebg-preview.png" alt="Завод нефтяного оборудования" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/shlumbergepng.jpg"                      alt="Schlumberger" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/ofs.svg"                                alt="ОФС" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/integra.jpg"                            alt="Интегра" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/eng-logo.jpg"                           alt="ЭНГС" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/petro-removebg-preview.png"             alt="Петроальянс" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/suldukar.svg"                           alt="Сюльдюкар Геологоразведка" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/samgtu-removebg-preview.png"            alt="СамГТУ" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/smnipi-removebg-preview.png"            alt="СамараНИПИнефть" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/rngsnab.jpg"                            alt="РНГ Снабжение" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/PNIPU_russkiyi.png_.png"                alt="ПНИПУ" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/noveks.svg"                             alt="NOVEX" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/sokol-removebg-preview.png"             alt="Сокол ГНБ" loading="lazy"></div>
+                    <div class="client-card igs"><img src="images/logos/1227-removebg-preview.png"          alt="ИГС Группа компаний" loading="lazy"></div>
+                    <div class="client-card gns"><img src="images/logos/gns.svg"                            alt="ИГС Группа компаний" loading="lazy"></div>
 
                     <!-- 2 блок логотипов — точная копия -->
-                    <div class="client-card"><img src="images/logos/7a9226b1eea5a45a8d8921135dc25e9c.jpg"  alt="АРКТИКГАЗ"></div>
-                    <div class="client-card"><img src="images/logos/Novatek_Logo_cyrillic.svg"              alt="НОВАТЭК"></div>
-                    <div class="client-card"><img src="images/logos/ccs-logo-new.jpg"                       alt="Центр цементирования скважин"></div>
-                    <div class="client-card"><img src="images/logos/logo_osnovnoy_angliyskiy_chernyy.jpg"   alt="НОВАТЭК (англ.)"></div>
-                    <div class="client-card"><img src="images/logos/Burservis_logo_cyr_w%201_layerstyle.png" alt="Бурсервис"></div>
-                    <div class="client-card"><img src="images/logos/Elbrus_logo_color_v1.jpg"               alt="Эльбрус Дриллинг"></div>
-                    <div class="client-card"><img src="images/logos/zavod_neft_oborud-removebg-preview.png" alt="Завод нефтяного оборудования"></div>
-                    <div class="client-card"><img src="images/logos/shlumbergepng.jpg"                      alt="Schlumberger"></div>
-                    <div class="client-card"><img src="images/logos/ofs.svg"                                alt="ОФС"></div>
-                    <div class="client-card"><img src="images/logos/integra.jpg"                            alt="Интегра"></div>
-                    <div class="client-card"><img src="images/logos/eng-logo.jpg"                           alt="ЭНГС"></div>
-                    <div class="client-card"><img src="images/logos/petro-removebg-preview.png"                              alt="Петроальянс"></div>
-                    <div class="client-card"><img src="images/logos/suldukar.svg"                           alt="Сюльдюкар Геологоразведка"></div>
-                    <div class="client-card"><img src="images/logos/samgtu-removebg-preview.png"                             alt="СамГТУ"></div>
-                    <div class="client-card"><img src="images/logos/smnipi-removebg-preview.png"                             alt="СамараНИПИнефть"></div>
-                    <div class="client-card"><img src="images/logos/rngsnab.jpg"                            alt="РНГ Снабжение"></div>
-                    <div class="client-card"><img src="images/logos/PNIPU_russkiyi.png_.png"                               alt="ПНИПУ"></div>
-                    <div class="client-card"><img src="images/logos/noveks.svg"                             alt="NOVEX"></div>
-                    <div class="client-card"><img src="images/logos/sokol-removebg-preview.png"                              alt="Сокол ГНБ"></div>
-                    <div class="client-card"><img src="images/logos/1227-removebg-preview.png"                                alt="ИГС Группа компаний"></div>
-                    <div class="client-card"><img src="images/logos/gns.svg"                                alt="ИГС Группа компаний"></div>
+                    <div class="client-card"><img src="images/logos/7a9226b1eea5a45a8d8921135dc25e9c.jpg"  alt="АРКТИКГАЗ" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/Novatek_Logo_cyrillic.svg"              alt="НОВАТЭК" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/ccs-logo-new.jpg"                       alt="Центр цементирования скважин" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/logo_osnovnoy_angliyskiy_chernyy.jpg"   alt="НОВАТЭК (англ.)" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/Burservis_logo_cyr_w%201_layerstyle.png" alt="Бурсервис" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/Elbrus_logo_color_v1.jpg"               alt="Эльбрус Дриллинг" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/zavod_neft_oborud-removebg-preview.png" alt="Завод нефтяного оборудования" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/shlumbergepng.jpg"                      alt="Schlumberger" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/ofs.svg"                                alt="ОФС" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/integra.jpg"                            alt="Интегра" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/eng-logo.jpg"                           alt="ЭНГС" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/petro-removebg-preview.png"             alt="Петроальянс" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/suldukar.svg"                           alt="Сюльдюкар Геологоразведка" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/samgtu-removebg-preview.png"            alt="СамГТУ" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/smnipi-removebg-preview.png"            alt="СамараНИПИнефть" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/rngsnab.jpg"                            alt="РНГ Снабжение" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/PNIPU_russkiyi.png_.png"                alt="ПНИПУ" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/noveks.svg"                             alt="NOVEX" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/sokol-removebg-preview.png"             alt="Сокол ГНБ" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/1227-removebg-preview.png"              alt="ИГС Группа компаний" loading="lazy"></div>
+                    <div class="client-card"><img src="images/logos/gns.svg"                                alt="ИГС Группа компаний" loading="lazy"></div>
+
                 </div>
             </div>
         </div>
