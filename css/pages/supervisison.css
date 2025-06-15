@@ -1,0 +1,282 @@
+/* ===== Hero: Supervision Page ===== */
+.hero-supervising {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--gray-800);
+    overflow: hidden;
+}
+
+.hero-supervising::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('./images/supervision/Cover_hyprotec2.jpg') center center / cover no-repeat;
+    filter: brightness(0.5);
+    z-index: 1;
+}
+
+.hero-supervising-content {
+    position: relative;
+    z-index: 2;
+    color: var(--text-inverse);
+    text-align: center;
+    padding: 0 24px;
+    animation: fadeInUp 1s ease-out forwards;
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+html.loaded .hero-supervising-content {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s ease;
+}
+
+.hero-supervising-content h1 {
+    font-size: var(--font-xxl);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Адаптив ===== */
+@media (max-width: 768px) {
+    .hero-supervising-content h1 {
+        font-size: var(--font-xl);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-supervising-content h1 {
+        font-size: var(--font-lg);
+    }
+}
+
+/* ===== Вводная секция "Супервайзинг" ===== */
+.supervising-intro {
+    background-color: var(--gray-50);
+    padding: 100px 20px;
+}
+
+.supervising-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 64px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.supervising-text {
+    flex: 1 1 520px;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.supervising-description {
+    font-size: var(--font-lg);
+    line-height: 1.8;
+    color: var(--text-primary);
+    margin-top: 24px;
+    max-width: 600px;
+    text-wrap: pretty;
+}
+
+.supervising-image {
+    flex: 1 1 480px;
+    animation: fadeInRight 0.8s ease forwards;
+}
+
+.image-wrapper {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 450px;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.image-wrapper:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+.image-wrapper:hover img {
+    transform: scale(1.03);
+}
+
+/* ===== Адаптив ===== */
+@media (max-width: 1024px) {
+    .supervising-wrapper {
+        flex-direction: column;
+        gap: 48px;
+    }
+
+    .supervising-text {
+        text-align: center;
+    }
+
+    .supervising-description {
+        font-size: var(--font-sm);
+        margin: 0 auto;
+    }
+
+    .supervising-image {
+        max-width: 100%;
+    }
+}
+
+/* ===== Почему нас выбирают ===== */
+.supervising-why {
+    background: var(--gray-50);
+    padding: 100px 20px;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.why-feature {
+    background: var(--white);
+    border-left: 4px solid var(--accent-500);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+html.loaded .why-feature {
+    opacity: 1;
+    transform: none;
+}
+
+.why-feature:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+.why-feature h3 {
+    font-size: var(--font-lg);
+    font-weight: 700;
+    color: var(--accent-500);
+}
+
+.why-feature p {
+    font-size: var(--font-lg);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* Адаптив */
+@media (max-width: 600px) {
+    .why-feature {
+        padding: 24px;
+    }
+
+    .why-feature h3 {
+        font-size: var(--font-sm);
+    }
+
+    .why-feature p {
+        font-size: 14px;
+    }
+}
+
+/* ===== Услуги: стильный аккордеон ===== */
+.supervising-services {
+    background: var(--gray-50);
+    padding: 100px 20px;
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.accordion details {
+    border-radius: 12px;
+    border: 1px solid var(--gray-200);
+    background: var(--gray-50);
+    padding: 20px 24px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.accordion details[open] {
+    background: var(--white);
+    border-color: var(--accent-500);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.accordion summary {
+    font-size: var(--font-md);
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    cursor: pointer;
+    position: relative;
+    padding-right: 30px;
+    transition: color 0.3s ease;
+}
+
+.accordion summary:hover {
+    color: var(--accent-500);
+}
+
+.accordion summary::after {
+    content: "×";
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.25rem;
+    color: var(--gray-600);
+    transition: transform 0.3s ease;
+}
+
+.accordion details[open] summary::after {
+    transform: rotate(45deg);
+    color: var(--accent-500);
+}
+
+.accordion p {
+    margin-top: 16px;
+    font-size: var(--font-sm);
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 800px;
+}
+
+/* Адаптив */
+@media (max-width: 600px) {
+    .accordion summary {
+        font-size: var(--font-sm);
+    }
+
+    .accordion p {
+        font-size: 14px;
+    }
+}
+
+
+

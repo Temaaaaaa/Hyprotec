@@ -1,0 +1,228 @@
+.simple-hero {
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.simple-hero .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+.simple-hero .hero-text {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: var(--text-inverse);
+}
+.simple-hero .hero-text h1 {
+    font-size: var(--font-xxl);
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+.simple-hero .hero-text .tagline {
+    font-size: var(--font-lg);
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* ===== Секция цементирования ===== */
+.cementing-section {
+    background: var(--gray-50);
+    padding: 100px 20px;
+}
+
+.cementing-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 80px;
+    align-items: flex-start;
+}
+
+.cementing-text {
+    flex: 1 1 600px;
+    color: var(--text-primary);
+    font-size: var(--font-md);
+    line-height: 1.8;
+}
+
+.cementing-list {
+    list-style: disc;
+    padding-left: 24px;
+    margin: 0;
+}
+
+.cementing-list li {
+    margin-bottom: 14px;
+    color: var(--text-primary);
+}
+
+/* ===== Изображение справа ===== */
+.cementing-image {
+    flex: 1 1 460px;
+    max-width: 540px;
+}
+
+.cementing-image figure {
+    background: var(--white);
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+}
+
+.cementing-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.cementing-image figcaption {
+    margin-top: 12px;
+    font-size: var(--font-sm);
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.cementing-image .note {
+    display: block;
+    margin-top: 8px;
+    font-size: var(--font-sm);
+    color: var(--text-secondary);
+}
+
+/* ===== Адаптив ===== */
+@media (max-width: 1024px) {
+    .cementing-layout {
+        flex-direction: column;
+        gap: 48px;
+    }
+
+    .cementing-text,
+    .cementing-image {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .cementing-text {
+        font-size: var(--font-sm);
+    }
+
+    .cementing-list li {
+        margin-bottom: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .cementing-section {
+        padding: 60px 16px;
+    }
+
+    .cementing-text {
+        font-size: var(--font-sm);
+    }
+
+    .cementing-list {
+        padding-left: 20px;
+    }
+
+    .cementing-image figure {
+        padding: 12px;
+    }
+
+    .cementing-image figcaption {
+        font-size: 13px;
+    }
+
+    .cementing-image .note {
+        font-size: 13px;
+    }
+}
+
+
+
+
+.consulting-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+    gap: 12px;
+    background-color: var(--gray-50);
+}
+
+.carousel-window {
+    width: 750px; /* Точная ширина как у картинки */
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    padding: 12px;
+    background: var(--gray-50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-slide img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.carousel-nav {
+    background: var(--white);
+    border: none;
+    font-size: 2.25rem; /* ⬅️ стало крупнее */
+    padding: 10px 15px; /* ⬅️ больше площадь */
+    color: var(--accent-500);
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-nav:hover {
+    background: var(--gray-100);
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .carousel-window {
+        width: 100%;
+    }
+
+    .carousel-slide {
+        padding: 8px;
+    }
+
+    .carousel-nav {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+

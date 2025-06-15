@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- БАЗА -->
+    <link rel="stylesheet" href="css/base/reset.css">
+    <link rel="stylesheet" href="css/base/variables.css">
+
+    <!-- УТИЛИТЫ -->
+    <link rel="stylesheet" href="css/utilities/layout.css">
+    <link rel="stylesheet" href="css/utilities/animations.css">
+    <link rel="stylesheet" href="css/utilities/dark-mode.css">
+    <link rel="stylesheet" href="css/base/responsive.css">
+
+    <!-- КОМПОНЕНТЫ -->
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/theme-toggle.css">
+    <link rel="stylesheet" href="css/sections/footer.css">
+    <link rel="stylesheet" href="css/components/hero.css">
+
+    <!-- СПЕЦИФИЧНЫЕ СЕКЦИИ -->
+    <link rel="stylesheet" href="css/pages/calibration.css">
+    <link rel="stylesheet" href="css/sections/contacts.css">
+
+    <title>Document</title>
+</head>
+<body>
+<header class="site-header">
+    <div class="container top-bar">
+        <!-- Логотип -->
+        <a href="index.html" class="logo">
+            <img src="images/Hyprotec_logo3-03.jpg" alt="HYPROTEC" />
+        </a>
+
+        <!-- Навигация -->
+        <nav class="main-nav" id="mainNav" aria-label="Основная навигация">
+            <ul class="nav-list">
+                <li><a href="#about">О компании</a></li>
+
+                <li class="has-dropdown">
+                    <a href="#services" class="dropdown-toggle" aria-haspopup="true"  aria-expanded="false">
+                        Услуги <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-label="submenu">
+                        <li><a href="https://hyprotec.ru/monitoring_system" target="_blank" rel="noopener noreferrer">Система анализа</a></li>
+                        <li><a href="ntc.html" target="_blank" rel="noopener noreferrer">Научно-тех. центр</a></li>
+                        <li><a href="https://supervision.hyprotec.ru" target="_blank" rel="noopener noreferrer">Супервайзинг</a></li>
+                        <li><a href="https://consulting.hyprotec.ru" target="_blank" rel="noopener noreferrer">Консалтинг</a></li>
+                        <li><a href="https://calibration.hyprotec.ru" target="_blank" rel="noopener noreferrer">Калибровка и ТО</a></li>
+                        <li><a href="https://training.hyprotec.ru" target="_blank" rel="noopener noreferrer">Обучение персонала</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#equipment-section">Оборудование</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+            <div class="lang-switch">
+                <a href="index.html" class="lang-link ru active">RU</a>
+                <a href="en/index.html" class="lang-link en">EN</a>
+            </div>
+
+
+
+            <!-- Телефон -->
+            <div class="contact-phone">
+                <a href="tel:+79223180000">8 (922) 318-00-00</a>
+            </div>
+
+            <!-- Темная тема -->
+            <div class="theme-wrapper">
+                <label class="theme-switch">
+                    <input type="checkbox" id="theme" class="theme-switch__input" />
+                    <span class="theme-switch__slider"></span>
+                </label>
+            </div>
+        </nav>
+
+        <!-- Бургер-меню -->
+        <button id="menuToggle" class="hamburger" aria-label="Открыть меню">
+            ☰
+        </button>
+    </div>
+</header>
+<main>
+    <section class="hero-calibration hero">
+        <div class="hero-calibration-bg"></div>
+        <div class="container hero-calibration-inner">
+            <h1 class="hero-calibration-title">
+                Калибровка и&nbsp;техническое<br>обслуживание лабораторного оборудования
+            </h1>
+        </div>
+    </section>
+    <section class="calibration-intro">
+        <div class="container calibration-layout">
+            <div class="calibration-text">
+                <div class="section-header">
+                    <span class="section-number">01</span>
+                    <h2 class="section-title">Калибровка и&nbsp;техническое обслуживание<br>лабораторного оборудования</h2>
+                </div>
+                <p>
+                    Это ключевой этап в жизненном цикле лабораторий. Наши инженеры выполняют калибровку и сервисное обслуживание оборудования ведущих брендов, обеспечивая максимальную точность измерений.
+                </p>
+                <ul>
+                    <li>Выдача сертификатов по результатам калибровки, или допуск к ремонту</li>
+                    <li>Обслуживание и ремонт OFITE, FANN, GRACE, CHANDLER, ARTISAN и др.</li>
+                    <li>Schlumberger и ШЦЦ доверяют нам свои лаборатории</li>
+                </ul>
+            </div>
+
+            <div class="calibration-image">
+                <img src="images/cards/card4.jpg" alt="Оборудование в лаборатории">
+            </div>
+        </div>
+    </section>
+    <section class="contacts-section">
+        <div class="container">
+            <div class="contacts-container">
+                <div class="contacts-left">
+                    <h2 class="contacts-phone">8 922 318 00 00</h2>
+                    <a href="mailto:info@hyprotec.ru" class="contacts-email">info@hyprotec.ru</a>
+                    <p class="contacts-hours">пн–пт с 10:00 до 19:00</p>
+
+                    <div class="company-details">
+                        <p>ООО <strong>«ХАЙПРОТЕК»</strong></p>
+                        <p>ИНН: <strong>7203456345</strong></p>
+                        <p>КПП: <strong>720301001</strong></p>
+                        <p>ОГРН: <strong>1187232020722</strong></p>
+                        <p>625000, Тюменская область, г. Тюмень,<br>ул. Грибоедова, д. 15, помещ. 1</p>
+                    </div>
+                </div>
+
+                <div class="contacts-right">
+                    <iframe
+                            src="https://yandex.ru/map-widget/v1/?um=constructor%3Af2b12c5ceae10d922c0fee41817b70696ff03f02db3c599ca4628d5f3698f18a&amp;source=constructor"
+                            width="100%" height="300" allowfullscreen loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer id="contacts" class="site-footer">
+    <div class="container">
+        <div class="footer-container">
+            <div class="footer-left">
+                <a href="#" class="footer-logo">
+                    <img src="images/Hyprotec_logo3-03.jpg" alt="HYPROTEC логотип" class="footer-logo">
+                </a>
+                <div class="footer-rights">© Все права защищены. HYPROTEC.</div>
+            </div>
+
+            <div class="footer-right">
+                <div class="footer-column">
+                    <h4>МЕНЮ</h4>
+                    <ul>
+                        <li><a href="#about">О нас</a></li>
+                        <li><a href="#services">Услуги</a></li>
+                        <li><a href="#">Проекты</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>О КОМПАНИИ</h4>
+                    <ul>
+                        <li><a href="https://hyprotec.ru/certificates">Сертификаты</a></li>
+                        <li><a href="https://gofile-35434a357a.cz2.quickconnect.to/sharing/CKgb5spN2">Презентация</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
