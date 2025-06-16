@@ -28,6 +28,62 @@
     <title>Document</title>
 </head>
 <body>
+<header class="site-header">
+    <div class="container top-bar">
+        <!-- Логотип -->
+        <a href="index.html" class="logo">
+            <img src="../images/Hyprotec_logo3-03.jpg" alt="HYPROTEC" />
+        </a>
+
+        <!-- Навигация -->
+        <nav class="main-nav" id="mainNav" aria-label="Основная навигация">
+            <ul class="nav-list">
+                <li><a href="#train">Обучение</a></li>
+
+                <li class="has-dropdown">
+                    <a href="#services" class="dropdown-toggle" aria-haspopup="true"  aria-expanded="false">
+                        Услуги <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-label="submenu">
+                        <li><a href="../monitoring/" target="_blank" rel="noopener noreferrer">Система анализа</a></li>
+                        <li><a href="../ntc/" target="_blank" rel="noopener noreferrer">Научно-тех. центр</a></li>
+                        <li><a href="../supervising/" target="_blank" rel="noopener noreferrer">Супервайзинг</a></li>
+                        <li><a href="../consulting/" target="_blank" rel="noopener noreferrer">Консалтинг</a></li>
+                        <li><a href="../calibration/" target="_blank" rel="noopener noreferrer">Калибровка и ТО</a></li>
+                        <li><a href="../education/" target="_blank" rel="noopener noreferrer">Обучение персонала</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#courses">Курсы</a></li>
+                <li><a href="#license">Лицензия</a></li>
+            </ul>
+            <div class="lang-switch">
+                <a href="index.html" class="lang-link ru active">RU</a>
+                <a href="en/index.html" class="lang-link en">EN</a>
+            </div>
+
+
+
+            <!-- Телефон -->
+            <div class="contact-phone">
+                <a href="tel:+79223180000">8 (922) 318-00-00</a>
+            </div>
+
+            <!-- Темная тема -->
+            <div class="theme-wrapper">
+                <label class="theme-switch">
+                    <input type="checkbox" id="theme" class="theme-switch__input" />
+                    <span class="theme-switch__slider"></span>
+                </label>
+            </div>
+        </nav>
+
+        <!-- Бургер-меню -->
+        <button id="menuToggle" class="hamburger" aria-label="Открыть меню">
+            ☰
+        </button>
+    </div>
+</header>
 <main>
     <section class="hero hero-education">
         <div class="hero-overlay"></div>
@@ -37,7 +93,7 @@
     </section>
 
 
-    <section class="training-section">
+    <section class="training-section" id="train">
         <div class="container training-layout">
             <div class="training-text">
                 <div class="section-header">
@@ -72,7 +128,7 @@
             </div>
         </div>
     </section>
-    <section class="mud-course-section">
+    <section class="mud-course-section" id="courses">
         <div class="container mud-course-layout">
             <div class="mud-course-text">
                 <div class="section-header">
@@ -176,7 +232,7 @@
             </div>
         </div>
     </section>
-    <section class="license-section">
+    <section class="license-section" id="license">
         <div class="container">
             <div class="section-header text-left">
                 <span class="section-number">06</span>
@@ -251,6 +307,7 @@
         </div>
     </div>
 </footer>
+<script src="../js/main.js"></script>
 
 </body>
 </html>
