@@ -15,7 +15,7 @@
 .hero-calibration-bg {
     position: absolute;
     inset: 0;
-    background: url('images/cards/card4.jpg') center center / cover no-repeat;
+    background: url('../../images/cards/card4.jpg') center center / cover no-repeat;
     filter: brightness(0.5);
     z-index: 1;
 }
