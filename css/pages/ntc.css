@@ -416,16 +416,7 @@ html.loaded .hero-ntc-inner {
     line-height: 1.7;
 }
 
-/* Адаптив */
-@media (max-width: 768px) {
-    .ntc-accordion summary {
-        font-size: var(--font-md);
-    }
 
-    .ntc-accordion p {
-        font-size: var(--font-sm);
-    }
-}
 
 
 

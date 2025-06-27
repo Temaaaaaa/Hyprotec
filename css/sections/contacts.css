@@ -1,59 +1,116 @@
 .contacts-section {
     background-color: var(--gray-50);
+    padding: 80px 0;
 }
 
 .contacts-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 60px;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 48px;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
 }
 
-
 .contacts-left {
-    flex: 1 1 400px;
     font-size: var(--font-md);
-    line-height: 1.6;
     color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .contacts-phone {
     font-size: var(--font-xxl);
-    margin-bottom: 10px;
+    font-weight: 600;
     color: var(--text-primary);
+    line-height: 1.2;
 }
 
 .contacts-email {
-    display: inline-block;
     font-size: var(--font-xl);
     color: var(--accent-500);
-    margin-bottom: 10px;
     text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contacts-email:hover {
+    color: var(--accent-600);
 }
 
 .contacts-hours {
     font-style: italic;
     color: var(--text-secondary);
-    margin-bottom: 20px;
+}
+
+.company-details {
+    margin-top: 12px;
 }
 
 .company-details p {
-    margin: 6px 0;
+    font-size: var(--font-sm);
     color: var(--text-secondary);
+    margin-bottom: 4px;
+    line-height: 1.5;
 }
 
 .contacts-right {
-    flex: 1 1 400px;
-    align-self: center;
-    max-width: 100%;
+    width: 100%;
 }
 
 .contacts-right iframe {
     width: 100%;
-    height: 380px;
+    height: 100%;
+    min-height: 320px;
     border: none;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease;
 }
 
+.contacts-right iframe:hover {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
 
+/* Адаптив — всё мягко переходит */
+@media (max-width: 768px) {
+    .contacts-section {
+        padding: 60px 0;
+    }
+
+    .contacts-phone {
+        font-size: var(--font-xl);
+    }
+
+    .contacts-email {
+        font-size: var(--font-lg);
+    }
+
+    .contacts-right iframe {
+        min-height: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contacts-container {
+        padding: 0 16px;
+        gap: 32px;
+    }
+
+    .contacts-phone {
+        font-size: var(--font-lg);
+    }
+
+    .contacts-email {
+        font-size: var(--font-md);
+    }
+
+    .company-details p {
+        font-size: 0.9rem;
+    }
+
+    .contacts-right iframe {
+        min-height: 240px;
+    }
+}

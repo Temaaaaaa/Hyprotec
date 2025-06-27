@@ -134,3 +134,15 @@
 }
 
 
+@media (max-width: 768px) {
+    .hero-static h1 {
+        font-size: var(--font-lg);
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--text-inverse);
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+}
+
+

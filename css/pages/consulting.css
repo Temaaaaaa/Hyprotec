@@ -209,19 +209,7 @@
     transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
-    .carousel-window {
-        width: 100%;
-    }
 
-    .carousel-slide {
-        padding: 8px;
-    }
-
-    .carousel-nav {
-        font-size: 1.5rem;
-    }
-}
 
 
 

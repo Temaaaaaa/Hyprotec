@@ -7,11 +7,6 @@
     z-index: 1;
 }
 
-/*.equipment-section .container {*/
-/*    max-width: 1280px;*/
-/*    margin: 0 auto;*/
-/*    padding: 0 20px;*/
-/*}*/
 
 .equipment-content {
     display: flex;
@@ -69,215 +64,148 @@
     transform: rotate(20deg);
 }
 
-/* Адаптив */
-/**/
-/* ===== EQUIPMENT: адаптив ===== */
-@media (max-width: 1280px) {
-    .equipment-section {
-        padding: 80px 20px;
-    }
-
-    .equipment-content {
-        gap: 40px;
-        font-size: var(--font-md);
-    }
-
-    .challenges-list {
-        gap: 20px;
-    }
-
-    .challenges-list li {
-        padding: 20px 24px;
-        font-size: var(--font-sm);
-    }
-}
-
-@media (max-width: 1024px) {
-    .equipment-content {
-        gap: 32px;
-    }
-
-    .challenges-list {
-        grid-template-columns: 1fr;
-    }
-
-    .challenges-list li {
-        font-size: var(--font-sm);
-        padding: 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .equipment-section {
-        padding: 60px 16px;
-    }
-
-    .equipment-content {
-        gap: 24px;
-        font-size: var(--font-sm);
-    }
-
-    .equipment-paragraphs p {
-        margin-bottom: 16px;
-    }
-
-    .challenges-list li {
-        padding: 16px 20px;
-        gap: 12px;
-    }
-}
-
-@media (max-width: 480px) {
-    .equipment-section {
-        padding: 48px 12px;
-    }
-
-    .challenges-list {
-        gap: 16px;
-    }
-
-    .challenges-list li {
-        padding: 14px 16px;
-        font-size: var(--font-sm);
-    }
-}
-
-
 
 
 /* ===== Секция Владения ===== */
 
 
 /* ===== Ownership Section ===== */
-.ownership-section {
-    padding: 100px 20px;
-    background: var(--gray-50);
-}
-
-.section-subline {
-    display: block;
-    font-size: var(--font-md);
-    font-weight: 400;
-    color: var(--text-secondary);
-    margin-top: 8px;
-}
-
+/* ===== Владение: Секция стоимости ===== */
+/* ===== Базовая стилизация секции владения ===== */
+/* ===== Ownership Section ===== */
 .ownership-wrapper {
     display: flex;
     flex-direction: column;
     gap: 48px;
 }
 
-/* Сетка: таблица слева, график справа */
 .ownership-split {
     display: flex;
+    gap: 40px;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 48px;
 }
 
-/* === Таблица слева === */
 .ownership-table-block {
-    flex: 1 1 640px;
-    min-width: 320px;
+    flex: 1 1 420px;
+    overflow-x: auto;
 }
 
-/* === График справа === */
-.ownership-chart-block {
-    flex: 1 1 500px;
-    /*min-width: 250px;*/
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 8px;
-}
-
-.ownership-chart-block canvas {
-    width: 100% !important;
-    aspect-ratio: 2 / 1;
-    display: block;
-    border-radius: 8px;
-}
-
-
-/* === Таблица === */
 .ownership-table {
     width: 100%;
-    font-size: var(--font-lg);
     border-collapse: collapse;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
-    transition: var(--transition-default);
-    margin: 0 auto;
-}
-
-.ownership-table th {
-    background: var(--gray-200);
-    font-weight: 600;
-    color: var(--text-primary);
-    padding: 24px 32px;
-    font-size: var(--font-lg);
-    text-align: center;
-}
-
-.ownership-table td {
     background: var(--white);
-    color: var(--text-primary);
-    padding: 20px 28px;
-    text-align: center;
-    font-size: var(--font-lg);
-    border-bottom: 1px solid var(--gray-100);
-    transition: background-color 0.3s ease;
+    box-shadow: var(--shadow-sm);
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: var(--font-base);
 }
 
-.ownership-table tbody tr:not(.total-row):hover td {
-    background-color: var(--gray-100);
+.ownership-table thead th {
+    background: var(--bg-muted);
+    padding: 16px;
+    text-align: center;
+}
+
+.ownership-table tbody td {
+    padding: 14px;
+    border-bottom: 1px solid var(--gray-200);
+    text-align: center;
 }
 
 .ownership-table .total-row td {
-    background: var(--gray-50);
-    font-weight: 800;
+    font-weight: 600;
     color: var(--accent-500);
-    font-size: var(--font-xl);
-    padding: 26px 32px;
-    border: none;
+    font-size: var(--font-md);
 }
 
-/* === Преимущества под таблицей === */
+.ownership-chart-block {
+    flex: 1 1 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.bar-group h4 {
+    margin-bottom: 8px;
+    font-size: var(--font-base);
+    font-weight: 600;
+}
+
+.bar {
+    height: 26px;
+    border-radius: 26px;
+    color: var(--text-inverse);
+    font-size: var(--font-sm);
+    line-height: 26px;
+    padding: 0 12px;
+    margin-bottom: 6px;
+    position: relative;
+    background-color: var(--gray-600);
+}
+
+.bar.red   { background-color: var(--accent-500); }
+.bar.blue  { background-color: #29c6f6; }
+.bar.green { background-color: #82e0aa; }
+
 .ownership-notes {
-    margin-top: 24px;
-    padding: 0;
     list-style: none;
-    display: grid;
-    gap: 16px;
-    font-size: var(--font-lg);
-    color: var(--text-primary);
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+    padding-left: 0;
+    margin-top: 20px;
 }
 
 .ownership-notes li {
-    padding-left: 28px;
     position: relative;
-    line-height: 1.7;
+    padding-left: 24px;
+    margin-bottom: 12px;
+    font-size: var(--font-base);
 }
 
 .ownership-notes li::before {
-    content: '✓';
+    content: "✔";
     position: absolute;
     left: 0;
-    top: 2px;
-    font-size: 1.2em;
     color: var(--accent-500);
+    font-weight: bold;
 }
-.ownership-table--stacked {
-    display: none;
-}
-/* === Адаптив === */
 
-/* 🌗 Dark Mode */
+/* ===== Адаптив ===== */
+@media (max-width: 1024px) {
+    .ownership-split {
+        flex-direction: column;
+    }
+}
+@media (max-width: 460px) {
+    .ownership-wrapper {
+        gap: 32px;
+    }
+
+    .ownership-table {
+        font-size: 0.9rem;
+    }
+
+    .ownership-table thead th,
+    .ownership-table tbody td {
+        padding: 10px;
+    }
+
+
+    .ownership-notes li {
+        font-size: var(--font-sm);
+        padding-left: 20px;
+    }
+
+    .ownership-notes li::before {
+        font-size: var(--font-sm);
+    }
+}
+
+
+
+
+
+
+/* ===== Dark Mode ===== */
 html.dark-mode .ownership-section {
     background: var(--gray-900);
 }
@@ -301,8 +229,6 @@ html.dark-mode .ownership-table .total-row td {
 html.dark-mode .ownership-notes li {
     color: var(--gray-100);
 }
-
-
 
 /* ===== Карточки оборудования ===== */
 .product-cards {
@@ -389,53 +315,118 @@ html.dark-mode .ownership-notes li {
     padding: 100px 20px;
     background-color: var(--gray-50);
 }
-
 .stats-content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 64px;
-    max-width: 1440px;
-    margin: 0 auto;
+    gap: 40px;
+    justify-content: space-between;
 }
 
 .stats-text {
-    flex: 1 1 600px;
+    flex: 1 1 500px;
     font-size: var(--font-lg);
-    line-height: 1.8;
-    color: var(--text-primary);
+    line-height: 1.7;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 16px;
 }
 
-.stats-charts {
+.stats-chart-block {
+    flex: 1 1 420px;
     display: flex;
-    flex-direction: row;
-    gap: 48px;
-    justify-content: center;
-    align-items: flex-start;
-    width: 100%;
-    margin: 0 auto;
+    flex-direction: column;
+    gap: 200px;
 }
 
-.chart-block {
-    width: 800px;
-    /* Было 340px */
-    max-width: 100vw;
-    min-width: 320px;
-    display: flex;
-    justify-content: space-around;
+.bar-group h4 {
+    margin-bottom: 8px;
+    font-size: var(--font-lg);
+    font-weight: 600;
 }
 
-.chart-block canvas {
-    width: 720px !important;   /* или столько, сколько нужно */
-    height: 720px !important;
-    max-width: 100%;
-    display: block;
-    margin: 0 auto;
+.bar {
+    height: 26px;
+    border-radius: 26px;
+    color: #fff;
+    font-size: 1rem;
+    line-height: 26px;
+    padding: 0 12px;
+    margin-bottom: 6px;
+    position: relative;
+    background-color: #ccc;
 }
+
+.bar.red   { background-color: #e74c3c; }
+.bar.green { background-color: #82e0aa; }
+
+/* ===== Адаптив ===== */
+@media (max-width: 1024px) {
+    .stats-content {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 1024px) {
+    .stats-text {
+        font-size: var(--font-base);
+    }
+
+    .stats-chart-block {
+        gap: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-text {
+        font-size: var(--font-sm);
+        gap: 12px;
+    }
+
+    .stats-chart-block {
+        gap: 80px;
+    }
+
+    .bar-group h4 {
+        font-size: var(--font-base);
+    }
+
+    .bar {
+        font-size: 0.8rem;
+        line-height: 24px;
+        height: 24px;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-section {
+        padding: 60px 12px;
+    }
+
+    .stats-text {
+        font-size: var(--font-sm);
+        gap: 10px;
+    }
+
+    .bar-group h4 {
+        font-size: 0.95rem;
+        margin-bottom: 6px;
+    }
+
+    .bar {
+        font-size: 0.75rem;
+        height: 22px;
+        line-height: 22px;
+        padding: 0 8px;
+    }
+
+    .stats-chart-block {
+        gap: 150px;
+    }
+}
+
+
+
 
 /* На мобильных — вертикально и чуть меньше */
 

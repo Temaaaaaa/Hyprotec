@@ -2,34 +2,46 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="../css/components/header.css">
-    <link rel="stylesheet" href="../css/base/variables.css" />
-    <link rel="stylesheet" href="../css/base/reset.css" />
-    <link rel="stylesheet" href="../css/components/header.css" />
-    <link rel="stylesheet" href="../css/components/theme-toggle.css" />
-    <link rel="stylesheet" href="../css/sections/equipment.css" />
-    <link rel="stylesheet" href="../css/sections/footer.css" />
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LAB</title>
+    <!-- Base Styles -->
+    <link rel="stylesheet" href="../css/base/variables.css">
+    <link rel="stylesheet" href="../css/base/reset.css">
     <link rel="stylesheet" href="../css/sections/contacts.css">
-    <link rel="stylesheet" href="../css/utilities/layout.css" />
-    <link rel="stylesheet" href="../css/utilities/animations.css" />
-    <link rel="stylesheet" href="../css/utilities/dark-mode.css" />
-    <link rel="stylesheet" href="../css/pages/monitoring.css">
-    <link rel="stylesheet" href="../css/sections/whyus.css">
 
+
+    <!-- Components -->
+    <link rel="stylesheet" href="../css/components/header.css">
+    <link rel="stylesheet" href="../css/components/hero.css">
+    <link rel="stylesheet" href="../css/components/theme-toggle.css">
+
+    <!-- Sections -->
+    <link rel="stylesheet" href="../css/sections/about.css">
+    <link rel="stylesheet" href="../css/sections/whyus.css">
+    <link rel="stylesheet" href="../css/sections/footer.css">
+    <link rel="stylesheet" href="../css/sections/equipment.css">
+    <link rel="stylesheet" href="../css/pages/monitoring.css">
+
+    <!-- Utilities -->
+    <link rel="stylesheet" href="../css/utilities/animations.css">
+    <link rel="stylesheet" href="../css/utilities/dark-mode.css">
+    <link rel="stylesheet" href="../css/utilities/layout.css">
+    <link rel="stylesheet" href="../css/base/responsive.css">
 </head>
 <body>
 <header class="site-header">
     <div class="container top-bar">
         <!-- Логотип -->
-        <a href="index.html" class="logo">
+        <a href="../index.html" class="logo">
             <img src="../images/Hyprotec_logo3-03.jpg" alt="HYPROTEC" />
         </a>
 
         <!-- Навигация -->
         <nav class="main-nav" id="mainNav" aria-label="Основная навигация">
             <ul class="nav-list">
-                <li><a href="#about">О компании</a></li>
+                <li><a href="#about">Цементирование</a></li>
 
                 <li class="has-dropdown">
                     <a href="#services" class="dropdown-toggle" aria-haspopup="true"  aria-expanded="false">
@@ -38,19 +50,19 @@
                     <ul class="dropdown-menu" aria-label="submenu">
                         <li><a href="../monitoring/" target="_blank" rel="noopener noreferrer">Система анализа</a></li>
                         <li><a href="../ntc/" target="_blank" rel="noopener noreferrer">Научно-тех. центр</a></li>
-                        <li><a href="../supervising/" target="_blank" rel="noopener noreferrer">Супервайзинг</a></li>
-                        <li><a href="../consulting/" target="_blank" rel="noopener noreferrer">Консалтинг</a></li>
-                        <li><a href="../calibration/" target="_blank" rel="noopener noreferrer">Калибровка и ТО</a></li>
+                        <li><a href="../supervising" target="_blank" rel="noopener noreferrer">Супервайзинг</a></li>
+                        <li><a href="../consulting" target="_blank" rel="noopener noreferrer">Консалтинг</a></li>
+                        <li><a href="../calibration" target="_blank" rel="noopener noreferrer">Калибровка и ТО</a></li>
                         <li><a href="../education/" target="_blank" rel="noopener noreferrer">Обучение персонала</a></li>
                     </ul>
                 </li>
 
-                <li><a href="#equipment-section">Оборудование</a></li>
+                <li><a href="#examples">Примеры</a></li>
                 <li><a href="#contacts">Контакты</a></li>
             </ul>
             <div class="lang-switch">
-                <a href="index.html" class="lang-link ru active">RU</a>
-                <a href="en/index.html" class="lang-link en">EN</a>
+                <a href="../index.html" class="lang-link ru active">RU</a>
+                <a href="../en/index.html" class="lang-link en">EN</a>
             </div>
 
 
@@ -119,7 +131,7 @@
         </div>
     </section>
 
-    <section class="why-us-section">
+    <section class="why-us-section" id="target-directions">
         <div class="container">
             <div class="section-header">
                 <span class="section-number">02</span>
@@ -163,7 +175,7 @@
             </p>
         </div>
     </section>
-    <section class="equipment-section">
+    <section class="equipment-section" id="features">
         <div class="container">
             <div class="section-header">
                 <span class="section-number">03</span>
@@ -306,11 +318,11 @@
 </footer>
 
 
+<script src="../js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 <script>
     feather.replace();
 </script>
-
 <script src="../js/main.js"></script>
 </body>
 </html>

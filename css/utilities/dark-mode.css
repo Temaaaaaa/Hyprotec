@@ -258,3 +258,164 @@ html.dark-mode .ownership-table--stacked .cell:first-child {
 html.dark-mode .ownership-table--stacked .label {
   color: var(--gray-100);
 }
+
+/* === Дополнительно для корректной темной темы === */
+html.dark-mode .lab-card,
+html.dark-mode .cementing-image figure,
+html.dark-mode .mud-course-image,
+html.dark-mode .cement-course-image,
+html.dark-mode .format-card,
+html.dark-mode .test-card,
+html.dark-mode .recommendation-image,
+html.dark-mode .license-grid img,
+html.dark-mode .carousel-slide,
+html.dark-mode .carousel-window {
+  background-color: var(--gray-800) !important;
+  color: var(--gray-100) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+html.dark-mode .cementing-list li,
+html.dark-mode .mud-icon-list li,
+html.dark-mode .cement-icon-list li,
+html.dark-mode .icon-list li {
+  color: var(--gray-100);
+}
+
+html.dark-mode .section-subline,
+html.dark-mode .note,
+html.dark-mode .mud-subtitle,
+html.dark-mode .cement-subtitle {
+  color: var(--gray-100);
+  opacity: 0.85;
+}
+
+html.dark-mode .hero-education,
+html.dark-mode .hero-calibration,
+html.dark-mode .simple-hero,
+html.dark-mode .hero-static,
+html.dark-mode .hero-supervising,
+html.dark-mode .hero-ntc {
+  background-color: var(--gray-900);
+}
+
+html.dark-mode .hero-ntc-subtitle,
+html.dark-mode .tagline {
+  color: var(--gray-100);
+  opacity: 0.9;
+}
+
+html.dark-mode .test-card {
+  border-left-color: var(--accent-500);
+}
+
+/* === Темная тема для NTC-аккордеона === */
+html.dark-mode .ntc-accordion details {
+  background: var(--gray-800);
+  color: var(--gray-100);
+  border-left: 4px solid var(--accent-500);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+}
+
+html.dark-mode .ntc-accordion details[open] {
+  background: var(--gray-700);
+}
+
+html.dark-mode .ntc-accordion summary {
+  color: var(--gray-100);
+}
+
+html.dark-mode .ntc-accordion p {
+  color: var(--gray-100);
+  opacity: 0.85;
+}
+
+html.dark-mode .hero-ntc-inner {
+  background: transparent !important;
+}
+
+/* === Why-feature в тёмной теме === */
+html.dark-mode .why-feature {
+  background-color: var(--gray-800);
+  color: var(--gray-100);
+  border-left: 4px solid var(--accent-500);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+html.dark-mode .why-feature h3 {
+  color: var(--accent-500);
+}
+
+html.dark-mode .why-feature p {
+  color: var(--gray-100);
+  opacity: 0.9;
+}
+/* === Темная тема: Супервайзинг аккордеон === */
+html.dark-mode .accordion details {
+  background-color: var(--gray-800);
+  color: var(--gray-100);
+  border: 1px solid var(--gray-700);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+html.dark-mode .accordion details[open] {
+  background-color: var(--gray-700);
+  border-color: var(--accent-500);
+}
+
+html.dark-mode .accordion summary {
+  color: var(--gray-100);
+}
+
+html.dark-mode .accordion p {
+  color: var(--gray-100);
+  opacity: 0.9;
+}
+
+/* === Тёмная тема: фон у карусели === */
+html.dark-mode .consulting-carousel {
+  background-color: var(--gray-900) !important;
+}
+
+/* === Тёмная тема: окно и слайд без белого фона === */
+html.dark-mode .carousel-window,
+html.dark-mode .carousel-slide {
+  background-color: var(--gray-900) !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+/* === Стрелки (навигация) в тёмной теме === */
+html.dark-mode .carousel-nav {
+  background-color: var(--gray-900) !important;
+  color: var(--gray-100) !important;
+  box-shadow: 0 0 0 1px var(--gray-700);
+  border: none;
+}
+
+html.dark-mode .carousel-nav:hover {
+  background-color: var(--gray-800) !important;
+}
+
+
+html.dark-mode .hero-calibration-inner {
+  background: transparent !important;
+}
+
+html.dark-mode .hero-calibration-inner .hero-calibration-title {
+  color: var(--gray-100);
+}
+
+/* === Темная тема: видимость strong и span === */
+html.dark-mode strong,
+html.dark-mode span {
+  color: var(--text-inverse) !important;
+}
+/* Темная тема: усилить читаемость подписи */
+html.dark-mode .section-subline {
+  color: var(--text-inverse) !important;
+  opacity: 1 !important;
+}
+
+
+

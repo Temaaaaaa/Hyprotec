@@ -60,8 +60,8 @@
     line-height: 1.6;
 }
 
-/* ===== WHY-US: адаптив ===== */
-@media (max-width: 1024px) {
+/* ===== Why Us Adaptive ===== */
+@media (max-width: 1280px) {
     .why-us-grid {
         gap: 32px;
     }
@@ -70,47 +70,36 @@
         padding: 32px 24px;
     }
 
-    .icon-wrapper {
-        width: 64px;
-        height: 64px;
-    }
-
-    .icon-wrapper img {
-        width: 32px;
-        height: 32px;
-    }
-
     .why-title {
         font-size: var(--font-md);
     }
 
     .why-text {
-        font-size: var(--font-sm);
+        font-size: var(--font-base);
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .why-us-grid {
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 24px;
+        gap: 28px;
     }
 
     .why-card {
-        padding: 24px 20px;
+        padding: 28px 20px;
     }
 
     .icon-wrapper {
-        width: 56px;
-        height: 56px;
+        width: 60px;
+        height: 60px;
     }
 
     .icon-wrapper img {
-        width: 28px;
-        height: 28px;
+        width: 30px;
+        height: 30px;
     }
 
     .why-title {
-        font-size: var(--font-md);
+        font-size: var(--font-base);
     }
 
     .why-text {
@@ -119,29 +108,60 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+    .why-us-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
     .why-card {
-        padding: 20px 16px;
+        padding: 24px 16px;
         gap: 16px;
     }
 
-    .why-title {
-        font-size: var(--font-sm); /* ✅ существующая переменная */
-    }
-
-    .why-text {
-        font-size: var(--font-sm); /* ❗оставляем минимально допустимое */
-    }
-
     .icon-wrapper {
-        width: 48px;
-        height: 48px;
+        width: 52px;
+        height: 52px;
     }
 
     .icon-wrapper img {
-        width: 24px;
-        height: 24px;
+        width: 26px;
+        height: 26px;
+    }
+
+    .why-title {
+        font-size: var(--font-sm);
+    }
+
+    .why-text {
+        font-size: var(--font-sm);
     }
 }
+
+@media (max-width: 480px) {
+    .why-card {
+        padding: 20px 12px;
+        gap: 14px;
+    }
+
+    .icon-wrapper {
+        width: 44px;
+        height: 44px;
+    }
+
+    .icon-wrapper img {
+        width: 22px;
+        height: 22px;
+    }
+
+    .why-title {
+        font-size: var(--font-sm);
+    }
+
+    .why-text {
+        font-size: var(--font-sm);
+    }
+}
+
 
 
